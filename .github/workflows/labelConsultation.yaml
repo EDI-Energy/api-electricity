@@ -1,0 +1,62 @@
+name: Automatisches Labeln von Konsultationsbeiträgen
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+jobs:
+  process_issue:
+    runs-on: ubuntu-latest
+    env:
+      ALLOWED_USERS: ${{ secrets.FREIGEGEBENE_NUTZERNAMEN }}
+    steps:
+      - name: Issue verarbeiten
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const owner        = context.repo.owner;
+            const repo         = context.repo.repo;
+            const nr           = context.payload.issue.number;
+            const createdAt    = new Date(context.payload.issue.created_at);
+            const start        = new Date('2025-11-01T00:00:00Z');              # Hier muss das Datum zu jeder Konsultation neu angepasst werden
+            const end          = new Date('2025-12-01T00:00:00Z');              # Hier muss das Datum zu jeder Konsultation neu angepasst werden
+            const labels       = context.payload.issue.labels;
+            const actor        = context.actor;
+            
+            // 1) Außerhalb Zeitraum → Label, Kommentar, schließen
+            if (createdAt < start || createdAt >= end) {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: nr,
+                labels: ['Außerhalb des Konsultationszeitraums'] });
+              await github.rest.issues.createComment({ owner, repo, issue_number: nr,
+                body: 'Das Issue wurde außerhalb des vorgegebenen Konsultationszeitraum angelegt und ist damit ungültig.' });
+              await github.rest.issues.update({ owner, repo, issue_number: nr,
+                state: 'closed' });
+              console.log('Außerhalb-Zeitraum: gelabelt, kommentiert, geschlossen.');
+              return;
+            }
+
+            // 2) Innerhalb Zeitraum, aber nicht autorisierter User
+            const allowed = (process.env.ALLOWED_USERS || '')
+              .split(',').map(u=>u.trim()).filter(u=>u);
+            if (!allowed.includes(actor)) {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: nr,
+                labels: ['Status zu klären'] });
+              console.log(`User ${actor} nicht in ALLOWED_USERS: Label "Status zu klären" gesetzt.`);
+              return;
+            }
+
+            // 3) Innerhalb Zeitraum & autorisiert & noch keine Labels
+            if (labels.length === 0) {
+              // a) Konsultations-Label
+              await github.rest.issues.addLabels({ owner, repo, issue_number: nr,
+                labels: ['Konsultationsbeitrag'] });
+              console.log('Label "Konsultationsbeitrag" hinzugefügt.');
+
+              await github.rest.issues.update({ owner, repo, issue_number: nr,
+                title: newTitle });
+              console.log(`Titel aktualisiert: ${newTitle}`);
+            } else {
+              console.log(`Issue hat schon Labels: ${labels.map(l=>l.name).join(', ')}`);
+            }
