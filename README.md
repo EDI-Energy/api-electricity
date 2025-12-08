@@ -3,7 +3,7 @@ Dieses Repository enthält alle aktuell gültigen, zukünftig gültigen und zur 
 
 **Beachten Sie folgende Hinweise zur Stuktur des Repositories**
 - Der Branch "main" entspricht immer der aktuell gültige Version.
-- Der Branch "YYY-MM-DD-consultation" entspricht immer der zur Konsultation gestellten Version. Bitte beziehen Sie Ihre Konsultationsbeiträge ausschließlich auf den aktuell zur Konsultation stehenden Branch und beachten Sie die Hinweise zur Einreichung von Konsultationsbeiträgen.
+- Der Branch "YYYY-MM-DD-consultation" entspricht immer der zur Konsultation gestellten Version. Bitte beziehen Sie Ihre Konsultationsbeiträge ausschließlich auf den aktuell zur Konsultation stehenden Branch und beachten Sie die Hinweise zur Einreichung von Konsultationsbeiträgen.
 
 # Einreichen von Konsultationsbeiträgen / Anlegen von Issues
 Für das Einreichen eines Konsultationsbeitrags ist das Anlegen eines Issues erforderlich. Damit Ihr Konsultationsbeitrag gültig ist, muss dieser im vorgegebenen Konsultationszeitraum als Issue von einem Account angelegt werden, dessen Accountname (inkl. Unternehmensname und Marktrolle) der Bundesnetzagentur spätestens bis zum Ende des Konsultationszeitraumes mitgeteilt werden muss. Pro Unternehmen können mehrere Accounts Issues anlegen, sofern diese unterschiedliche Marktrollen vertreten (max. ein Account pro Marktrolle innerhalb eines Unternehmens). Issues, die außerhalb des Konsultationszeitraums angelegt werden, können nicht berücksichtigt werden.
