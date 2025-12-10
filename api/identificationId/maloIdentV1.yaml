@@ -1,0 +1,941 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/edi-energy/MaLoIdent_2024-07-03/1.0.0
+info:
+  title: EDI@Energy API-Webdienste zur Ermittlung der MaLo-ID der Marktlokation
+  description: " Publikationsdatum: 03.07.2024\n<h2><b>Ziel</h2></b> \n\n Gemäß Festlegung für einen beschleunigten werktäglichen Lieferantenwechsel in 24 Stunden (LFW24) der Bundesnetzagentur vom 21. März 2024 [BNetzA-Beschluss BK6-22-024](https://www.bundesnetzagentur.de/DE/Beschlusskammern/1_GZ/BK6-GZ/2022/BK6-22-024/BK6-22-024_Verfahren.html?nn=660086), ist der Use-Case GPKE Teil 2 - Fokus Zuordnungsprozesse, Kapitel 1.1. Ermittlung der MaLo-ID der Marktlokation, über API-Webdienste zu realisieren. 
+  
+  
+ Hinweis: IT-Systeme zur Umsetzung der API müssen grundsätzlich in der Lage sein, gleichzeitig allen berechtigten Kommunikationspartnern einen Verbindungausbau (TCP-Connenct) zu ermöglichen."
+
+  version: v1.0.0
+tags:
+- name: Anfrage MaLo-ID der Marktlokation
+  externalDocs:
+    description: Find out more
+    url: https://edi-energy.de
+- name: Rückmeldung auf Anfrage
+  externalDocs:
+    description: Find out more
+    url: https://edi-energy.de
+paths:
+  /maloId/request/v1:
+    post:
+      tags:
+      - Anfrage MaLo-ID der Marktlokation
+      summary: Anfrage MaLo-ID der Marktlokation
+      description: "Inhaltsdatensicherungsebene:
+Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      operationId: uploadFile
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/initialTransactionId'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '#/components/schemas/identificationParameter'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+  /maloId/dataForMarketLocationNegative/v1:
+    post:
+      tags:
+      - Rückmeldung auf Anfrage
+      summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description: "Inhaltsdatensicherungsebene:
+Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der negativen Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Aufrufs (Wert aus transactionId, Schritt1 des UC Ermittlung der MaLo-ID der Marktlokation)."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '#/components/schemas/referenceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/resultNegative'
+            
+            
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+  /maloId/dataForMarketLocationPositive/v1:
+    post:
+      tags:
+      - Rückmeldung auf Anfrage
+      summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description: "Inhaltsdatensicherungsebene:
+Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      operationId: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der postiven Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage (Wert aus transactionId, Schritt1 des UC Ermittlung der MaLo-ID der Marktlokation)."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '#/components/schemas/referenceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/resultPositive'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+
+    address:
+      type: object
+      properties:
+        countryCode:
+          $ref: '#/components/schemas/countryCode'
+        zipCode:
+          $ref: '#/components/schemas/zipCode'
+        city:
+          $ref: '#/components/schemas/city'
+        street:
+          $ref: '#/components/schemas/street'
+        houseNumber:
+          $ref: '#/components/schemas/houseNumber'
+        houseNumberAddition:
+          $ref: '#/components/schemas/houseNumberAddition'
+
+
+
+
+
+
+
+
+
+    city:
+      type: string
+      description: Angabe des Ortes der Marktlokationsadresse
+      example: Berlin
+    company:
+      type: string
+      description: Angabe des Firmennamen
+      example: BDEW & Co. KG
+
+
+    countryCode:
+      type: string
+      pattern: "[A-Z]{2}"
+      description: Angabe des Ländercodes nach ISO-3166-1 Alpha-2
+      example: DE
+
+
+
+    customerNumber:
+      type: string
+      description: Zur Angabe der Kundennummer des Kunden beim bisherigen Lieferanten (LFA)
+      example: V567345345
+
+
+
+
+
+
+
+    creationDateTime:
+      pattern: "20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(\\.[\\d]{1,4})?Z"
+      type: string
+      description: Zeitpunkt an dem der Aufruf erstellt wurde
+      example: 2023-08-01T12:30:00.1704Z
+    dataControllableResource:
+      required:
+      - dataMControllableResourceMarketPartner
+      - srId
+      type: object
+      properties:
+        srId:
+          $ref: '#/components/schemas/srId'
+        dataControllableResourceMeasuringPointOperators:
+          $ref: '#/components/schemas/dataControllableResourceMeasuringPointOperators'
+    dataControllableResources:
+      type: array
+      items:
+        $ref: '#/components/schemas/dataControllableResource'
+    dataControllableResourceMeasuringPointOperators:
+      type: array
+      items:
+        $ref: '#/components/schemas/srMarketPartner'
+    dataMarketLocation:
+      required:
+      - dataMarketLocationNetworkOperators
+      - dataMarketLocationTransmissionSystemOperators
+      - energyDirection
+      - maloId
+      - measurementTechnologyClassification
+      - optionalChangeForecastBasis
+      - dataMarketLocationProperties
+      type: object
+      properties:
+        maloId:
+          $ref: '#/components/schemas/maloId'
+        energyDirection:
+          $ref: '#/components/schemas/energyDirection'
+        measurementTechnologyClassification:
+          $ref: '#/components/schemas/measurementTechnologyClassification'
+        optionalChangeForecastBasis:
+          $ref: '#/components/schemas/optionalChangeForecastBasis'
+        dataMarketLocationProperties:
+          $ref: '#/components/schemas/dataMarketLocationProperties'        
+        dataMarketLocationNetworkOperators:
+          $ref: '#/components/schemas/dataMarketLocationNetworkOperators'
+        dataMarketLocationMeasuringPointOperators:
+          $ref: '#/components/schemas/dataMarketLocationMeasuringPointOperators'
+        dataMarketLocationTransmissionSystemOperators:
+          $ref: '#/components/schemas/dataMarketLocationTransmissionSystemOperators'
+        dataMarketLocationSuppliers:
+          $ref: '#/components/schemas/dataMarketLocationSuppliers'
+        dataMarketLocationName:
+          $ref: '#/components/schemas/name'
+        dataMarketLocationAddress:
+          $ref: '#/components/schemas/address'
+        dataMarketLocationLandParcels:
+          $ref: '#/components/schemas/landParcels'
+        dataMarketLocationGeographicCoordinates:
+          $ref: '#/components/schemas/geographicCoordinates'
+
+    dataMarketLocationMeasuringPointOperators:
+      type: array
+      items:
+        $ref: '#/components/schemas/marketLocationMeasuringPointOperator'
+
+    dataMarketLocationProperties:
+      type: array
+      items:
+        $ref: '#/components/schemas/marketLocationProperties'
+
+
+    dataMarketLocationNetworkOperators:
+      type: array
+      items:
+        $ref: '#/components/schemas/marketLocationNetworkOperator'
+
+    dataMarketLocationSuppliers:
+      type: array
+      items:
+        $ref: '#/components/schemas/marketLocationSupplier'
+
+
+
+    dataMarketLocationTransmissionSystemOperators:
+      type: array
+      items:
+        $ref: '#/components/schemas/marketLocationTransmissionSystemOperator'
+
+
+    dataMeterLocation:
+      required:
+      - dataMeterLocationMeasuringPointOperators
+      - meloId
+      - meterNumber
+      type: object
+      properties:
+        meloId:
+          $ref: '#/components/schemas/meloId'
+        meterNumber:
+          $ref: '#/components/schemas/meterNumber'
+        dataMeterLocationMeasuringPointOperators:
+          $ref: '#/components/schemas/dataMeterLocationMeasuringPointOperators'
+    dataMeterLocations:
+      type: array
+      items:
+        $ref: '#/components/schemas/dataMeterLocation'
+    dataMeterLocationMeasuringPointOperators:
+      type: array
+      items:
+        $ref: '#/components/schemas/meterLocationMeasuringPointOperator'
+    dataNetworkLocation:
+      required:
+      - dataNetworkLocationMeasuringPointOperators
+      - neloId
+      type: object
+      properties:
+        neloId:
+          $ref: '#/components/schemas/neloId'
+        dataNetworkLocationMeasuringPointOperators:
+          $ref: '#/components/schemas/dataNetworkLocationMeasuringPointOperators'
+    dataNetworkLocations:
+      type: array
+      items:
+        $ref: '#/components/schemas/dataNetworkLocation'
+    dataNetworkLocationMeasuringPointOperators:
+      type: array
+      items:
+        $ref: '#/components/schemas/networkLocationMeasuringPointOperator'
+    dataTechnicalResource:
+      required:
+      - trId
+      type: object
+      properties:
+        trId:
+          $ref: '#/components/schemas/trId'
+    dataTechnicalResources:
+      type: array
+      items:
+        $ref: '#/components/schemas/dataTechnicalResource'
+    dataTranche:
+      required:
+      - dataTrancheSuppliers
+      - proportion
+      - tranchenId
+      type: object
+      properties:
+        tranchenId:
+          $ref: '#/components/schemas/tranchenId'
+        proportion:
+          $ref: '#/components/schemas/proportion'
+        percent:
+          $ref: '#/components/schemas/percent'
+        dataTrancheSuppliers:
+          $ref: '#/components/schemas/dataTrancheSuppliers'
+    dataTranches:
+      type: array
+      items:
+        $ref: '#/components/schemas/dataTranche'
+    dataTrancheSuppliers:
+      type: array
+      items:
+        $ref: '#/components/schemas/trancheSupplier'
+
+    districtName:
+      type: string
+      description: Angabe des Gemarkungsnamens (des Flurstücks) der Marktlokationsadresse
+
+
+
+    east:
+      type: string
+      description: Angabe des UTM Ostwert nach WGS84. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen
+
+    easting:
+      type: string
+      description: Gauß-Krüger Rechtswert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen.
+
+    energyDirection:
+      type: string
+      description: Energieflussrichtung der Marktlokation
+      example: consumption
+      enum:
+      - consumption
+      - production
+    executionTimeFrom:
+      pattern: "20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ"
+      type: string
+      description: Beginnzeitpunkt, Zeitpunkt zu dem die zugeordneten Marktpartner oder Lokationen zugeordnet werden. Dieser Zeitpunkt muss ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit sein.
+      example: 2023-08-01T22:00:00Z
+    executionTimeUntil:
+      pattern: "20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ"
+      type: string
+      description: Endezeitpunkt, Zeitpunkt bis zu dem die zugeordneten Marktpartner oder Lokationen zugeordnet werden. Dieser Zeitpunkt muss ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit sein.
+      example: 2023-08-01T22:00:00Z
+    reason:
+      type: string
+      description: Angabe der weiteren Erläuterung zum in responseCode genannten Antwortgrundes sofern dies gemäß dem in decisionTree genannten Entscheidungsbaums zulässig ist.
+      example: Ich bin ein Freitext.
+    firstnames:
+      type: string
+      description: Angabe des Vornamen des Kunden
+      example: Michael
+
+    geographicCoordinates:
+      type: object
+      properties:
+        latitude:
+          $ref: '#/components/schemas/latitude'
+        longitude:
+          $ref: '#/components/schemas/longitude'
+        east:
+          $ref: '#/components/schemas/east'
+        north:
+          $ref: '#/components/schemas/north'
+        zone:
+          $ref: '#/components/schemas/zone'
+        northing:
+          $ref: '#/components/schemas/northing'
+        easting:
+          $ref: '#/components/schemas/easting'
+
+
+
+    houseNumber:
+      type: integer
+      description: Angabe der Hausnummer der Marktlokationsadresse
+      example: 32
+    houseNumberAddition:
+      type: string
+      description: Angabe der Hausnummernergänzung der Marktlokationsadresse
+      example: F
+    identificationDateTime:
+      pattern: "20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ"
+      type: string
+      description: Zeitpunkt zu dem die Identifikation stattfinden soll. Dieser Zeitpunkt muss ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit sein.
+      example: 2023-08-02T22:00:00Z
+    identificationParameter:
+      required:
+      - identificationDateTime
+      - energyDirection
+      - identificationParameterAddress
+      type: object
+      properties:
+        identificationDateTime:
+          $ref: '#/components/schemas/identificationDateTime'
+        energyDirection:
+          $ref: '#/components/schemas/energyDirection'
+        identificationParameterId:
+          $ref: '#/components/schemas/identificationParameter_identificationParameterId'
+        identificationParameterAddress:
+          $ref: '#/components/schemas/identificationParameter_identificationParameterAddress'
+    initialTransactionId:
+      type: string
+      description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+      format: UUID RFC4122
+      example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+
+    lotNumber:
+      type: string
+      description: Angabe der Flurnummer (des Flurstücks) der Marktlokationsadresse
+
+    landParcel:
+      required:
+      - districtName
+      - lotNumber
+      - subLotNumber
+      type: object
+      properties:
+        districtName:
+          $ref: '#/components/schemas/districtName'
+        lotNumber:
+          $ref: '#/components/schemas/lotNumber'
+        subLotNumber:
+          $ref: '#/components/schemas/subLotNumber'
+    landParcels:
+      type: array
+      items:
+        $ref: '#/components/schemas/landParcel'
+
+    latitude:
+      type: string
+      description: Angabe der Breite (Breitengrad) nach WGS84. 46 <= X <= 59. °N
+
+    longitude:
+      type: string
+      description: Angabe der Länge (Längengrad) nach WGS84. 4 <= X <= 18. °O
+
+
+    maloId:
+      pattern: "\\d{11}"
+      type: string
+      description: Identifiziert die Marktlokation mittels einer eindeutigen ID
+      example: "57685676748"
+    marketLocationDateTime:
+      required:
+      - executionTimeFrom
+      - maloId
+      type: object
+      properties:
+        maloId:
+          $ref: '#/components/schemas/maloId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+    marketLocationDateTimes:
+      type: array
+      items:
+        $ref: '#/components/schemas/marketLocationDateTime'
+
+    marketLocationMeasuringPointOperator:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+
+
+    marketLocationNetworkOperator:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+    marketLocationProperties:
+      required:
+      - executionTimeFrom
+      - marketLocationProperty
+      type: object
+      properties:
+        marketLocationProperty:
+          $ref: '#/components/schemas/marketLocationProperty'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+    marketLocationProperty:
+      type: string
+      description: Eigenschaft der Marktlokation. nonActice=ruhende Marktlokation, customerFacility=Marktlokation ist eine Kundenanlage, standard=alle "Standard" Marktlokationen die nicht unter die Eigenschaft "ruhende Marktlokation" und "Kundenanlage" fallen.
+      example: measured
+      enum:
+      - customerFacility
+      - nonActice
+      - standard
+
+
+
+    marketLocationSupplier:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+
+
+
+    marketLocationTransmissionSystemOperator:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+
+
+
+
+    marketPartnerId:
+      pattern: "\\d{13}"
+      type: integer
+      description: Identifiziert den Marktpartner (Marktpartner-ID)
+      example: 9900987654321
+
+    measurementTechnologyClassification:
+      type: string
+      description: Angabe der messtechnischen Einordung der Marktlokation
+      example: intelligentMeasuringSystem
+      enum:
+      - intelligentMeasuringSystem
+      - conventionalMeasuringSystem
+      - noMeasurement
+    meloId:
+      pattern: "DE\\d{11}[A-Z,\\d]{20}"
+      type: string
+      description: Identifiziert die Messlokation mittels einer eindeutigen ID
+      example: DE00014545768S0000000000000003054
+    meloIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/meloId'
+
+    meterLocationMeasuringPointOperator:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+
+
+
+
+
+
+
+    meterNumber:
+      type: string
+      description: Identifiziert das Gerät der Messlokation mittels Gerätenummer
+      example: 1SM-8465929523
+
+    meterNumbers:
+      type: array
+      items:
+        $ref: '#/components/schemas/meterNumber'
+
+    name:
+      type: object
+      properties:
+        surnames:
+          $ref: '#/components/schemas/surnames'
+        firstnames:
+          $ref: '#/components/schemas/firstnames'
+        title:
+          $ref: '#/components/schemas/title'
+        company:
+          $ref: '#/components/schemas/company'
+
+
+
+
+
+    neloId:
+      pattern: "E[A-Z\\d]{9}\\d"
+      type: string
+      description: Identifiziert die Netzlokation mittels einer eindeutigen ID
+      example: E1234848431
+    networkLocationMeasuringPointOperator:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+
+    north:
+      type: string
+      description: Angabe des UTM Nordwert nach WGS84. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen
+
+    northing:
+      type: string
+      description: Gauß-Krüger Hochwert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen.
+
+
+
+
+    optionalChangeForecastBasis:
+      type: string
+      description: Wahlrecht zur Änderung der Prognosegrundlage
+      example: possible
+      enum:
+      - possible
+      - notPossible
+    percent:
+      pattern: "\\d{1,2}(\\.[\\d]{1,3})?"
+      type: number
+      description: "Prozentualer Wert, wenn proportion mit percent vorhanden ist."
+      example: "75.912"
+
+    subLotNumber:
+      type: string
+      description: Angabe der Flurstücksnummer (des Flurstücks) der Marktlokationsadresse
+
+
+    proportion:
+      type: string
+      description: Gibt die Bildungslogik der Tranche an
+      example: percent
+      enum:
+      - bilateralAgreement
+      - percent
+    responseCode:
+      pattern: "A[A-Z\\d]{2}"
+      type: string
+      description: Angabe des Antwortgrundes des in decisionTree genannten Entscheidungsbaums.
+      example: A10
+    referenceId:
+      type: string
+      description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Vorgangs
+      format: UUID RFC4122
+      example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+    resultNegative:
+      description: Hier wird bei einer neagtiven Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als "networkOperator" anzugeben, an den die Marktlokation abgegeben wurde. 
+      required:
+      - responseCode
+      - decisionTree
+      type: object
+      properties:
+        decisionTree:
+          $ref: '#/components/schemas/decisionTree'
+        responseCode:
+          $ref: '#/components/schemas/responseCode'
+        reason:
+          $ref: '#/components/schemas/reason'
+        networkOperator:
+          $ref: '#/components/schemas/marketPartnerId'
+
+    resultPositive:
+      description: Hier wird bei einer positiven Antwort die identifizierte Marktlokation und alle dazugehörigen Parameter angegeben. Hierzu gehören die Marktpartner an der jeweiligen Lokation, die Kunden- und Adressdaten, die Lokationen, welche zu dieser Marktlokation gehören, etc. Die Informationen sind ab dem Anfragezeitpunkt "identificationDateTime" aus der Anfrage bis in die Zukunft mit allen beim NB zum Bearbeitungszeitpunkt vorliegenden Informationen ab dem Anfragezeitpunkt zu übermitteln.Hierzu gehören auch Informationen, welche nicht als "required" gekennzeichnet sind. So müssen alle vorliegenden Informationen zur Messlokation übermittelt werden. In der Schnittstellenbeschreibung sind diese jedoch nicht als "required" gekennzeichnet, da es sich auch um eine pauschale Marktlokation handeln kann, in welcher es keine Messlokation gibt. Dies gilt ebenfalls für alle weiteren Informationen die nicht als "required" gekennzeichnet sind. Wie der Lieferant "Supplier" an der Marktlokation. Da eine Marktlokation auch tranchiert sein kann, wechselt zu diesem Zeitpunkt der LF von der Zuordnung der Marktlokation zur Tranche, weshalb dieser in diesem Szenario als nicht "required" definiert wurde.
+      required:
+      - dataMarketLocation
+      type: object
+      properties:
+        dataMarketLocation:
+          $ref: '#/components/schemas/dataMarketLocation'
+        dataTranches:
+          $ref: '#/components/schemas/dataTranches'
+        dataMeterLocations:
+          $ref: '#/components/schemas/dataMeterLocations'
+        dataTechnicalResources:
+          $ref: '#/components/schemas/dataTechnicalResources'
+        dataControllableResources:
+          $ref: '#/components/schemas/dataControllableResources'
+        dataNetworkLocations:
+          $ref: '#/components/schemas/dataNetworkLocations'
+          
+
+
+
+
+
+
+
+    srId:
+      pattern: "C[A-Z\\d]{9}\\d"
+      type: string
+      description: Identifiziert die Steuerbare Ressource mittels einer eindeutigen ID
+      example: C1234848431
+    srMarketPartner:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      - marketPartnerTypeSr
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+    decisionTree:
+      pattern: "E_\\d{4}"
+      type: string
+      description: Angabe des Entscheidungsbaums aus dem edi@energy Dokument "Entscheidungsbaum-Diagramme und Codelisten für die Antwortnachrichten" als Grundlage für den negativen Antwortgrund
+      example: E_0594
+    street:
+      type: string
+      description: Angabe der Straße der Marktlokationsadresse
+      example: Reinhardtstraße
+    surnames:
+      type: string
+      description: Angabe des Namen des Kunden
+      example: Becker
+
+
+    title:
+      type: string
+      description: Angabe des Titels der natürlichen Person
+      example: Prof.Dr.
+
+
+
+
+
+
+    tranchenId:
+      pattern: "\\d{11}"
+      type: string
+      description: Identifiziert die Tranche mittels einer eindeutigen ID
+      example: "57685676742"
+
+
+    tranchenIds:
+      type: array
+      items:
+        $ref: '#/components/schemas/tranchenId'
+
+
+
+
+
+    trancheSupplier:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: '#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: '#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: '#/components/schemas/executionTimeUntil'
+    transactionId:
+      type: string
+      description: Externe Transaktionsnummer zur eindeutigen Identifikation des Vorgangs des sendenden Marktpartners
+      format: UUID RFC4122
+      example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+    trId:
+      pattern: "D[A-Z\\d]{9}\\d"
+      type: string
+      description: Identifiziert die Technische Ressource mittels einer eindeutigen ID
+      example: D1234848431
+    zipCode:
+      type: string
+      description: Angabe der Postleitzahl der Marktlokationsadresse
+      example: 12117
+
+
+    zone:
+      type: string
+      description: Angabe des UTM Zonenwertes nach WGS84.
+      enum:
+      - UTMZone31 
+      - UTMZone32
+      - UTMZone33
+
+
+    identificationParameter_identificationParameterId:
+      type: object
+      properties:
+        maloId:
+          $ref: '#/components/schemas/maloId'
+        tranchenIds:
+          $ref: '#/components/schemas/tranchenIds'
+        meloIds:
+          $ref: '#/components/schemas/meloIds'
+        meterNumbers:
+          $ref: '#/components/schemas/meterNumbers'
+        customerNumber:
+          $ref: '#/components/schemas/customerNumber'
+    identificationParameter_identificationParameterAddress:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/name'
+        address:
+          $ref: '#/components/schemas/address'
+        landParcels:
+          $ref: '#/components/schemas/landParcels'
+        geographicCoordinates:
+          $ref: '#/components/schemas/geographicCoordinates'
