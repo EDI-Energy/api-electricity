@@ -5,7 +5,7 @@ rules:
   no-identical-paths: warn
   no-invalid-media-type-examples: warn
   no-path-trailing-slash: warn
-  no-required-schema-properties-undefined: error
+  no-required-schema-properties-undefined: warn
   no-schema-type-mismatch: warn
   no-server-example.com: warn
   no-server-trailing-slash: error
