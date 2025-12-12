@@ -1,7 +1,7 @@
 openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
   title: EDI@Energy API-Webdienste zur prozessualen Abwicklung von Steuerungshandlungen in Verbindung mit intelligenten Messsystemen (iMS) -  Universalbestellprozess
-  version: 2.0.0
+  version: 1.0.0
   description: Mit diesen API-Webdiensten werden die Steuerungshandlungen in Verbindung mit intelligenten Messsystemen umgesestzt.
   
 servers: # URLs unter der die API bereitsteht
