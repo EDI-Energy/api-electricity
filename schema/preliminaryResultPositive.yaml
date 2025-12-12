@@ -5,5 +5,5 @@ components:
       - preliminaryStatePositive
       type: object
       properties:
-        PreliminaryStatePositive:
+        preliminaryStatePositive:
           $ref: 'preliminaryStatePositive.yaml#/components/schemas/preliminaryStatePositive'
