@@ -1,6 +1,6 @@
 components:
   schemas:
-    preliminaryStatePositive:
+    preliminaryStatePositiveControlMeasures:
       type: string
       description: Vorläufige positive Antwortgrund
       example: possible

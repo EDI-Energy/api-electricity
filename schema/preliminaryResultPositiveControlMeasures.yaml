@@ -1,0 +1,14 @@
+components:
+  schemas:
+    preliminaryResultPositiveControlMeasures:
+      required:
+      - locationId
+      - preliminaryStatePositiveControlMeasures
+      type: object
+      properties:
+        locationId:
+          oneOf:
+            - $ref: './srId.yaml#/components/schemas/srId'
+            - $ref: './neloId.yaml#/components/schemas/neloId'
+        preliminaryStatePositiveControlMeasures:
+          $ref: './preliminaryStatePositiveControlMeasures.yaml#/components/schemas/preliminaryStatePositiveControlMeasures'

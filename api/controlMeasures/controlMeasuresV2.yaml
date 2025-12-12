@@ -40,58 +40,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
-
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: commandControl
-        in: query
-        description: Objekt des Steuerbefehls Beginn Steuerung
-        required: true
-        content:
-         application/json: 
-          schema: 
-           required: 
-           - maximumPowerValue
-           - executionTimeFrom
-           type: object
-           properties:
-             maximumPowerValue:
-               $ref: '../../schema/maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
-             executionTimeFrom:
-               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
-             executionTimeUntil:
-               $ref: '../../schema/executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
-
+         application/json:
+           schema:
+             $ref: '../../schema/commandControl.yaml#/components/schemas/commandControl'
       responses:
         "202":
           description: accepted  
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
 
@@ -124,53 +88,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: commandRegular
-        in: query
-        description: Objekt des Steuerbefehls Beendigung Steuerung
-        required: true
-        content:
-         application/json: 
-          schema: 
-           required: 
-           - executionTimeFrom
-           type: object
-           properties:
-             executionTimeFrom:
-               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
-
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/commandRegular.yaml#/components/schemas/commandRegular'
       responses:
         "202":
           description: accepted
-          
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
  
@@ -188,7 +121,6 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
-
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -213,54 +145,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: preliminaryResultPositive
-        in: query
-        description: Gibt die positive Antwort, dass der Steuerbefehl grundsätzlich umgesetzt werden kann.
-        required: true
-        content:
-          application/json:
-            schema:
-              required:
-              - preliminaryStatePositive
-              type: object
-              properties:
-                preliminaryStatePositive:
-                  type: string
-                  example: possible
-
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/preliminaryResultPositiveControlMeasures.yaml#/components/schemas/preliminaryResultPositiveControlMeasures'
       responses:
         "202":
           description: accepted
-          
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
 
@@ -302,57 +202,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: resultNegative
-        in: query
-        description: Gibt die negative Antwort, dass der Steuerbefehl nicht umgesetzt werden kann. In ReasonNegative wird die negative Antwort begründet, communicationFailure=Kommunikationsverbindung zur Steuerbox gestört, overload=Backend des MSB ist überlastet,  unable= MSB Prozessual nicht in der Lage Anforderung umzusetzen (z.B. Wartungsarbeiten).
-        required: true
-        content:
-          application/json:
-            schema:
-              required:
-              - stateNegative
-              - reasonNegative
-              type: object
-              properties:
-                stateNegative:
-                  type: string
-                  example: failed
-                reasonNegative:
-                  type: string
-                  example: communicationFailure
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
       responses:
         "202":
           description: accepted
-          
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
 
@@ -394,53 +259,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirkt (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: resultPositive
-        in: query
-        description: Positive Antwort, dass der Steuerbefehl umgesetzt wurde.
-        required: true
-        content:
-          application/json:
-            schema:
-              required:
-              - statePositive
-              type: object
-              properties:
-                statePositive:
-                  type: string
-                  example: succeeded
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/resultPositiveControlMeasures.yaml#/components/schemas/resultPositiveControlMeasures'
       responses:
         "202":
           description: accepted
-          
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
 
@@ -482,56 +316,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken sollte (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: resultNegative
-        in: query
-        description: Gibt die negative Antwort, dass der Steuerbefehl nicht umgesetzt werden kann. In ReasonNegative wird die negative Antwort begründet, communicationFailure=Kommunikationsverbindung zur Steuerbox gestört, overload=Backend des MSB ist überlastet,  unable= MSB Prozessual nicht in der Lage Anforderung umzusetzen (z.B. Wartungsarbeiten).
-        required: true
-        content:
-          application/json:
-            schema:
-              required:
-              - stateNegative
-              - reasonNegative
-              type: object
-              properties:
-                stateNegative:
-                  type: string
-                  example: failed
-                reasonNegative:
-                  type: string
-                  example: communicationFailure
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
       responses:
         "202":
           description: accepted
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
 
@@ -573,52 +373,22 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken sollte (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: stateUnknown
-        in: query
-        description: Gibt die Information, dass der finale Status des Steuerbefehls noch nicht aus dem iMS vorliegt.
-        required: true
-        content:
-          application/json:
-            schema:
-              required:
-              - stateUnknown
-              type: object
-              properties:
-                stateUnknown:
-                  type: string
-                  example: unknown
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/resultUnknownControlMeasures.yaml#/components/schemas/resultUnknownControlMeasures'
       responses:
         "202":
           description: accepted
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error
 
@@ -652,76 +422,21 @@ paths:
         explode: false
         schema:
                 $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
-      - name: locationId
-        in: query
-        description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirkt (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
-        required: true
-        style: form
-        explode: false
-        example: C1234848431
-        schema:
-          oneOf:
-            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
-            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
-      - name: partnerId
-        in: query
-        description: Identifiziert den Marktpartner (NB, LF) der den bestätigten Steuerbefehl ursprünglich bestellt bzw. angewiesen hat (Marktpartner-ID). 
-        required: true
-        style: form
-        explode: false
-        schema:
-                $ref: '../../schema/partnerId.yaml#/components/schemas/partnerId'
-      - name: commandControl
-        in: query
-        description: Objekt des Steuerbefehls Beginn Steuerung
-        required: false
-        content:
-         application/json: 
-          schema: 
-           required: 
-           - maximumPowerValue
-           - executionTimeFrom
-           type: object
-           properties:
-             maximumPowerValue:
-               $ref: '../../schema/maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
-             executionTimeFrom:
-               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
-             executionTimeUntil:
-               $ref: '../../schema/executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
-      - name: commandRegular
-        in: query
-        description: Objekt des Steuerbefehls Beendigung Steuerung
-        required: false
-        content:
-         application/json: 
-          schema: 
-           required: 
-           - executionTimeFrom
-           type: object
-           properties:
-             executionTimeFrom:
-               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
       requestBody:
         content:
-          application/json:
-            schema:
-              type: string
-              format: binary
+         application/json:
+           schema:
+             $ref: '../../schema/commandInformation.yaml#/components/schemas/commandInformation'
       responses:
         "202":
           description: accepted
         "400":
           description: Bad Request
-
         "401":
           description: Unauthorized
-
         "404":
           description: Not Found
-
         "405":
           description: Method not allowed
-
         "500":
           description: Internal Server Error

@@ -1,6 +1,6 @@
 components:
   schemas:
-    stateNegative:
+    stateNegativeControlMeasures:
       type: string
       description: Negativer Antwortgrund
       example: failed

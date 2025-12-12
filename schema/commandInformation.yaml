@@ -1,0 +1,14 @@
+components:
+  schemas:
+    commandInformation:
+      required:
+      - commandInformation
+      - partnerId
+      type: object
+      properties:
+        commandInformation:
+          oneOf:
+            - $ref: './commandControl.yaml#/components/schemas/commandControl'
+            - $ref: './commandRegular.yaml#/components/schemas/commandRegular'
+        partnerId:
+          $ref: './partnerId.yaml#/components/schemas/partnerId'

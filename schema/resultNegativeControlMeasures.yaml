@@ -1,0 +1,18 @@
+components:
+  schemas:
+    resultNegativeControlMeasures:
+      description: 
+      required:
+      - locationId
+      - stateNegativeControlMeasures
+      - reasonNegativeControlMeasures
+      type: object
+      properties:
+        locationId:
+          oneOf:
+            - $ref: './srId.yaml#/components/schemas/srId'
+            - $ref: './neloId.yaml#/components/schemas/neloId' 
+        stateNegativeControlMeasures:
+          $ref: './stateNegativeControlMeasures.yaml#/components/schemas/stateNegativeControlMeasures'
+        reasonNegativeControlMeasures:
+          $ref: './reasonNegativeControlMeasures.yaml#/components/schemas/reasonNegativeControlMeasures'

@@ -1,14 +1,15 @@
 components:
   schemas:
-    commandRegular:
+    resultUnknownControlMeasures:
+      description: 
       required:
       - locationId
-      - executionTimeFrom
+      - stateUnknownControlMeasures
       type: object
       properties:
         locationId:
           oneOf:
             - $ref: './srId.yaml#/components/schemas/srId'
             - $ref: './neloId.yaml#/components/schemas/neloId'
-        executionTimeFrom:
-          $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
+        stateUnknownControlMeasures:
+          $ref: './stateUnknownControlMeasures.yaml#/components/schemas/stateUnknownControlMeasures'

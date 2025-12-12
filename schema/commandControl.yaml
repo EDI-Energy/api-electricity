@@ -2,10 +2,15 @@ components:
   schemas:
     commandControl:
       required:
+      - locationId
       - maximumPowerValue
       - executionTimeFrom
       type: object
       properties:
+        locationId:
+          oneOf:
+            - $ref: './srId.yaml#/components/schemas/srId'
+            - $ref: './neloId.yaml#/components/schemas/neloId'
         maximumPowerValue:
           $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
         executionTimeFrom:

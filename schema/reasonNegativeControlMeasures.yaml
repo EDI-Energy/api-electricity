@@ -1,6 +1,6 @@
 components:
   schemas:
-    reasonNegative:
+    reasonNegativeControlMeasures:
       type: string
       description: Grund 
       example: communicationFailure

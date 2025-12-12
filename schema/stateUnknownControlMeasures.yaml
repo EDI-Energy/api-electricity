@@ -1,6 +1,6 @@
 components:
   schemas:
-    stateUnknown:
+    stateUnknownControlMeasures:
       type: string
       description: unbekannter Status des Steuerbefehls
       example: unknown

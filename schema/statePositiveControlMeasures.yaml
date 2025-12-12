@@ -1,6 +1,6 @@
 components:
   schemas:
-    statePositive:
+    statePositiveControlMeasures:
       type: string
       description: Positiver Antwortgrund
       example: succeeded
