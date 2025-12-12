@@ -10,7 +10,7 @@ servers: # URLs unter der die API bereitsteht
   
 
 paths:
-  /steuerbefehl/konfiguration/:
+  /steuerbefehl/konfiguration/v2:
     post:
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
       description: ""
@@ -95,7 +95,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/initialZustand/:
+  /steuerbefehl/initialZustand/v2:
     post:
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf den ursprünglichen Zustand.
       description: ""
@@ -174,7 +174,7 @@ paths:
         "500":
           description: Internal Server Error
  
-  /steuerbefehl/vorlaeufigePositiveAntwort/:
+  /steuerbefehl/vorlaeufigePositiveAntwort/v2:
     post:
       summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
       description: ""
@@ -264,7 +264,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/vorlaeufigeNegativeAntwort/:
+  /steuerbefehl/vorlaeufigeNegativeAntwort/v2:
     post:
       summary: Negative Mitteilung zum weiteren Vorgehen
       description: ""
@@ -356,7 +356,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/positiveAntwort/:
+  /steuerbefehl/positiveAntwort/v2:
     post:
       summary: Positive Antwort auf den Steuerbefehl
       description: ""
@@ -444,7 +444,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/negativeAntwort/:
+  /steuerbefehl/negativeAntwort/v2:
     post:
       summary: Negative Antwort auf den Steuerbefehl
       description: ""
@@ -535,7 +535,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/informationAnweisung/:
+  /steuerbefehl/informationAnweisung/v2:
     post:
       summary: Information zum Steuerbefehl an Anweisenden, dass finaler Status noch nicht vorliegt.
       description: ""
@@ -622,7 +622,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/information/:
+  /steuerbefehl/information/v2:
     post:
       summary: Information
       description: ""
