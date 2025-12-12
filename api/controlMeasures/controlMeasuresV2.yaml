@@ -10,7 +10,7 @@ servers: # URLs unter der die API bereitsteht
   
 
 paths:
-  /[Post]/steuerbefehl/konfiguration/:
+  /steuerbefehl/konfiguration/:
     post:
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
       description: ""
@@ -94,7 +94,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /[Post]/steuerbefehl/initialZustand/:
+  /steuerbefehl/initialZustand/:
     post:
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf den ursprünglichen Zustand.
       description: ""
@@ -173,7 +173,7 @@ paths:
         "500":
           description: Internal Server Error
  
-  /[Post]/steuerbefehl/vorlaeufigePositiveAntwort/:
+  /steuerbefehl/vorlaeufigePositiveAntwort/:
     post:
       summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
       description: ""
@@ -262,7 +262,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /[Post]/steuerbefehl/vorlaeufigeNegativeAntwort/:
+  /steuerbefehl/vorlaeufigeNegativeAntwort/:
     post:
       summary: Negative Mitteilung zum weiteren Vorgehen
       description: ""
@@ -354,7 +354,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /[Post]/steuerbefehl/positiveAntwort/:
+  /steuerbefehl/positiveAntwort/:
     post:
       summary: Positive Antwort auf den Steuerbefehl
       description: ""
@@ -442,7 +442,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /[Post]/steuerbefehl/negativeAntwort/:
+  /steuerbefehl/negativeAntwort/:
     post:
       summary: Negative Antwort auf den Steuerbefehl
       description: ""
@@ -533,7 +533,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /[Post]/steuerbefehl/informationAnweisung/:
+  /steuerbefehl/informationAnweisung/:
     post:
       summary: Information zum Steuerbefehl an Anweisenden, dass finaler Status noch nicht vorliegt.
       description: ""
@@ -620,7 +620,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /[Post]/steuerbefehl/information/:
+  /steuerbefehl/information/:
     post:
       summary: Information
       description: ""
