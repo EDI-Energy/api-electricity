@@ -233,7 +233,7 @@ paths:
               - preliminaryStatePositive
               type: object
               properties:
-                preliminaryStatePostive:
+                preliminaryStatePositive:
                   type: string
                   example: possible
 
@@ -414,7 +414,7 @@ paths:
               - statePositive
               type: object
               properties:
-                statePostive:
+                statePositive:
                   type: string
                   example: succeeded
       requestBody:
