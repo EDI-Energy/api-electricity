@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: EDI@Energy API-Webdienste zur Ermittlung der MaLo-ID der Marktlokation
+  description: " Publikationsdatum: 03.07.2024\n<h2><b>Ziel</h2></b> \n\n Gemäß Festlegung für einen beschleunigten werktäglichen Lieferantenwechsel in 24 Stunden (LFW24) der Bundesnetzagentur vom 21. März 2024 [BNetzA-Beschluss BK6-22-024](https://www.bundesnetzagentur.de/DE/Beschlusskammern/1_GZ/BK6-GZ/2022/BK6-22-024/BK6-22-024_Verfahren.html?nn=660086), ist der Use-Case GPKE Teil 2 - Fokus Zuordnungsprozesse, Kapitel 1.1. Ermittlung der MaLo-ID der Marktlokation, über API-Webdienste zu realisieren. 
+  
+  
+ Hinweis: IT-Systeme zur Umsetzung der API müssen grundsätzlich in der Lage sein, gleichzeitig allen berechtigten Kommunikationspartnern einen Verbindungausbau (TCP-Connenct) zu ermöglichen."
+
+  version: v2.0.0
+tags:
+- name: Anfrage MaLo-ID der Marktlokation
+  externalDocs:
+    description: Find out more
+    url: https://edi-energy.de
+- name: Rückmeldung auf Anfrage
+  externalDocs:
+    description: Find out more
+    url: https://edi-energy.de
+paths:
+  /maloId/request/v2:
+    post:
+      tags:
+      - Anfrage MaLo-ID der Marktlokation
+      summary: Anfrage MaLo-ID der Marktlokation
+      description: 
+      operationId: uploadFile
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/identificationParameter.yaml#/components/schemas/identificationParameter'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+  /maloId/dataForMarketLocationNegative/v2:
+    post:
+      tags:
+      - Rückmeldung auf Anfrage
+      summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description:
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der negativen Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Aufrufs (Wert aus transactionId, Schritt1 des UC Ermittlung der MaLo-ID der Marktlokation)."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../../schema/resultNegative.yaml#/components/schemas/resultNegative'   
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+
+  /maloId/dataForMarketLocationPositive/v2:
+    post:
+      tags:
+      - Rückmeldung auf Anfrage
+      summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description: 
+      operationId: 
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der postiven Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage (Wert aus transactionId, Schritt1 des UC Ermittlung der MaLo-ID der Marktlokation)."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../../schema/resultPositive.yaml#/components/schemas/resultPositive'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
