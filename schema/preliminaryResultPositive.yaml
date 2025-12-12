@@ -1,0 +1,9 @@
+components:
+  schemas:
+    preliminaryResultPositive:
+      required:
+      - preliminaryStatePositive
+      type: object
+      properties:
+        PreliminaryStatePositive:
+          $ref: 'preliminaryStatePositive.yaml#/components/schemas/preliminaryStatePositive'

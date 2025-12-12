@@ -1,0 +1,8 @@
+components:
+  schemas:
+    preliminaryStatePositive:
+      type: string
+      description: Vorläufige positive Antwortgrund
+      example: possible
+      enum:
+      - possible

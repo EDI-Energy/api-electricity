@@ -1,0 +1,7 @@
+components:
+  schemas:
+    partnerId:
+      type: integer
+      description: Identifiziert den Marktpartner (Marktpartner-ID)
+      pattern: \d{13}
+      example: 4041407000008

@@ -1,0 +1,8 @@
+components:
+  schemas:
+    stateNegative:
+      type: string
+      description: Negativer Antwortgrund
+      example: failed
+      enum:
+      - failed

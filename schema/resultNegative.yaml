@@ -1,0 +1,13 @@
+components:
+  schemas:
+    resultNegative:
+      description: 
+      required:
+      - stateNegative
+      - reasonNegative
+      type: object
+      properties:
+        stateNegative:
+          $ref: './stateNegative.yaml#/components/schemas/stateNegative'
+        reasonNegative:
+          $ref: './reasonNegative.yaml#/components/schemas/reasonNegative'

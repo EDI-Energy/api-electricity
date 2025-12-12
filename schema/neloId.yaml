@@ -1,0 +1,7 @@
+components:
+  schemas:
+    neloId:
+      pattern: "E[A-Z\\d]{9}\\d"
+      type: string
+      description: Identifiziert die Netzlokation mittels einer eindeutigen ID
+      example: E1234848431

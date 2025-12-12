@@ -1,0 +1,8 @@
+components:
+  schemas:
+    stateUnknown:
+      type: string
+      description: unbekannter Status des Steuerbefehls
+      example: unknown
+      enum:
+      - unknown

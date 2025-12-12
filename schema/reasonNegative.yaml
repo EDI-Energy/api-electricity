@@ -1,0 +1,10 @@
+components:
+  schemas:
+    reasonNegative:
+      type: string
+      description: Grund 
+      example: communicationFailure
+      enum:
+      - communicationFailure
+      - overload
+      - unable
