@@ -1,0 +1,17 @@
+components:
+  schemas:
+    dataTranche:
+      required:
+      - dataTrancheSuppliers
+      - proportion
+      - tranchenId
+      type: object
+      properties:
+        tranchenId:
+          $ref: './tranchenId.yaml#/components/schemas/tranchenId'
+        proportion:
+          $ref: './proportion.yaml#/components/schemas/proportion'
+        percent:
+          $ref: './percent.yaml#/components/schemas/percent'
+        dataTrancheSuppliers:
+          $ref: './dataTrancheSuppliers.yaml#/components/schemas/dataTrancheSuppliers'

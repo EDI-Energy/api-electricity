@@ -1,0 +1,15 @@
+components:
+  schemas:
+    identificationParameter_identificationParameterId:
+      type: object
+      properties:
+        maloId:
+          $ref: './maloId.yaml#/components/schemas/maloId'
+        tranchenIds:
+          $ref: './tranchenIds.yaml#/components/schemas/tranchenIds'
+        meloIds:
+          $ref: './meloIds.yaml#/components/schemas/meloIds'
+        meterNumbers:
+          $ref: './meterNumbers.yaml#/components/schemas/meterNumbers'
+        customerNumber:
+          $ref: '.customerNumber.yaml#/components/schemas/customerNumber'

@@ -1,0 +1,6 @@
+components:
+  schemas:
+    customerNumber:
+      type: string
+      description: Zur Angabe der Kundennummer des Kunden beim bisherigen Lieferanten (LFA)
+      example: V567345345

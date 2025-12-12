@@ -1,0 +1,14 @@
+components:
+  schemas:
+    trancheSupplier:
+      required:
+      - executionTimeFrom
+      - marketPartnerId
+      type: object
+      properties:
+        marketPartnerId:
+          $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        executionTimeFrom:
+          $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: './executionTimeUntil.yaml#/components/schemas/executionTimeUntil'

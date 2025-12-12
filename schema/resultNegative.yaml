@@ -1,0 +1,17 @@
+components:
+  schemas:
+    resultNegative:
+      description: Hier wird bei einer neagtiven Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als "networkOperator" anzugeben, an den die Marktlokation abgegeben wurde. 
+      required:
+      - responseCode
+      - decisionTree
+      type: object
+      properties:
+        decisionTree:
+          $ref: './decisionTree.yaml#/components/schemas/decisionTree'
+        responseCode:
+          $ref: './responseCode.yaml#/components/schemas/responseCode'
+        reason:
+          $ref: './reason.yaml#/components/schemas/reason'
+        networkOperator:
+          $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'

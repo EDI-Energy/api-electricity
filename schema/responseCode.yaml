@@ -1,0 +1,7 @@
+components:
+  schemas:
+    responseCode:
+      pattern: "A[A-Z\\d]{2}"
+      type: string
+      description: Angabe des Antwortgrundes des in decisionTree genannten Entscheidungsbaums.
+      example: A10

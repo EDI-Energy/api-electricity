@@ -1,0 +1,6 @@
+components:
+  schemas:
+    meloIds:
+      type: array
+      items:
+        $ref: './meloId.yaml#/components/schemas/meloId'

@@ -1,0 +1,6 @@
+components:
+  schemas:
+    title:
+      type: string
+      description: Angabe des Titels der natürlichen Person
+      example: Prof.Dr.

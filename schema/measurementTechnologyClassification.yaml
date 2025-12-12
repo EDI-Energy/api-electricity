@@ -1,0 +1,10 @@
+components:
+  schemas:
+    measurementTechnologyClassification:
+      type: string
+      description: Angabe der messtechnischen Einordung der Marktlokation
+      example: intelligentMeasuringSystem
+      enum:
+      - intelligentMeasuringSystem
+      - conventionalMeasuringSystem
+      - noMeasurement

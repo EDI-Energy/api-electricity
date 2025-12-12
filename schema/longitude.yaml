@@ -1,0 +1,5 @@
+components:
+  schemas:
+    longitude:
+      type: string
+      description: Angabe der Länge (Längengrad) nach WGS84. 4 <= X <= 18. °O

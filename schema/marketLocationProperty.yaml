@@ -1,0 +1,11 @@
+components:
+  schemas:
+   marketLocationProperty:
+      type: string
+      description: Eigenschaft der Marktlokation. nonActice=ruhende Marktlokation, customerFacility=Marktlokation ist eine Kundenanlage, standard=alle "Standard" Marktlokationen die nicht unter die Eigenschaft "ruhende Marktlokation" und "Kundenanlage" fallen.
+      example: measured
+      enum:
+      - customerFacility
+      - nonActice
+      - standard
+

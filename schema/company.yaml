@@ -1,0 +1,6 @@
+components:
+  schemas:
+     company:
+      type: string
+      description: Angabe des Firmennamen
+      example: BDEW & Co. KG

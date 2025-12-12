@@ -1,0 +1,9 @@
+components:
+  schemas:
+    zone:
+      type: string
+      description: Angabe des UTM Zonenwertes nach WGS84.
+      enum:
+      - UTMZone31 
+      - UTMZone32
+      - UTMZone33

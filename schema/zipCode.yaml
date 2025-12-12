@@ -1,0 +1,6 @@
+components:
+  schemas:
+    zipCode:
+      type: string
+      description: Angabe der Postleitzahl der Marktlokationsadresse
+      example: 12117

@@ -1,0 +1,7 @@
+components:
+  schemas:
+    houseNumberAddition:
+      type: string
+      description: Angabe der Hausnummernergänzung der Marktlokationsadresse
+      example: F
+ 

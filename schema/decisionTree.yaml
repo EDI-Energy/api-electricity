@@ -1,0 +1,7 @@
+components:
+  schemas:
+    decisionTree:
+      pattern: "E_\\d{4}"
+      type: string
+      description: Angabe des Entscheidungsbaums aus dem edi@energy Dokument "Entscheidungsbaum-Diagramme und Codelisten für die Antwortnachrichten" als Grundlage für den negativen Antwortgrund
+      example: E_0594

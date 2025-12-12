@@ -1,0 +1,7 @@
+components:
+  schemas:
+    tranchenId:
+      pattern: "\\d{11}"
+      type: string
+      description: Identifiziert die Tranche mittels einer eindeutigen ID
+      example: "57685676742"

@@ -1,0 +1,5 @@
+components:
+  schemas:
+    districtName:
+      type: string
+      description: Angabe des Gemarkungsnamens (des Flurstücks) der Marktlokationsadresse

@@ -1,0 +1,5 @@
+components:
+  schemas:
+    northing:
+      type: string
+      description: Gauß-Krüger Hochwert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen.

@@ -1,0 +1,13 @@
+components:
+  schemas:
+    identificationParameter_identificationParameterAddress:
+      type: object
+      properties:
+        name:
+          $ref: './name.yaml#/components/schemas/name'
+        address:
+          $ref: './address.yaml#/components/schemas/address'
+        landParcels:
+          $ref: './landParcels.yaml#/components/schemas/landParcels'
+        geographicCoordinates:
+          $ref: './geographicCoordinates.yaml#/components/schemas/geographicCoordinates'

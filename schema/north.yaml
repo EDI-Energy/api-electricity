@@ -1,0 +1,5 @@
+components:
+  schemas:
+    north:
+      type: string
+      description: Angabe des UTM Nordwert nach WGS84. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen

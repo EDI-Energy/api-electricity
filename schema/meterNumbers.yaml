@@ -1,0 +1,6 @@
+components:
+  schemas:
+    meterNumbers:
+      type: array
+      items:
+        $ref: './meterNumber.yaml#/components/schemas/meterNumber'

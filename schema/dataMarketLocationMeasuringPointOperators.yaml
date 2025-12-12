@@ -1,0 +1,6 @@
+components:
+  schemas:
+    dataMarketLocationMeasuringPointOperators:
+      type: array
+      items:
+        $ref: './marketLocationMeasuringPointOperator.yaml/components/schemas/marketLocationMeasuringPointOperator'

@@ -1,0 +1,14 @@
+components:
+  schemas:
+    marketLocationDateTime:
+      required:
+      - executionTimeFrom
+      - maloId
+      type: object
+      properties:
+        maloId:
+          $ref: './maloId.yaml#/components/schemas/maloId'
+        executionTimeFrom:
+          $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
+        executionTimeUntil:
+          $ref: './executionTimeUntil.yaml#/components/schemas/executionTimeUntil'

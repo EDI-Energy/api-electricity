@@ -1,0 +1,16 @@
+components:
+  schemas:
+    dataMeterLocation:
+      required:
+      - dataMeterLocationMeasuringPointOperators
+      - meloId
+      - meterNumber
+      type: object
+      properties:
+        meloId:
+          $ref: './meloId.yaml#/components/schemas/meloId'
+        meterNumber:
+          $ref: './meterNumber.yaml#/components/schemas/meterNumber'
+        dataMeterLocationMeasuringPointOperators:
+          $ref: './dataMeterLocationMeasuringPointOperators.yaml#/components/schemas/dataMeterLocationMeasuringPointOperators'
+ 

@@ -1,0 +1,7 @@
+components:
+  schemas:
+    trId:
+      pattern: "D[A-Z\\d]{9}\\d"
+      type: string
+      description: Identifiziert die Technische Ressource mittels einer eindeutigen ID
+      example: D1234848431

@@ -1,0 +1,10 @@
+components:
+  schemas:
+    dataTechnicalResource:
+      required:
+      - trId
+      type: object
+      properties:
+        trId:
+          $ref: './trId.yaml#/components/schemas/trId'
+ 

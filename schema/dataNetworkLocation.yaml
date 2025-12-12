@@ -1,0 +1,12 @@
+components:
+  schemas:
+    dataNetworkLocation:
+      required:
+      - dataNetworkLocationMeasuringPointOperators
+      - neloId
+      type: object
+      properties:
+        neloId:
+          $ref: './neloId.yaml#/components/schemas/neloId'
+        dataNetworkLocationMeasuringPointOperators:
+          $ref: './dataNetworkLocationMeasuringPointOperators.yaml#/components/schemas/dataNetworkLocationMeasuringPointOperators'

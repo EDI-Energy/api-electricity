@@ -1,0 +1,19 @@
+components:
+  schemas:
+    geographicCoordinates:
+      type: object
+      properties:
+        latitude:
+          $ref: './latitude.yaml#/components/schemas/latitude'
+        longitude:
+          $ref: './longitude.yaml#/components/schemas/longitude'
+        east:
+          $ref: './east.yaml#/components/schemas/east'
+        north:
+          $ref: './north.yaml#/components/schemas/north'
+        zone:
+          $ref: './zone.yaml#/components/schemas/zone'
+        northing:
+          $ref: './northing.yaml#/components/schemas/northing'
+        easting:
+          $ref: './easting.yaml#/components/schemas/easting'

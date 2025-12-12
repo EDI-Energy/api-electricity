@@ -1,0 +1,17 @@
+Components:
+  schemas:
+    identificationParameter:
+      required:
+      - identificationDateTime
+      - energyDirection
+      - identificationParameterAddress
+      type: object
+      properties:
+        identificationDateTime:
+          $ref: './identificationDateTime.yaml#/components/schemas/identificationDateTime'
+        energyDirection:
+          $ref: './energyDirection.yaml#/components/schemas/energyDirection'
+        identificationParameterId:
+          $ref: './identificationParameter_identificationParameterId.yaml#/components/schemas/identificationParameter_identificationParameterId'
+        identificationParameterAddress:
+          $ref: './identificationParameter_identificationParameterAddress.yaml#/components/schemas/identificationParameter_identificationParameterAddress'

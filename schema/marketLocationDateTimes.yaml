@@ -1,0 +1,6 @@
+components:
+  schemas:
+    marketLocationDateTimes:
+      type: array
+      items:
+        $ref: './marketLocationDateTime.yaml#/components/schemas/marketLocationDateTime'

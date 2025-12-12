@@ -1,0 +1,5 @@
+components:
+  schemas:
+    latitude:
+      type: string
+      description: Angabe der Breite (Breitengrad) nach WGS84. 46 <= X <= 59. °N

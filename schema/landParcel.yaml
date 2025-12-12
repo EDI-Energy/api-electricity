@@ -1,0 +1,16 @@
+components:
+  schemas:
+    landParcel:
+      required:
+      - districtName
+      - lotNumber
+      - subLotNumber
+      type: object
+      properties:
+        districtName:
+          $ref: './districtName.yaml#/components/schemas/districtName'
+        lotNumber:
+          $ref: './lotNumber.yaml#/components/schemas/lotNumber'
+        subLotNumber:
+          $ref: './subLotNumber.yaml#/components/schemas/subLotNumber'
+ 

@@ -1,0 +1,18 @@
+components:
+  schemas:
+    address:
+      type: object
+      properties:
+        countryCode:
+          $ref: './countryCode.yaml#/components/schemas/countryCode'
+        zipCode:
+          $ref: './zipCode.yaml#/components/schemas/zipCode'
+        city:
+          $ref: './city.yaml#/components/schemas/city'
+        street:
+          $ref: './street.yaml#/components/schemas/street'
+        houseNumber:
+          $ref: './houseNumber.yaml#/components/schemas/houseNumber'
+        houseNumberAddition:
+          $ref: './houseNumberAddition.yaml#/components/schemas/houseNumberAddition'
+

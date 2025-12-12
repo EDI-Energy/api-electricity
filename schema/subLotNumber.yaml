@@ -1,0 +1,5 @@
+components:
+  schemas:
+    subLotNumber:
+      type: string
+      description: Angabe der Flurstücksnummer (des Flurstücks) der Marktlokationsadresse

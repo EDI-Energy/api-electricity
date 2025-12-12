@@ -1,0 +1,6 @@
+components:
+  schemas:
+    street:
+      type: string
+      description: Angabe der Straße der Marktlokationsadresse
+      example: Reinhardtstraße

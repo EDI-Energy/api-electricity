@@ -1,0 +1,6 @@
+components:
+  schemas:
+    dataTrancheSuppliers:
+      type: array
+      items:
+        $ref: './trancheSupplier.yaml#/components/schemas/trancheSupplier'

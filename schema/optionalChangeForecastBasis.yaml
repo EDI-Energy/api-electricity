@@ -1,0 +1,9 @@
+components:
+  schemas:
+    optionalChangeForecastBasis:
+      type: string
+      description: Wahlrecht zur Änderung der Prognosegrundlage
+      example: possible
+      enum:
+      - possible
+      - notPossible

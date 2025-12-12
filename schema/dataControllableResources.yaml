@@ -1,0 +1,6 @@
+components:
+  schemas:
+     dataControllableResources:
+      type: array
+      items:
+        $ref: './dataControllableResource.yaml#/components/schemas/dataControllableResource'

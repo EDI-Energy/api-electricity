@@ -1,0 +1,39 @@
+components:
+  schemas:
+    dataMarketLocation:
+      required:
+      - dataMarketLocationNetworkOperators
+      - dataMarketLocationTransmissionSystemOperators
+      - energyDirection
+      - maloId
+      - measurementTechnologyClassification
+      - optionalChangeForecastBasis
+      - dataMarketLocationProperties
+      type: object
+      properties:
+        maloId:
+          $ref: './maloId.yaml#/components/schemas/maloId'
+        energyDirection:
+          $ref: './energyDirection.yaml#/components/schemas/energyDirection'
+        measurementTechnologyClassification:
+          $ref: './measurementTechnologyClassification.yaml#/components/schemas/measurementTechnologyClassification'
+        optionalChangeForecastBasis:
+          $ref: './optionalChangeForecastBasis.yaml#/components/schemas/optionalChangeForecastBasis'
+        dataMarketLocationProperties:
+          $ref: './dataMarketLocationProperties.yaml#/components/schemas/dataMarketLocationProperties'        
+        dataMarketLocationNetworkOperators:
+          $ref: './dataMarketLocationNetworkOperators.yaml#/components/schemas/dataMarketLocationNetworkOperators'
+        dataMarketLocationMeasuringPointOperators:
+          $ref: './dataMarketLocationMeasuringPointOperators.yaml#/components/schemas/dataMarketLocationMeasuringPointOperators'
+        dataMarketLocationTransmissionSystemOperators:
+          $ref: './dataMarketLocationTransmissionSystemOperators.yaml#/components/schemas/dataMarketLocationTransmissionSystemOperators'
+        dataMarketLocationSuppliers:
+          $ref: './dataMarketLocationSuppliers.yaml#/components/schemas/dataMarketLocationSuppliers'
+        dataMarketLocationName:
+          $ref: './name.yaml#/components/schemas/name'
+        dataMarketLocationAddress:
+          $ref: './address.yaml#/components/schemas/address'
+        dataMarketLocationLandParcels:
+          $ref: './landParcels.yaml#/components/schemas/landParcels'
+        dataMarketLocationGeographicCoordinates:
+          $ref: './geographicCoordinates.yaml#/components/schemas/geographicCoordinates'
