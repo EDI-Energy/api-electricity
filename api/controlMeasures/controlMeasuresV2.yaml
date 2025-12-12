@@ -23,7 +23,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -31,15 +31,16 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -49,8 +50,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: commandControl
         in: query
         description: Objekt des Steuerbefehls Beginn Steuerung
@@ -64,11 +65,11 @@ paths:
            type: object
            properties:
              maximumPowerValue:
-               $ref: '#/components/schemas/maximumPowerValue'
+               $ref: '../../schema/maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
              executionTimeFrom:
-               $ref: '#/components/schemas/executionTimeFrom'
+               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
              executionTimeUntil:
-               $ref: '#/components/schemas/executionTimeUntil'
+               $ref: '../../schema/executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
       requestBody:
         content:
           application/json:
@@ -106,7 +107,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -114,15 +115,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -132,8 +133,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: commandRegular
         in: query
         description: Objekt des Steuerbefehls Beendigung Steuerung
@@ -146,7 +147,7 @@ paths:
            type: object
            properties:
              executionTimeFrom:
-               $ref: '#/components/schemas/executionTimeFrom'
+               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
 
       requestBody:
         content:
@@ -186,7 +187,8 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -194,15 +196,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -210,7 +212,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '#/components/schemas/referenceId'
+                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -220,8 +222,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: preliminaryResultPositive
         in: query
         description: Gibt die positive Antwort, dass der Steuerbefehl grundsätzlich umgesetzt werden kann.
@@ -275,7 +277,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -283,15 +285,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -299,7 +301,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '#/components/schemas/referenceId'
+                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken soll (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -309,8 +311,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: resultNegative
         in: query
         description: Gibt die negative Antwort, dass der Steuerbefehl nicht umgesetzt werden kann. In ReasonNegative wird die negative Antwort begründet, communicationFailure=Kommunikationsverbindung zur Steuerbox gestört, overload=Backend des MSB ist überlastet,  unable= MSB Prozessual nicht in der Lage Anforderung umzusetzen (z.B. Wartungsarbeiten).
@@ -367,7 +369,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -375,15 +377,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -391,7 +393,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '#/components/schemas/referenceId'
+                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirkt (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -401,8 +403,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: resultPositive
         in: query
         description: Positive Antwort, dass der Steuerbefehl umgesetzt wurde.
@@ -455,7 +457,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -463,15 +465,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -479,7 +481,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '#/components/schemas/referenceId'
+                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken sollte (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -489,8 +491,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: resultNegative
         in: query
         description: Gibt die negative Antwort, dass der Steuerbefehl nicht umgesetzt werden kann. In ReasonNegative wird die negative Antwort begründet, communicationFailure=Kommunikationsverbindung zur Steuerbox gestört, overload=Backend des MSB ist überlastet,  unable= MSB Prozessual nicht in der Lage Anforderung umzusetzen (z.B. Wartungsarbeiten).
@@ -546,7 +548,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -554,15 +556,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -570,7 +572,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '#/components/schemas/referenceId'
+                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirken sollte (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -580,8 +582,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: stateUnknown
         in: query
         description: Gibt die Information, dass der finale Status des Steuerbefehls noch nicht aus dem iMS vorliegt.
@@ -633,7 +635,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/transactionId'
+                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -641,15 +643,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/creationDateTime'
+                $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
       - name: initialTransactionId
         in: header
-        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
         style: simple
         explode: false
         schema:
-                $ref: '#/components/schemas/initialTransactionId'
+                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: locationId
         in: query
         description: Identifiziert die Lokation (Netzlokation oder Steuerbare Ressource) auf die der Steuerbefehl wirkt (SR-ID oder Nelo-ID).<b>ID der Netzlokation</b> (Schema neloId) oder <b>ID der Steuerbaren Ressource</b> (Schema srId).
@@ -659,8 +661,8 @@ paths:
         example: C1234848431
         schema:
           oneOf:
-            - $ref: '#/components/schemas/srId'
-            - $ref: '#/components/schemas/neloId'
+            - $ref: '../../schema/srId.yaml#/components/schemas/srId'
+            - $ref: '../../schema/neloId.yaml#/components/schemas/neloId'
       - name: partnerId
         in: query
         description: Identifiziert den Marktpartner (NB, LF) der den bestätigten Steuerbefehl ursprünglich bestellt bzw. angewiesen hat (Marktpartner-ID). 
@@ -668,7 +670,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '#/components/schemas/partnerId'
+                $ref: '../../schema/partnerId.yaml#/components/schemas/partnerId'
       - name: commandControl
         in: query
         description: Objekt des Steuerbefehls Beginn Steuerung
@@ -682,11 +684,11 @@ paths:
            type: object
            properties:
              maximumPowerValue:
-               $ref: '#/components/schemas/maximumPowerValue'
+               $ref: '../../schema/maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
              executionTimeFrom:
-               $ref: '#/components/schemas/executionTimeFrom'
+               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
              executionTimeUntil:
-               $ref: '#/components/schemas/executionTimeUntil'
+               $ref: '../../schema/executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
       - name: commandRegular
         in: query
         description: Objekt des Steuerbefehls Beendigung Steuerung
@@ -699,7 +701,7 @@ paths:
            type: object
            properties:
              executionTimeFrom:
-               $ref: '#/components/schemas/executionTimeFrom'
+               $ref: '../../schema/executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
       requestBody:
         content:
           application/json:
