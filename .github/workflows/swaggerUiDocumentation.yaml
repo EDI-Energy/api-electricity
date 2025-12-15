@@ -1,0 +1,249 @@
+name: Swagger-Dokumentation veröffentlichen
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'api/**'
+      - '.github/workflows/swaggerUiDocumentation.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Site-Ordner für Output vorbereiten
+        run: |
+          rm -rf site
+          mkdir -p site/specs
+          touch site/.nojekyll
+
+      - name: Kopiert alle API-Specs nach site/specs
+        shell: bash
+        run: |
+          mapfile -t SPECS < <(find api -type f \( -iname '*.yaml' -o -iname '*.yml' \) | sort)
+          if [ ${#SPECS[@]} -eq 0 ]; then
+            echo "No YAML specs found in folder api/"; exit 1
+          fi
+
+          for spec in "${SPECS[@]}"; do
+            rel="${spec#api/}"
+            out="site/specs/$rel"
+            mkdir -p "$(dirname "$out")"
+            echo "Copy $spec -> $out"
+            cp "$spec" "$out"
+          done
+
+      - name: Erstellt specs.json
+        run: |
+          python3 - <<'PY'
+          import json, os
+          paths=[]
+          for root,_,files in os.walk('site/specs'):
+              for f in files:
+                  if f.lower().endswith(('.yaml','.yml','.json')):
+                      full=os.path.join(root,f)
+                      rel=os.path.relpath(full, 'site').replace('\\','/')
+                      paths.append(rel)  # -> "specs/…"
+          paths.sort()
+          with open('site/specs.json','w', encoding='utf-8') as fh:
+              json.dump(paths, fh, ensure_ascii=False, indent=2)
+          print(open('site/specs.json','r', encoding='utf-8').read())
+          PY
+
+      - name: Erstellt Swagger UI index.html
+        run: |
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Swagger-Dokumentation</title>
+
+            <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css" />
+            <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+            <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+            <style>
+              :root { --pad: 14px; }
+              body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+              header {
+                position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid #eee;
+                display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: var(--pad);
+              }
+              header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+              .controls { display: flex; gap: 10px; align-items: center; }
+              .controls input, .controls select, .controls button {
+                padding: 8px 10px; border-radius: 10px; border: 1px solid #ddd; font-size: 14px;
+              }
+              .controls button { cursor: pointer; }
+              #swagger-ui { padding: var(--pad); }
+              .hint { color:#666; font-size: 13px; }
+              .swagger-ui .topbar { display: none !important; }
+            </style>
+          </head>
+          <body>
+            <header>
+              <h1>API-Webdienste</h1>
+              <div class="controls">
+                <input id="filter" type="search" placeholder="API suchen…" />
+                <select id="spec-select"></select>
+                <button id="copy-link">Link kopieren</button>
+              </div>
+              <span class="hint" id="count"></span>
+            </header>
+
+            <div id="swagger-ui"></div>
+
+            <script>
+              const v = `?v=${Date.now()}`;
+              const $ = (s) => document.querySelector(s);
+
+              const groupKey = (relPath) => {
+                const parts = relPath.replace(/^specs\//,'').split('/');
+                if (parts.length >= 2) return parts[0] + ' \u203A ' + parts[1];
+                if (parts.length >= 1) return parts[0];
+                return 'Root';
+              };
+              const baseName = (p) => p.split('/').pop();
+
+              async function readMeta(path) {
+                try {
+                  const res = await fetch(path + v);
+                  const text = await res.text();
+                  let obj;
+                  try { obj = JSON.parse(text); }
+                  catch { obj = jsyaml.load(text); }
+                  const title = obj?.info?.title?.trim();
+                  const version = obj?.info?.version?.trim();
+                  return { path, title: title || baseName(path), version: version || '' };
+                } catch {
+                  return { path, title: baseName(path), version: '' };
+                }
+              }
+
+              function labelFor(m) { return m.version ? `${m.title} · v${m.version}` : m.title; }
+
+              function buildSelect(items) {
+                const sel = $('#spec-select');
+                sel.innerHTML = '';
+                const groups = new Map();
+                for (const it of items) {
+                  const g = groupKey(it.path);
+                  if (!groups.has(g)) groups.set(g, []);
+                  groups.get(g).push(it);
+                }
+                for (const g of [...groups.keys()].sort((a,b)=>a.localeCompare(b,'de'))) {
+                  const og = document.createElement('optgroup');
+                  og.label = g;
+                  const arr = groups.get(g).sort((a,b)=>labelFor(a).localeCompare(labelFor(b),'de'));
+                  for (const it of arr) {
+                    const opt = document.createElement('option');
+                    opt.value = it.path;
+                    opt.textContent = labelFor(it);
+                    opt.title = it.path;
+                    og.appendChild(opt);
+                  }
+                  sel.appendChild(og);
+                }
+                $('#count').textContent = `${items.length} API-Webdienst${items.length===1?'':'e'}`;
+              }
+
+              function filterSelect(query) {
+                const q = query.trim().toLowerCase();
+                const sel = $('#spec-select');
+                let shown = 0;
+                for (const og of sel.querySelectorAll('optgroup')) {
+                  let groupShown = 0;
+                  for (const opt of og.children) {
+                    const match = !q || opt.textContent.toLowerCase().includes(q);
+                    opt.hidden = !match;
+                    if (match) groupShown++;
+                  }
+                  og.hidden = groupShown === 0;
+                  shown += groupShown;
+                }
+                $('#count').textContent = `${shown} von ${sel.querySelectorAll('option').length} APIs`;
+                const firstVisible = sel.querySelector('option:not([hidden])');
+                if (firstVisible) sel.value = firstVisible.value;
+              }
+
+              let ui = null;
+              function loadUI(url) {
+                ui = SwaggerUIBundle({
+                  url,
+                  dom_id: '#swagger-ui',
+                  deepLinking: true,
+                  docExpansion: 'list',
+                  defaultModelsExpandDepth: 0,
+                  persistAuthorization: true,
+                  tryItOutEnabled: true,
+                });
+              }
+
+              (async function init() {
+                const list = await (await fetch('specs.json' + v)).json();
+                const metas = await Promise.all(list.map(readMeta));
+                buildSelect(metas);
+
+                const params = new URLSearchParams(location.search);
+                const fromUrl = params.get('spec');
+                const initial = fromUrl && list.includes(fromUrl) ? fromUrl : $('#spec-select').value;
+
+                $('#spec-select').value = initial;
+                loadUI(initial + v);
+
+                $('#filter').addEventListener('input', (e) => filterSelect(e.target.value));
+
+                $('#spec-select').addEventListener('change', (e) => {
+                  const path = e.target.value;
+                  const params = new URLSearchParams(location.search);
+                  params.set('spec', path);
+                  history.replaceState(null, '', `?${params.toString()}`);
+                  loadUI(path + v);
+                });
+
+                $('#copy-link').addEventListener('click', async () => {
+                  const path = $('#spec-select').value;
+                  const url = new URL(location.href);
+                  url.searchParams.set('spec', path);
+                  try {
+                    await navigator.clipboard.writeText(url.toString());
+                    const btn = $('#copy-link'); const old = btn.textContent;
+                    btn.textContent = 'Kopiert ✓'; setTimeout(()=>btn.textContent=old, 1200);
+                  } catch {}
+                });
+              })();
+            </script>
+          </body>
+          </html>
+          HTML
+
+      - name: Hochladen des Pages Artifakts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
