@@ -66,7 +66,7 @@ jobs:
           path: work/main
           fetch-depth: 0
 
-      - name: Aktuell gültig: Bündelt Specs nach site/aktuell-gueltig/specs
+      - name: "Aktuell gültig: Bündelt Specs nach site/aktuell-gueltig/specs"
         shell: bash
         run: |
           set -euo pipefail
@@ -94,7 +94,7 @@ jobs:
             redocly bundle "$spec" --output "$out"
           done
 
-      - name: Aktuell gültig: erstellt specs.json
+      - name: "Aktuell gültig: erstellt specs.json"
         run: |
           python3 - <<'PY'
           import json, os
@@ -120,7 +120,7 @@ jobs:
           path: work/consultation
           fetch-depth: 0
 
-      - name: Zur Konsultation gestellt: Bündelt Specs nach site/konsultation/specs
+      - name: "Zur Konsultation gestellt: Bündelt Specs nach site/konsultation/specs"
         if: steps.consult.outputs.exists == 'true'
         shell: bash
         run: |
@@ -149,7 +149,7 @@ jobs:
             redocly bundle "$spec" --output "$out"
           done
 
-      - name: Zur Konsultation gestellt: erstellt specs.json
+      - name: "Zur Konsultation gestellt: erstellt specs.json"
         if: steps.consult.outputs.exists == 'true'
         run: |
           python3 - <<'PY'
@@ -168,7 +168,7 @@ jobs:
           print(open('site/konsultation/specs.json','r', encoding='utf-8').read())
           PY
 
-      - name: Zur Konsultation gestellt: Fallback-Seite, falls kein Branch existiert
+      - name: "Zur Konsultation gestellt: Fallback-Seite, falls kein Branch existiert"
         if: steps.consult.outputs.exists != 'true'
         run: |
           cat > site/konsultation/index.html <<'HTML'
@@ -195,7 +195,7 @@ jobs:
           </html>
           HTML
 
-      - name: Erstellt Swagger UI (Aktuell gültig + Zur Konsultation gestellt) + Startseite
+      - name: "Erstellt Swagger UI (Aktuell gültig + Zur Konsultation gestellt) + Startseite"
         shell: bash
         run: |
           set -euo pipefail
