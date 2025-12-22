@@ -10,7 +10,7 @@ info:
   
  Hinweis: IT-Systeme zur Umsetzung der API müssen grundsätzlich in der Lage sein, gleichzeitig allen berechtigten Kommunikationspartnern einen Verbindungausbau (TCP-Connenct) zu ermöglichen."
 
-  version: 1.0.0
+  version: 1.0.1
 tags:
 - name: Anfrage MaLo-ID der Marktlokation
   externalDocs:
