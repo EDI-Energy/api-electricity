@@ -12,4 +12,4 @@ components:
         meterNumbers:
           $ref: './meterNumbers.yaml#/components/schemas/meterNumbers'
         customerNumber:
-          $ref: '.customerNumber.yaml#/components/schemas/customerNumber'
+          $ref: './customerNumber.yaml#/components/schemas/customerNumber'

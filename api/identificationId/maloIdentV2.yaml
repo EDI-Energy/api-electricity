@@ -12,7 +12,7 @@ paths:
   /maloId/request/v2:
     post:
       summary: Anfrage MaLo-ID der Marktlokation
-      description: 
+      description: Anfrage MaLo-ID der Marktlokation
       operationId: uploadFile
       parameters:
       - name: transactionId
@@ -60,7 +60,7 @@ paths:
   /maloId/dataForMarketLocationNegative/v2:
     post:
       summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description:
+      description: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
       parameters:
       - name: transactionId
         in: header
@@ -116,8 +116,7 @@ paths:
   /maloId/dataForMarketLocationPositive/v2:
     post:
       summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description: 
-      operationId: 
+      description: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
       parameters:
       - name: transactionId
         in: header

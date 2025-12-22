@@ -3,4 +3,4 @@ components:
     dataMarketLocationMeasuringPointOperators:
       type: array
       items:
-        $ref: './marketLocationMeasuringPointOperator.yaml/components/schemas/marketLocationMeasuringPointOperator'
+        $ref: './marketLocationMeasuringPointOperator.yaml#/components/schemas/marketLocationMeasuringPointOperator'

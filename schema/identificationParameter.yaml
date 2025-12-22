@@ -1,4 +1,4 @@
-Components:
+components:
   schemas:
     identificationParameter:
       required:
