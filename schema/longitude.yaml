@@ -2,4 +2,6 @@ components:
   schemas:
     longitude:
       type: string
-      description: Angabe der Länge (Längengrad) nach WGS84. 4 <= X <= 18. °O
+      pattern: "^([4-9]|1[0-8])([.]\\d+)?$"
+      description: Angabe des Längengrads
+      example: 11.567484
