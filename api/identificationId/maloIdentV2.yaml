@@ -9,7 +9,6 @@ paths:
     post:
       summary: Anfrage MaLo-ID der Marktlokation
       description: Anfrage MaLo-ID der Marktlokation
-      operationId: uploadFile
       parameters:
       - name: transactionId
         in: header
