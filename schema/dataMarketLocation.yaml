@@ -7,7 +7,6 @@ components:
       - energyDirection
       - maloId
       - measurementTechnologyClassification
-      - optionalChangeForecastBasis
       - dataMarketLocationProperties
       type: object
       properties:
@@ -17,8 +16,6 @@ components:
           $ref: './energyDirection.yaml#/components/schemas/energyDirection'
         measurementTechnologyClassification:
           $ref: './measurementTechnologyClassification.yaml#/components/schemas/measurementTechnologyClassification'
-        optionalChangeForecastBasis:
-          $ref: './optionalChangeForecastBasis.yaml#/components/schemas/optionalChangeForecastBasis'
         dataMarketLocationProperties:
           $ref: './dataMarketLocationProperties.yaml#/components/schemas/dataMarketLocationProperties'        
         dataMarketLocationNetworkOperators:
