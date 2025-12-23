@@ -2,4 +2,6 @@ components:
   schemas:
     latitude:
       type: string
-      description: Angabe der Breite (Breitengrad) nach WGS84. 46 <= X <= 59. °N
+      pattern: "^(4[6-9]|5[0-9])([.]\\d+)?$"
+      description: Angabe des Breitengrads
+      example: 51.763939
