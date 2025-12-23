@@ -8,7 +8,7 @@ Dieses Repository enthält alle aktuell gültigen, zukünftig gültigen und zur 
 # Einreichen von Konsultationsbeiträgen / Anlegen von Issues
 Für das Einreichen eines Konsultationsbeitrags ist das Anlegen eines Issues erforderlich. Damit Ihr Konsultationsbeitrag gültig ist, muss dieser im vorgegebenen Konsultationszeitraum als Issue von einem Account angelegt werden, dessen Accountname (inkl. Unternehmensname und Marktrolle) der Bundesnetzagentur spätestens bis zum Ende des Konsultationszeitraumes mitgeteilt werden muss. Pro Unternehmen können mehrere Accounts Issues anlegen, sofern diese unterschiedliche Marktrollen vertreten (max. ein Account pro Marktrolle innerhalb eines Unternehmens). Issues, die außerhalb des Konsultationszeitraums angelegt werden, können nicht berücksichtigt werden.
 
-**Bitte beachten Sie beim Einreichen das im folgenden beschriebene Vorgehen**
+**Bitte beachten Sie beim Einreichen das im Folgenden beschriebene Vorgehen**
 
 https://github.com/user-attachments/assets/d6e1ecd3-e869-4f74-a75d-c78307816580
 
