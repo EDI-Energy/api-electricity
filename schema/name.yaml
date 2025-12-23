@@ -6,7 +6,7 @@ components:
         surnames:
           $ref: './surnames.yaml#/components/schemas/surnames'
         firstnames:
-          $ref: './firstnames.yaml#/components/schemas/firstnames'
+          $ref: './firstNames.yaml#/components/schemas/firstNames'
         title:
           $ref: './title.yaml#/components/schemas/title'
         company:
