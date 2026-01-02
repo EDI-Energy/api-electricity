@@ -1,0 +1,6 @@
+components:
+  schemas:
+    firstName:
+      type: string
+      description: Angabe des Vornamen einer natürlichen Person
+      example: Michael

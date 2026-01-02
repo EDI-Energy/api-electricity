@@ -1,6 +1,0 @@
-components:
-  schemas:
-    surnames:
-      type: string
-      description: Angabe des Namen des Kunden
-      example: Becker

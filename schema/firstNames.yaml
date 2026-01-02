@@ -1,6 +1,0 @@
-components:
-  schemas:
-    firstNames:
-      type: string
-      description: Angabe des Vornamen des Kunden
-      example: Michael
