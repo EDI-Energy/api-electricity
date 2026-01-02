@@ -2,5 +2,6 @@ components:
   schemas:
      marketLocationNetworkOperators:
       type: array
+      MinItems: 1
       items:
-        $ref: './marketLocationNetworkOperator.yaml#/components/schemas/marketLocationNetworkOperator'
+        $ref: './marketLocationNetworkOperator.yaml#/components/schemas/marketLocationNetworkOperator'      
