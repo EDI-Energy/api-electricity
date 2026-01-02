@@ -1,6 +1,6 @@
 components:
   schemas:
-   dataNetworkLocationMeasuringPointOperators:
+   networkLocationMeasuringPointOperators:
       type: array
       items:
         $ref: './networkLocationMeasuringPointOperator.yaml#/components/schemas/networkLocationMeasuringPointOperator'
