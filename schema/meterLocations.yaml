@@ -1,0 +1,6 @@
+components:
+  schemas:
+     meterLocations:
+      type: array
+      items:
+        $ref: './meterLocation.yaml#/components/schemas/meterLocation'

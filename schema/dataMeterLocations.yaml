@@ -1,6 +1,0 @@
-components:
-  schemas:
-     dataMeterLocations:
-      type: array
-      items:
-        $ref: './dataMeterLocation.yaml#/components/schemas/dataMeterLocation'
