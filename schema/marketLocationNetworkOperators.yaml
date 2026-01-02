@@ -1,6 +1,6 @@
 components:
   schemas:
-     dataMarketLocationNetworkOperators:
+     marketLocationNetworkOperators:
       type: array
       items:
         $ref: './marketLocationNetworkOperator.yaml#/components/schemas/marketLocationNetworkOperator'

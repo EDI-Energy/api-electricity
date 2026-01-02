@@ -6,8 +6,8 @@ components:
       - dataMarketLocation
       type: object
       properties:
-        dataMarketLocation:
-          $ref: './dataMarketLocation.yaml#/components/schemas/dataMarketLocation'
+        marketLocation:
+          $ref: './marketLocation.yaml#/components/schemas/marketLocation'
         tranches:
           $ref: './tranches.yaml#/components/schemas/tranches'
         meterLocations:

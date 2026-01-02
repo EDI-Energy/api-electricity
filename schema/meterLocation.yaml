@@ -11,6 +11,6 @@ components:
           $ref: './meloId.yaml#/components/schemas/meloId'
         meterNumber:
           $ref: './meterNumber.yaml#/components/schemas/meterNumber'
-        dataMeterLocationMeasuringPointOperators:
+        meterLocationMeasuringPointOperators:
           $ref: './meterLocationMeasuringPointOperators.yaml#/components/schemas/meterLocationMeasuringPointOperators'
  
