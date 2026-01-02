@@ -4,7 +4,6 @@ components:
       required:
       - executionTimeFrom
       - marketPartnerId
-      - marketPartnerTypeSr
       type: object
       properties:
         marketPartnerId:
@@ -13,3 +12,4 @@ components:
           $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
         executionTimeUntil:
           $ref: './executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
+      description: Zugeordneter Marktparter zu einem Zeitraum an der steuerbaren Ressource
