@@ -1,6 +1,6 @@
 components:
   schemas:
-    dataTechnicalResource:
+    technicalResource:
       required:
       - trId
       type: object

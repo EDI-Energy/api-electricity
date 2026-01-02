@@ -1,6 +1,0 @@
-components:
-  schemas:
-    dataTechnicalResources:
-      type: array
-      items:
-        $ref: './dataTechnicalResource.yaml#/components/schemas/dataTechnicalResource'

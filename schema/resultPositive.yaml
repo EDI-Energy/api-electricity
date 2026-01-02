@@ -13,7 +13,7 @@ components:
         dataMeterLocations:
           $ref: './dataMeterLocations.yaml#/components/schemas/dataMeterLocations'
         dataTechnicalResources:
-          $ref: './dataTechnicalResources.yaml#/components/schemas/dataTechnicalResources'
+          $ref: './technicalResources.yaml#/components/schemas/technicalResources'
         dataControllableResources:
           $ref: './dataControllableResources.yaml#/components/schemas/dataControllableResources'
         dataNetworkLocations:
