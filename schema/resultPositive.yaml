@@ -15,7 +15,7 @@ components:
         technicalResources:
           $ref: './technicalResources.yaml#/components/schemas/technicalResources'
         dataControllableResources:
-          $ref: './dataControllableResources.yaml#/components/schemas/dataControllableResources'
+          $ref: './controllableResources.yaml#/components/schemas/controllableResources'
         dataNetworkLocations:
           $ref: './dataNetworkLocations.yaml#/components/schemas/dataNetworkLocations'
  
