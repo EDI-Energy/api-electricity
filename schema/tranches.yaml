@@ -1,0 +1,6 @@
+components:
+  schemas:
+    tranches:
+      type: array
+      items:
+        $ref: './tranche.yaml#/components/schemas/tranche'

@@ -8,11 +8,11 @@ components:
       properties:
         dataMarketLocation:
           $ref: './dataMarketLocation.yaml#/components/schemas/dataMarketLocation'
-        dataTranches:
-          $ref: './dataTranches.yaml#/components/schemas/dataTranches'
+        tranches:
+          $ref: './tranches.yaml#/components/schemas/tranches'
         dataMeterLocations:
           $ref: './dataMeterLocations.yaml#/components/schemas/dataMeterLocations'
-        dataTechnicalResources:
+        technicalResources:
           $ref: './technicalResources.yaml#/components/schemas/technicalResources'
         dataControllableResources:
           $ref: './dataControllableResources.yaml#/components/schemas/dataControllableResources'

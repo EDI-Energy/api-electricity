@@ -1,6 +1,0 @@
-components:
-  schemas:
-    dataTranches:
-      type: array
-      items:
-        $ref: './dataTranche.yaml#/components/schemas/dataTranche'
