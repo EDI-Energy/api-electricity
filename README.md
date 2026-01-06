@@ -10,5 +10,8 @@ Für das Einreichen eines Konsultationsbeitrags ist das Anlegen eines Issues erf
 
 **Bitte beachten Sie beim Einreichen das im Folgenden beschriebene Vorgehen**
 
-https://github.com/user-attachments/assets/d6e1ecd3-e869-4f74-a75d-c78307816580
+
+https://github.com/user-attachments/assets/f997de63-c3da-4ad8-8eb4-8b172d1f0332
+
+
 
