@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04.3
     steps:
       - name: Checkout (für Branch-Erkennung)
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
           touch site/.nojekyll
 
       - name: Installiere Redocly CLI (für Bundling)
-        run: npm i -g @redocly/cli@latest
+        run: npm i -g @redocly/cli@2.14.4
 
       - name: Checkout main (Aktuell gültig)
         uses: actions/checkout@v4
@@ -432,7 +432,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04.3
     steps:
       - name: Deploy to GitHub Pages
         id: deploy
