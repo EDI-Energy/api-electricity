@@ -3,7 +3,7 @@ components:
     resultPositive:
       description: Hier wird bei einer positiven Antwort die identifizierte Marktlokation und alle dazugehörigen Parameter angegeben. Hierzu gehören die Marktpartner an der jeweiligen Lokation, die Kunden- und Adressdaten, die Lokationen, welche zu dieser Marktlokation gehören, etc. Die Informationen sind ab dem Anfragezeitpunkt "identificationDateTime" aus der Anfrage bis in die Zukunft mit allen beim NB zum Bearbeitungszeitpunkt vorliegenden Informationen ab dem Anfragezeitpunkt zu übermitteln.Hierzu gehören auch Informationen, welche nicht als "required" gekennzeichnet sind. So müssen alle vorliegenden Informationen zur Messlokation übermittelt werden. In der Schnittstellenbeschreibung sind diese jedoch nicht als "required" gekennzeichnet, da es sich auch um eine pauschale Marktlokation handeln kann, in welcher es keine Messlokation gibt. Dies gilt ebenfalls für alle weiteren Informationen die nicht als "required" gekennzeichnet sind. Wie der Lieferant "Supplier" an der Marktlokation. Da eine Marktlokation auch tranchiert sein kann, wechselt zu diesem Zeitpunkt der LF von der Zuordnung der Marktlokation zur Tranche, weshalb dieser in diesem Szenario als nicht "required" definiert wurde.
       required:
-      - dataMarketLocation
+      - marketLocation
       type: object
       properties:
         marketLocation:
