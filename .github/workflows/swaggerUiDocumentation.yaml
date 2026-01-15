@@ -1,4 +1,4 @@
-name: Swagger-Dokumentation veröffentlichen
+name: "Swagger-Dokumentation veröffentlichen"
 
 on:
   push:
@@ -18,16 +18,16 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout (für Branch-Erkennung)
+      - name: "Checkout (für Branch-Erkennung)"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Remote-Branches holen
+      - name: "Remote-Branches holen"
         run: |
           git fetch --all --prune
 
-      - name: Consultation-Branch bestimmen (falls vorhanden)
+      - name: "Consultation-Branch bestimmen (falls vorhanden)"
         id: consult
         shell: bash
         run: |
@@ -48,7 +48,7 @@ jobs:
           echo "branch=$CANDIDATE" >> "$GITHUB_OUTPUT"
           echo "Using consultation branch: $CANDIDATE"
 
-      - name: Future-Branch bestimmen (falls vorhanden: endet auf -04-01 oder 10-01)
+      - name: "Future-Branch bestimmen (falls vorhanden: endet auf -04-01 oder 10-01)"
         id: future
         shell: bash
         run: |
@@ -69,7 +69,7 @@ jobs:
           echo "branch=$CANDIDATE" >> "$GITHUB_OUTPUT"
           echo "Using future branch: $CANDIDATE"
 
-      - name: Site/Work-Verzeichnisse vorbereiten
+      - name: "Site/Work-Verzeichnisse vorbereiten"
         run: |
           rm -rf work site
           mkdir -p work/main work/consultation work/future
@@ -78,10 +78,10 @@ jobs:
           mkdir -p site/zukuenftig-gueltig/specs
           touch site/.nojekyll
 
-      - name: Installiere Redocly CLI (für Bundling)
+      - name: "Installiere Redocly CLI (für Bundling)"
         run: npm i -g @redocly/cli@2.14.4
 
-      - name: Checkout main (Aktuell gültig)
+      - name: "Checkout main (Aktuell gültig)"
         uses: actions/checkout@v4
         with:
           ref: main
@@ -134,7 +134,7 @@ jobs:
           print(open('site/aktuell-gueltig/specs.json','r', encoding='utf-8').read())
           PY
 
-      - name: Checkout consultation-Branch
+      - name: "Checkout consultation-Branch"
         if: steps.consult.outputs.exists == 'true'
         uses: actions/checkout@v4
         with:
@@ -217,7 +217,7 @@ jobs:
           </html>
           HTML
 
-      - name: Checkout future-Branch
+      - name: "Checkout future-Branch"
         if: steps.future.outputs.exists == 'true'
         uses: actions/checkout@v4
         with:
@@ -559,7 +559,7 @@ jobs:
           sed -i "s|<!--CONSULT_BRANCH-->|${{ steps.consult.outputs.branch }}|g" site/index.html
           sed -i "s|<!--FUTURE_BRANCH-->|${{ steps.future.outputs.branch }}|g" site/index.html
 
-      - name: Hochladen des Pages Artifakts
+      - name: "Hochladen des Pages Artifakts"
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
@@ -571,6 +571,6 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-24.04
     steps:
-      - name: Deploy to GitHub Pages
+      - name: "Deploy to GitHub Pages"
         id: deploy
         uses: actions/deploy-pages@v4
