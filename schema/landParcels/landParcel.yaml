@@ -13,4 +13,3 @@ components:
           $ref: './lotNumber.yaml#/components/schemas/lotNumber'
         subLotNumber:
           $ref: './subLotNumber.yaml#/components/schemas/subLotNumber'
- 

@@ -31,6 +31,6 @@ components:
         marketLocationAddress:
           $ref: './address.yaml#/components/schemas/address'
         marketLocationLandParcels:
-          $ref: './landParcels.yaml#/components/schemas/landParcels'
+          $ref: './landParcels/landParcels.yaml#/components/schemas/landParcels'
         marketLocationGeographicCoordinates:
-          $ref: './geographicCoordinates.yaml#/components/schemas/geographicCoordinates'
+          $ref: './geographicCoordinates/geographicCoordinates.yaml#/components/schemas/geographicCoordinates'

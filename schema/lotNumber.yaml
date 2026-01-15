@@ -1,6 +1,0 @@
-components:
-  schemas:
-    lotNumber:
-      type: string
-      description: "Angabe der Flurnummer (des Flurstücks) der Marktlokationsadresse"
-      example: "345"

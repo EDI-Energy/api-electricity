@@ -1,0 +1,6 @@
+components:
+  schemas:
+    lotNumber:
+      type: string
+      description: "Angabe der Flurnummer (des Flurstücks)"
+      example: "345"
