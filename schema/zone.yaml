@@ -2,7 +2,8 @@ components:
   schemas:
     zone:
       type: string
-      description: Angabe des UTM Zonenwertes nach WGS84.
+      description: "Angabe des UTM Zonenwertes nach WGS84."
+      example: "UTMZone31"
       enum:
       - UTMZone31 
       - UTMZone32

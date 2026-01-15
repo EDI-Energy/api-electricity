@@ -2,4 +2,5 @@ components:
   schemas:
    easting:
       type: string
-      description: Gauß-Krüger Rechtswert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen.
+      description: "Gauß-Krüger Rechtswert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen."
+      example: "52.510885"

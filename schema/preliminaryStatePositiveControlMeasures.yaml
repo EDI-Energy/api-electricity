@@ -2,7 +2,7 @@ components:
   schemas:
     preliminaryStatePositiveControlMeasures:
       type: string
-      description: Vorläufige positive Antwortgrund
-      example: possible
+      description: "Vorläufige positive Antwortgrund"
+      example: "possible"
       enum:
       - possible

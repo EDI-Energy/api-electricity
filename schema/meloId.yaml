@@ -3,5 +3,5 @@ components:
    meloId:
       pattern: "^DE\\d{11}[A-Z,\\d]{20}$"
       type: string
-      description: Identifiziert die Messlokation mittels einer eindeutigen ID
-      example: DE00014545768S0000000000000003054
+      description: "Identifiziert die Messlokation mittels einer eindeutigen ID"
+      example: "DE00014545768S0000000000000003054"

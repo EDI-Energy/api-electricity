@@ -2,8 +2,8 @@ components:
   schemas:
     reasonNegativeControlMeasures:
       type: string
-      description: Grund 
-      example: communicationFailure
+      description: "Grund"
+      example: "communicationFailure"
       enum:
       - communicationFailure
       - overload

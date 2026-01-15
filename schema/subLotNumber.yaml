@@ -2,4 +2,5 @@ components:
   schemas:
     subLotNumber:
       type: string
-      description: Angabe der Flurstücksnummer (des Flurstücks) der Marktlokationsadresse
+      description: "Angabe der Flurstücksnummer (des Flurstücks)."
+      example: "34"

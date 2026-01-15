@@ -2,6 +2,6 @@ components:
   schemas:
     referenceId:
       type: string
-      description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Vorgangs
+      description: "Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Vorgangs"
       format: UUID RFC4122
-      example: f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+      example: "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"

@@ -2,7 +2,7 @@ components:
   schemas:
     statePositiveControlMeasures:
       type: string
-      description: Positiver Antwortgrund
-      example: succeeded
+      description: "Positiver Antwortgrund"
+      example: "succeeded"
       enum:
       - succeeded

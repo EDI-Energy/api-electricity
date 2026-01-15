@@ -2,6 +2,6 @@ components:
   schemas:
     partnerId:
       type: string
-      description: Identifiziert den Marktpartner (Marktpartner-ID)
       pattern: ^\d{13}$
-      example: 4041407000008
+      description: "Identifiziert den Marktpartner (Marktpartner-ID)"
+      example: "4041407000008"

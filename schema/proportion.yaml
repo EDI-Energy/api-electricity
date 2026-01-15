@@ -2,8 +2,8 @@ components:
   schemas:
    proportion:
       type: string
-      description: Gibt die Bildungslogik der Tranche an
-      example: percent
+      description: "Gibt die Bildungslogik der Tranche an"
+      example: "percent"
       enum:
       - bilateralAgreement
       - percent

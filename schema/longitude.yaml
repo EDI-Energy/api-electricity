@@ -3,5 +3,5 @@ components:
     longitude:
       type: string
       pattern: "^([4-9]|1[0-8])([.]\\d+)?$"
-      description: Angabe des Längengrads
-      example: 11.567484
+      description: "Angabe des Längengrads"
+      example: "11.567484"

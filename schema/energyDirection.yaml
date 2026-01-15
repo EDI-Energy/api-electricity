@@ -2,8 +2,8 @@ components:
   schemas:
     energyDirection:
       type: string
-      description: Energieflussrichtung der Marktlokation
-      example: consumption
+      description: "Energieflussrichtung der Marktlokation"
+      example: "consumption"
       enum:
       - consumption
       - production

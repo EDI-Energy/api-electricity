@@ -2,6 +2,6 @@ components:
   schemas:
     houseNumberAddition:
       type: string
-      description: Angabe der Hausnummernergänzung einer poatalsichen Adresse
-      example: F
+      description: "Angabe der Hausnummernergänzung einer postalischen Adresse"
+      example: "F"
  

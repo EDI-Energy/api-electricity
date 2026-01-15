@@ -2,5 +2,5 @@ components:
   schemas:
     houseNumber:
       type: integer
-      description: Angabe der Hausnummer einer postalsichen Adresse
+      description: "Angabe der Hausnummer einer postalischen Adresse"
       example: 32

@@ -3,5 +3,5 @@ components:
     marketPartnerId:
       pattern: "^\\d{13}$"
       type: string
-      description: Identifiziert den Marktpartner (Marktpartner-ID)
-      example: 9900987654321
+      description: "Identifiziert den Marktpartner (Marktpartner-ID)"
+      example: "9900987654321"

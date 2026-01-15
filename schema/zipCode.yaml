@@ -2,5 +2,5 @@ components:
   schemas:
     zipCode:
       type: string
-      description: Angabe der Postleitzahl einer postalischen Adresse
-      example: 12117
+      description: "Angabe der Postleitzahl einer postalischen Adresse"
+      example: "12117"

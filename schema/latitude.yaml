@@ -3,5 +3,5 @@ components:
     latitude:
       type: string
       pattern: "^(4[6-9]|5[0-9])([.]\\d+)?$"
-      description: Angabe des Breitengrads
-      example: 51.763939
+      description: "Angabe des Breitengrads"
+      example: "51.763939"

@@ -2,5 +2,5 @@ components:
   schemas:
     surname:
       type: string
-      description: Angabe des Nachnamen einer natürlichen Person
-      example: Becker
+      description: "Angabe des Nachnamen einer natürlichen Person"
+      example: "Becker"

@@ -2,8 +2,8 @@ components:
   schemas:
    marketLocationCharacteristic:
       type: string
-      description: Eigenschaft der Marktlokation. nonActive=ruhende Marktlokation, customerFacility=Marktlokation ist eine Kundenanlage, standard=alle "Standard" Marktlokationen die nicht unter die Eigenschaft "ruhende Marktlokation" und "Kundenanlage" fallen.
-      example: standard
+      description: "Eigenschaft der Marktlokation. nonActive=ruhende Marktlokation, customerFacility=Marktlokation ist eine Kundenanlage, standard=alle \"Standard\" Marktlokationen die nicht unter die Eigenschaft \ruhende Marktlokation\" und \"Kundenanlage\" fallen."
+      example: "standard"
       enum:
       - customerFacility
       - nonActive
