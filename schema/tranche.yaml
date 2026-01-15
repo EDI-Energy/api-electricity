@@ -11,7 +11,7 @@ components:
           $ref: './tranchenId.yaml#/components/schemas/tranchenId'
         proportion:
           $ref: './proportion.yaml#/components/schemas/proportion'
-        percent:
-          $ref: './percent.yaml#/components/schemas/percent'
+        percentLessHundred:
+          $ref: './percentLessHundred.yaml#/components/schemas/percentLessHundred'
         trancheSuppliers:
           $ref: './trancheSuppliers.yaml#/components/schemas/trancheSuppliers'
