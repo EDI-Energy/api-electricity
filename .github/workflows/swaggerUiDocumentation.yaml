@@ -210,7 +210,7 @@ jobs:
           <body>
             <h1>Zur Konsultation gestellt</h1>
             <div class="box">
-              <p>Derzeit ist keine Konsultations-Version veröffentlicht, da im Repository aktuell kein Branch existiert, der auf <code>consultation</code> endet.</p>
+              <p>Derzeit ist keine Konsultationsversion veröffentlicht.</p>
               <p><a href="../aktuell-gueltig/">Zur aktuell gültigen Version</a></p>
             </div>
           </body>
@@ -293,7 +293,7 @@ jobs:
           <body>
             <h1>Zukünftig gültig</h1>
             <div class="box">
-              <p>Derzeit ist keine zukünftige Version veröffentlicht, da im Repository aktuell kein Branch existiert, der auf <code>-04-01</code> oder <code>10-01</code> endet.</p>
+              <p>Derzeit ist keine zukünftig-gültige Version veröffentlicht.</p>
               <p><a href="../aktuell-gueltig/">Zur aktuell gültigen Version</a></p>
             </div>
           </body>
