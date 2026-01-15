@@ -1,6 +1,0 @@
-components:
-  schemas:
-    reason:
-      type: string
-      description: Angabe der weiteren Erläuterung zum in responseCode genannten Antwortgrundes sofern dies gemäß dem in decisionTree genannten Entscheidungsbaums zulässig ist.
-      example: Ich bin ein Freitext.

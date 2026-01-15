@@ -1,0 +1,19 @@
+components:
+  schemas:
+    result:
+      description: Hier wird bei Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. 
+      required:
+      - responseCode
+      - decisionTree
+      type: object
+      properties:
+        decisionTree:
+          $ref: './decisionTree.yaml#/components/schemas/decisionTree'
+        responseCode:
+          $ref: './responseCode.yaml#/components/schemas/responseCode'
+        freeText:
+          $ref: './../freeText.yaml#/components/schemas/freeText'
+        networkOperator:
+          $ref: './../marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          description: Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als "networkOperator" anzugeben, an den die Marktlokation abgegeben wurde. 
+          

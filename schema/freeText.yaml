@@ -1,0 +1,6 @@
+components:
+  schemas:
+    freeText:
+      type: string
+      description: "Angabe eines Textes."
+      example: "Ich bin ein Freitext."

@@ -38,7 +38,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../../schema/resultNegative.yaml#/components/schemas/resultNegative'
+              $ref: '../../schema/resultToRequest/result.yaml#/components/schemas/result'
       responses:
         "202":
           description: accepted
