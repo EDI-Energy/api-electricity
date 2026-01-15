@@ -1,18 +1,18 @@
 openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
-  title: EDI@Energy API-Webdienst zur Ermittlung der MaLo-ID der Marktlokation
-  version: 2.0.0
-  description: Mit diesen API-Webdienst wird die Ermittlung der MaLo-ID der Marktlokation umgesestzt.
+  title: EDI@Energy API-Webdienst zur Übermittlung einer Antwort auf eine Anfrage
+  version: 1.0.0
+  description: Mit diesem API-Webdienst kann ein ermittelter Antwortcode aus einem EBD übermittelt und somit eine Anfrage beantwortet werden.
 
 paths:
-  /maloId/request/v2:
+  /result/generalResult/v1:
     post:
-      summary: Anfrage MaLo-ID der Marktlokation
-      description: Anfrage MaLo-ID der Marktlokation
+      summary: Antwort auf eine Anfrage
+      description: Antwort auf eine Anfrage
       parameters:
       - name: transactionId
         in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage der MaLo-ID der Marktlokation des sendenden Marktpartners.
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage des sendenden Marktpartners.
         required: true
         style: simple
         explode: false
@@ -36,9 +36,9 @@ paths:
           $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       requestBody:
         content:
-         application/json:
-           schema:
-             $ref: '../../schema/identificationParameter.yaml#/components/schemas/identificationParameter'
+          application/json:
+            schema:
+              $ref: '../../schema/resultNegative.yaml#/components/schemas/resultNegative'
       responses:
         "202":
           description: accepted

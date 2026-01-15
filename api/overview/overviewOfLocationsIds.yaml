@@ -1,0 +1,61 @@
+openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
+info: # Allgemeine Infos zur Schnittstelle
+  title: EDI@Energy API-Webdienste zur Übermittlung einer Übersicht von Lokation-IDs
+  version: 1.0.0
+  description: Mit diesem API-Webdienste werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranchen, Technische Ressourcen, Steuerbare Ressourcen, etc.) und den jeweils zugeordneten Marktpartner übermittelt.
+paths:
+  /result/overviewOfLocationsIds/v1:
+    post:
+      summary: Übermittlung der Übsersicht aller einer Marktlokation zugordneten Lokationen.
+      description: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage (Wert aus transactionId, Schritt1 des UC Ermittlung der MaLo-ID der Marktlokation)."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../../schema/resultPositive.yaml#/components/schemas/resultPositive'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
