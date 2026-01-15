@@ -2,5 +2,7 @@ components:
   schemas:
     technicalResources:
       type: array
+      x-Translation:
+        de: "Technsiche Ressourcen"
       items:
         $ref: './technicalResource.yaml#/components/schemas/technicalResource'

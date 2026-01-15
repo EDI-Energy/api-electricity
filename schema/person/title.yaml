@@ -3,4 +3,6 @@ components:
     title:
       type: string
       description: "Angabe des Titels der natürlichen Person"
+      x-Translation:
+        de: "Titel"
       example: "Prof.Dr."

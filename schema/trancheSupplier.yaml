@@ -5,6 +5,8 @@ components:
       - executionTimeFrom
       - marketPartnerId
       type: object
+      x-Translation:
+        de: "Zugeordneter Lieferant an der Tranche"
       properties:
         marketPartnerId:
           $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'

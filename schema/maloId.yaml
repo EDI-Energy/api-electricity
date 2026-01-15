@@ -4,4 +4,6 @@ components:
       pattern: "^\\d{11}$"
       type: string
       description: "Identifiziert die Marktlokation mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Marktlokations-ID"
       example: "57685676748"

@@ -4,4 +4,6 @@ components:
       pattern: "^C[A-Z\\d]{9}\\d$"
       type: string
       description: "Identifiziert die Steuerbare Ressource mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Steuerbaren Ressource ID"
       example: "C1234848431"

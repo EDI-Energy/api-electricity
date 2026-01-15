@@ -2,5 +2,7 @@ components:
   schemas:
     city:
       type: string
-      description: "Stadt | Angabe der Stadt einer postalischen Adresse"
+      description: "Angabe der Stadt einer postalischen Adresse"
+      x-Translation:
+        de: "Stadt"
       example: "Berlin"

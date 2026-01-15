@@ -3,4 +3,6 @@ components:
     street:
       type: string
       description: "Angabe der Straße einer postalischen Adresse"
+      x-Translation:
+        de: "Strasse"
       example: "Reinhardtstraße"

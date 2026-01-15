@@ -6,6 +6,8 @@ components:
       - proportion
       - tranchenId
       type: object
+      x-Translation:
+        de: "Tranche"
       properties:
         tranchenId:
           $ref: './tranchenId.yaml#/components/schemas/tranchenId'

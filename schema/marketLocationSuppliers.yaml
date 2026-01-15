@@ -2,5 +2,7 @@ components:
   schemas:
     marketLocationSuppliers:
       type: array
+      x-Translation:
+        de: "Lieferanten an der Marktlokation"
       items:
         $ref: './marketLocationSupplier.yaml#/components/schemas/marketLocationSupplier'

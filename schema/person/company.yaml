@@ -3,4 +3,6 @@ components:
      company:
       type: string
       description: "Angabe des Firmennamen"
+      x-Translation:
+        de: "Firma"
       example: "BDEW & Co. KG"

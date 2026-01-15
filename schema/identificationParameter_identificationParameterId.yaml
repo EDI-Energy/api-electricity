@@ -2,6 +2,8 @@ components:
   schemas:
     identificationParameter_identificationParameterId:
       type: object
+      x-Translation:
+        de: "Identfikationsparameter IDs"
       properties:
         maloId:
           $ref: './maloId.yaml#/components/schemas/maloId'

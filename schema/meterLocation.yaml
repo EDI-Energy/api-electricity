@@ -6,6 +6,8 @@ components:
       - meloId
       - meterNumber
       type: object
+      x-Translation:
+        de: "Zählernummer / Gerätenummer"
       properties:
         meloId:
           $ref: './meloId.yaml#/components/schemas/meloId'

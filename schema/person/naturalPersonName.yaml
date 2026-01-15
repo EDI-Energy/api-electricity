@@ -4,6 +4,8 @@ components:
       required:
       - surname
       type: object
+      x-Translation:
+        de: "Natürliche Person"
       properties:
         surname:
           $ref: './surname.yaml#/components/schemas/surname'

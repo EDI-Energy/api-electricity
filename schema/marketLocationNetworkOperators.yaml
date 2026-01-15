@@ -2,6 +2,8 @@ components:
   schemas:
      marketLocationNetworkOperators:
       type: array
+      x-Translation:
+        de: "Netzbetreiber an der Marktlokation"
       minItems: 1
       items:
         $ref: './marketLocationNetworkOperator.yaml#/components/schemas/marketLocationNetworkOperator'      

@@ -1,7 +1,9 @@
 components:
   schemas:
     result:
-      description: Hier wird bei Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. 
+      description: Hier wird bei Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben.
+      x-Translation:
+        de: "Ergebnis"
       required:
       - responseCode
       - decisionTree

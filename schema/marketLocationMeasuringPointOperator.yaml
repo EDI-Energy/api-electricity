@@ -5,6 +5,8 @@ components:
       - executionTimeFrom
       - marketPartnerId
       type: object
+      x-Translation:
+        de: "Messstellenebtreiber an der Marktlokation"
       properties:
         marketPartnerId:
           $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'

@@ -4,4 +4,6 @@ components:
       type: string
       pattern: "^([4-9]|1[0-8])([.]\\d+)?$"
       description: "Angabe des Längengrads"
+      x-Translation:
+        de: "Längengrad"
       example: "11.567484"

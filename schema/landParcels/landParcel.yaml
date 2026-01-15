@@ -6,6 +6,8 @@ components:
       - lotNumber
       - subLotNumber
       type: object
+      x-Translation:
+        de: "Grundstück"
       properties:
         districtName:
           $ref: './districtName.yaml#/components/schemas/districtName'

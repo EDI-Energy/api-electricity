@@ -3,4 +3,6 @@ components:
     freeText:
       type: string
       description: "Angabe eines Textes."
+      x-Translation:
+        de: "Freitext"
       example: "Ich bin ein Freitext."

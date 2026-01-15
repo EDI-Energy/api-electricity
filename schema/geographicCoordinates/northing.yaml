@@ -3,4 +3,6 @@ components:
     northing:
       type: string
       description: "Gauß-Krüger Hochwert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen."
+      x-Translation:
+        de: "Nordwert"
       example: "13.398937"

@@ -2,6 +2,8 @@ components:
   schemas:
     geographicCoordinates:
       type: object
+      x-Translation:
+        de: "Geographische Koordinaten"
       properties:
         latitude:
           $ref: './latitude.yaml#/components/schemas/latitude'

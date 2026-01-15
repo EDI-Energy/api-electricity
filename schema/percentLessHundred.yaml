@@ -4,4 +4,6 @@ components:
       pattern: "\\d{1,2}(\\.[\\d]{1,3})?"
       type: string
       description: "Prozentualer Wert"
+      x-Translation:
+        de: "Prozentualer Wert unter 100%"
       example: "75.912"

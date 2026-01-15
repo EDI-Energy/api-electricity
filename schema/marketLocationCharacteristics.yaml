@@ -5,6 +5,8 @@ components:
       - executionTimeFrom
       - marketLocationCharacteristic
       type: object
+      x-Translation:
+        de: "Eigenschaft der Marktlokation"
       properties:
         marketLocationCharacteristic:
           $ref: './marketLocationCharacteristic.yaml#/components/schemas/marketLocationCharacteristic'

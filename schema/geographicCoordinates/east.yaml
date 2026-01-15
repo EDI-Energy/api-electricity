@@ -3,4 +3,6 @@ components:
     east:
       type: string
       description: "Angabe des UTM Ostwert nach WGS84. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen"
+      x-Translation:
+        de: Ost
       example: "457800E"

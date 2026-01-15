@@ -3,4 +3,6 @@ components:
     customerNumber:
       type: string
       description: "Zur Angabe der Kundennummer des Kunden beim bisherigen Lieferanten (LFA)"
+      x-Translation:
+        de: "Kundennummer"
       example: "V567345345"

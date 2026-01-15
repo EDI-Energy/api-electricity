@@ -4,4 +4,6 @@ components:
       type: string
       pattern: "[A-Z]{2}"
       description: "Angabe des Ländercodes nach ISO-3166-1 Alpha-2"
+      x-Translation:
+        de: "Ländercode"
       example: "DE"

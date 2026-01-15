@@ -3,4 +3,6 @@ components:
    easting:
       type: string
       description: "Gauß-Krüger Rechtswert. Umgerechneter Wert muss Min/Max für Länge/Breite entsprechen."
+      x-Translation:
+        de: "Ostwert"
       example: "52.510885"

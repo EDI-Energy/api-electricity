@@ -5,6 +5,8 @@ components:
       - networkLocationMeasuringPointOperators
       - neloId
       type: object
+      x-Translation:
+        de: "Netzlokation"
       properties:
         neloId:
           $ref: './neloId.yaml#/components/schemas/neloId'

@@ -5,6 +5,8 @@ components:
       - controllableResourceMarketPartner
       - srId
       type: object
+      x-Translation:
+        de: "Steuerbare Ressource"
       properties:
         srId:
           $ref: './srId.yaml#/components/schemas/srId'

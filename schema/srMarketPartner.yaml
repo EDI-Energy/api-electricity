@@ -5,6 +5,8 @@ components:
       - executionTimeFrom
       - marketPartnerId
       type: object
+      x-Translation:
+        de: "Zugeordneter Marktparter zu einem Zeitraum an der steuerbaren Ressource"
       properties:
         marketPartnerId:
           $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'

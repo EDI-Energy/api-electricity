@@ -2,6 +2,8 @@ components:
   schemas:
     identificationParameter_identificationParameterAddress:
       type: object
+      x-Translation:
+        de: "Identfikationsparameter Adressen"
       properties:
         name:
           $ref: './person/name.yaml#/components/schemas/name'

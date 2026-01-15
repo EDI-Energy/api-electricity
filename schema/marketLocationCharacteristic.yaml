@@ -4,6 +4,8 @@ components:
       type: string
       description: "Eigenschaft der Marktlokation. nonActive=ruhende Marktlokation, customerFacility=Marktlokation ist eine Kundenanlage, standard=alle \"Standard\" Marktlokationen die nicht unter die Eigenschaft \ruhende Marktlokation\" und \"Kundenanlage\" fallen."
       example: "standard"
+      x-Translation:
+        de: "Eigenschaft der Marktlokation"
       enum:
       - customerFacility
       - nonActive

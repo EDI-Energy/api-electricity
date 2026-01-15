@@ -9,6 +9,8 @@ components:
       - measurementTechnologyClassification
       - marketLocationProperties
       type: object
+      x-Translation:
+        de: "Marktlokation"
       properties:
         maloId:
           $ref: './maloId.yaml#/components/schemas/maloId'

@@ -6,6 +6,8 @@ components:
       - energyDirection
       - identificationParameterAddress
       type: object
+      x-Translation:
+        de: "Identifikationsparameter"
       properties:
         identificationDateTime:
           $ref: './identificationDateTime.yaml#/components/schemas/identificationDateTime'

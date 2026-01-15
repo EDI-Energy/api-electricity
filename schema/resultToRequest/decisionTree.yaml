@@ -4,4 +4,6 @@ components:
       pattern: "E_\\d{4}"
       type: string
       description: "Angabe des Entscheidungsbaums aus dem Edi@energy Dokument 'Entscheidungsbaum-Diagramme und Codelisten für die Antwortnachrichten' als Grundlage für den Antwortgrund."
+      x-Translation:
+        de: "Entscheidungsbaum"
       example: "E_0594"

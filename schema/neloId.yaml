@@ -4,4 +4,6 @@ components:
       pattern: "^E[A-Z\\d]{9}\\d$"
       type: string
       description: "Identifiziert die Netzlokation mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Netzlokation-ID"
       example: "E1234848431"

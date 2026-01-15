@@ -2,5 +2,7 @@ components:
   schemas:
     trancheSuppliers:
       type: array
+      x-Translation:
+        de: "Zugeordnete Lieferanten an der Tranche"
       items:
         $ref: './trancheSupplier.yaml#/components/schemas/trancheSupplier'

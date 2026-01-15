@@ -4,6 +4,8 @@ components:
       required:
       - trId
       type: object
+      x-Translation:
+        de: "Technsiche Ressource"
       properties:
         trId:
           $ref: './trId.yaml#/components/schemas/trId'

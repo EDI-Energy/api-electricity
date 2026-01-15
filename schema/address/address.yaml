@@ -2,6 +2,8 @@ components:
   schemas:
     address:
       type: object
+      x-Translation:
+        de: "Adresse"
       properties:
         countryCode:
           $ref: './countryCode.yaml#/components/schemas/countryCode'

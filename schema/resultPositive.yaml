@@ -5,6 +5,8 @@ components:
       required:
       - marketLocation
       type: object
+      x-Translation:
+        de: "Positive Antwort"
       properties:
         marketLocation:
           $ref: './marketLocation.yaml#/components/schemas/marketLocation'

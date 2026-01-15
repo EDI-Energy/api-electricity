@@ -3,4 +3,6 @@ components:
     houseNumberAddition:
       type: string
       description: "Angabe der Hausnummernergänzung einer postalischen Adresse"
+      x-Translation:
+        de: "Hausnummernergänzung"
       example: "F"

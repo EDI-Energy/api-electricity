@@ -4,4 +4,6 @@ components:
       pattern: "A[A-Z\\d]{2}"
       type: string
       description: "Angabe des Antwortgrundes des in decisionTree genannten Entscheidungsbaums."
+      x-Translation:
+        de: "Antwortgrund"
       example: "A10"

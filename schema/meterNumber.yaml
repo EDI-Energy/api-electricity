@@ -3,4 +3,6 @@ components:
     meterNumber:
       type: string
       description: "Identifiziert das Gerät der Messlokation mittels Gerätenummer"
+      x-Translation:
+        de: "Zählernummer / Gerätenummer"
       example: "1SM-8465929523"

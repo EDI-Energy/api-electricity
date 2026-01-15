@@ -4,4 +4,6 @@ components:
       pattern: "^\\d{11}$"
       type: string
       description: "Identifiziert die Tranche mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Tranchen-ID"
       example: "57685676742"

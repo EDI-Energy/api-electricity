@@ -3,6 +3,8 @@ components:
     energyDirection:
       type: string
       description: "Energieflussrichtung der Marktlokation"
+      x-Translation:
+        de: "Energieflussrichtung"
       example: "consumption"
       enum:
       - consumption

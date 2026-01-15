@@ -5,6 +5,8 @@ components:
       - executionTimeFrom
       - maloId
       type: object
+      x-Translation:
+        de: "Zeitscheibe einer Marktlokation"
       properties:
         maloId:
           $ref: './maloId.yaml#/components/schemas/maloId'

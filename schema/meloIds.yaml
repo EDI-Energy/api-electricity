@@ -2,5 +2,7 @@ components:
   schemas:
     meloIds:
       type: array
+      x-Translation:
+        de: "Messlokations-IDs"
       items:
         $ref: './meloId.yaml#/components/schemas/meloId'

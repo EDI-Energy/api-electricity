@@ -3,4 +3,6 @@ components:
     surname:
       type: string
       description: "Angabe des Nachnamen einer natürlichen Person"
+      x-Translation:
+        de: "Nachname"
       example: "Becker"
