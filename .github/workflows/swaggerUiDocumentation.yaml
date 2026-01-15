@@ -48,12 +48,34 @@ jobs:
           echo "branch=$CANDIDATE" >> "$GITHUB_OUTPUT"
           echo "Using consultation branch: $CANDIDATE"
 
+      - name: Future-Branch bestimmen (falls vorhanden: endet auf -04-01 oder 10-01)
+        id: future
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          CANDIDATE="$(git for-each-ref --format='%(refname:short)' --sort=-committerdate refs/remotes/origin \
+            | sed 's|^origin/||' \
+            | grep -E '(-04-01|10-01)$' \
+            | head -n 1 || true)"
+
+          if [[ -z "$CANDIDATE" ]]; then
+            echo "No future branch found."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "exists=true" >> "$GITHUB_OUTPUT"
+          echo "branch=$CANDIDATE" >> "$GITHUB_OUTPUT"
+          echo "Using future branch: $CANDIDATE"
+
       - name: Site/Work-Verzeichnisse vorbereiten
         run: |
           rm -rf work site
-          mkdir -p work/main work/consultation
+          mkdir -p work/main work/consultation work/future
           mkdir -p site/aktuell-gueltig/specs
           mkdir -p site/konsultation/specs
+          mkdir -p site/zukuenftig-gueltig/specs
           touch site/.nojekyll
 
       - name: Installiere Redocly CLI (für Bundling)
@@ -195,7 +217,90 @@ jobs:
           </html>
           HTML
 
-      - name: "Erstellt Swagger UI (Aktuell gültig + Zur Konsultation gestellt) + Startseite"
+      - name: Checkout future-Branch
+        if: steps.future.outputs.exists == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.future.outputs.branch }}
+          path: work/future
+          fetch-depth: 0
+
+      - name: "Zukünftig gültig: Bündelt Specs nach site/zukuenftig-gueltig/specs"
+        if: steps.future.outputs.exists == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd work/future
+
+          if [[ -d "API" ]]; then
+            SPEC_DIR="API"
+          elif [[ -d "api" ]]; then
+            SPEC_DIR="api"
+          else
+            echo "Neither 'API/' nor 'api/' exists in future branch."
+            exit 1
+          fi
+
+          mapfile -t SPECS < <(find "$SPEC_DIR" -type f \( -iname '*.yaml' -o -iname '*.yml' \) | sort)
+          if [ ${#SPECS[@]} -eq 0 ]; then
+            echo "No YAML specs found in folder $SPEC_DIR/ (future)."; exit 1
+          fi
+
+          for spec in "${SPECS[@]}"; do
+            rel="${spec#${SPEC_DIR}/}"
+            out="../../site/zukuenftig-gueltig/specs/$rel"
+            mkdir -p "$(dirname "$out")"
+            echo "Bundle (future) $spec -> $out"
+            redocly bundle "$spec" --output "$out"
+          done
+
+      - name: "Zukünftig gültig: erstellt specs.json"
+        if: steps.future.outputs.exists == 'true'
+        run: |
+          python3 - <<'PY'
+          import json, os
+          base = 'site/zukuenftig-gueltig/specs'
+          paths=[]
+          for root,_,files in os.walk(base):
+              for f in files:
+                  if f.lower().endswith(('.yaml','.yml','.json')):
+                      full=os.path.join(root,f)
+                      rel=os.path.relpath(full, 'site/zukuenftig-gueltig').replace('\\','/')
+                      paths.append(rel)  
+          paths.sort()
+          with open('site/zukuenftig-gueltig/specs.json','w', encoding='utf-8') as fh:
+              json.dump(paths, fh, ensure_ascii=False, indent=2)
+          print(open('site/zukuenftig-gueltig/specs.json','r', encoding='utf-8').read())
+          PY
+
+      - name: "Zukünftig gültig: Fallback-Seite, falls kein Branch existiert"
+        if: steps.future.outputs.exists != 'true'
+        run: |
+          cat > site/zukuenftig-gueltig/index.html <<'HTML'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>API-Dokumentation – Zukünftig gültig</title>
+            <style>
+              body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
+              a { color: inherit; }
+              .box { border: 1px solid #ddd; border-radius: 12px; padding: 14px; max-width: 820px; }
+              code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
+            </style>
+          </head>
+          <body>
+            <h1>Zukünftig gültig</h1>
+            <div class="box">
+              <p>Derzeit ist keine zukünftige Version veröffentlicht, da im Repository aktuell kein Branch existiert, der auf <code>-04-01</code> oder <code>10-01</code> endet.</p>
+              <p><a href="../aktuell-gueltig/">Zur aktuell gültigen Version</a></p>
+            </div>
+          </body>
+          </html>
+          HTML
+
+      - name: "Erstellt Swagger UI (Aktuell gültig + Zur Konsultation gestellt + Zukünftig gültig) + Startseite"
         shell: bash
         run: |
           set -euo pipefail
@@ -252,7 +357,8 @@ jobs:
                 <h1><!--H1--></h1>
                 <nav>
                   <a href="../aktuell-gueltig/">Aktuell gültig</a> ·
-                  <a href="../konsultation/">Zur Konsultation gestellt</a>
+                  <a href="../konsultation/">Zur Konsultation gestellt</a> ·
+                  <a href="../zukuenftig-gueltig/">Zukünftig gültig</a>
                 </nav>
               </div>
               <div class="controls">
@@ -398,6 +504,10 @@ jobs:
             make_ui "site/konsultation" "API-Dokumentation – Zur Konsultation gestellt" "Zur Konsultation gestellt"
           fi
 
+          if [[ "${{ steps.future.outputs.exists }}" == "true" ]]; then
+            make_ui "site/zukuenftig-gueltig" "API-Dokumentation – Zukünftig gültig" "Zukünftig gültig"
+          fi
+
           cat > site/index.html <<'HTML'
           <!doctype html>
           <html lang="de">
@@ -409,18 +519,45 @@ jobs:
               body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
               a { display: inline-block; padding: 12px 14px; border: 1px solid #ddd; border-radius: 12px; text-decoration: none; color: inherit; margin-right: 10px; }
               a:hover { background: rgba(0,0,0,.03); }
+              h1 { color: #C20000; }
+              .item { margin: 14px 0; }
+              .meta { color: #666; margin: 6px 0 0 0; }
+              code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
             </style>
           </head>
           <body>
             <h1>API-Dokumentation</h1>
             <p>Bitte wählen:</p>
-            <p>
-              <a href="./aktuell-gueltig/">Aktuell gültig</a>
-              <a href="./konsultation/">Zur Konsultation gestellt</a>
-            </p>
+
+            <div class="item">
+              <p>
+                <a href="./aktuell-gueltig/">Aktuell gültig</a><br />
+                <span class="meta"><code>main</code></span><br />
+                <span class="meta">enthält die aktuell gültigen Versionen</span>
+              </p>
+            </div>
+
+            <div class="item">
+              <p>
+                <a href="./konsultation/">Zur Konsultation gestellt</a><br />
+                <span class="meta"><code><!--CONSULT_BRANCH--></code></span><br />
+                <span class="meta">enthält die aktuell gültigen und zur Konsultation gestellten Versionen</span>
+              </p>
+            </div>
+
+            <div class="item">
+              <p>
+                <a href="./zukuenftig-gueltig/">Zukünftig gültig</a><br />
+                <span class="meta"><code><!--FUTURE_BRANCH--></code></span><br />
+                <span class="meta">enthält die aktuell gültigen und zukünftig gültigen Versionen</span>
+              </p>
+            </div>
           </body>
           </html>
           HTML
+
+          sed -i "s|<!--CONSULT_BRANCH-->|${{ steps.consult.outputs.branch }}|g" site/index.html
+          sed -i "s|<!--FUTURE_BRANCH-->|${{ steps.future.outputs.branch }}|g" site/index.html
 
       - name: Hochladen des Pages Artifakts
         uses: actions/upload-pages-artifact@v3
