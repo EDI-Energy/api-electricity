@@ -1,0 +1,7 @@
+components:
+  schemas:
+    legalPersonName:
+      type: object
+      properties:
+        company:
+          $ref: './company.yaml#/components/schemas/company'

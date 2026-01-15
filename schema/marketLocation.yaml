@@ -27,7 +27,7 @@ components:
         marketLocationSuppliers:
           $ref: './marketLocationSuppliers.yaml#/components/schemas/marketLocationSuppliers'
         marketLocationName:
-          $ref: './name.yaml#/components/schemas/name'
+          $ref: './person/name.yaml#/components/schemas/name'
         marketLocationAddress:
           $ref: './address/address.yaml#/components/schemas/address'
         marketLocationLandParcels:

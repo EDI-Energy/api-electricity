@@ -1,0 +1,9 @@
+components:
+  schemas:
+    name:
+      type: object
+      properties:
+        name:
+          oneOf:
+           - $ref: './naturalPersonName.yaml#/components/schemas/naturalPersonName'
+           - $ref: './legalPersonName.yaml#/components/schemas/legalPersonName'      

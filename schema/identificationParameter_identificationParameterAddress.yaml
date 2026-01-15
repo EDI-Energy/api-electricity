@@ -4,7 +4,7 @@ components:
       type: object
       properties:
         name:
-          $ref: './name.yaml#/components/schemas/name'
+          $ref: './person/name.yaml#/components/schemas/name'
         address:
           $ref: './address/address.yaml#/components/schemas/address'
         landParcels:

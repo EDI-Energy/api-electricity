@@ -1,6 +1,8 @@
 components:
   schemas:
-    name:
+    naturalPersonName:
+      required:
+      - surname
       type: object
       properties:
         surname:
@@ -9,6 +11,3 @@ components:
           $ref: './firstName.yaml#/components/schemas/firstName'
         title:
           $ref: './title.yaml#/components/schemas/title'
-        company:
-          $ref: './company.yaml#/components/schemas/company'
-
