@@ -4,4 +4,3 @@ components:
       type: string
       description: "Angabe der Hausnummernergänzung einer postalischen Adresse"
       example: "F"
- 

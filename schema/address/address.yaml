@@ -15,4 +15,3 @@ components:
           $ref: './houseNumber.yaml#/components/schemas/houseNumber'
         houseNumberAddition:
           $ref: './houseNumberAddition.yaml#/components/schemas/houseNumberAddition'
-
