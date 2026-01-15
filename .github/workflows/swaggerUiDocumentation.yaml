@@ -293,7 +293,7 @@ jobs:
           <body>
             <h1>Zukünftig gültig</h1>
             <div class="box">
-              <p>Derzeit ist keine zukünftig-gültige Version veröffentlicht.</p>
+              <p>Derzeit ist keine zukünftig gültige Version veröffentlicht.</p>
               <p><a href="../aktuell-gueltig/">Zur aktuell gültigen Version</a></p>
             </div>
           </body>
