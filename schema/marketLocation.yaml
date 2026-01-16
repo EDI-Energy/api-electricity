@@ -7,7 +7,7 @@ components:
       - energyDirection
       - maloId
       - measurementTechnologyClassification
-      - marketLocationProperties
+      - marketLocationCharacteristics
       type: object
       x-Translation:
         de: "Marktlokation"
