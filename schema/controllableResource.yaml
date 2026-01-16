@@ -2,7 +2,7 @@ components:
   schemas:
     controllableResource:
       required:
-      - controllableResourceMarketPartner
+      - controllableResourceMeasuringPointOperators
       - srId
       type: object
       x-Translation:
