@@ -1,9 +1,9 @@
 components:
    schemas:
-    executionTimeFrom:
+    zeroClockLegalGermanTime:
       pattern: "20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ"
       type: string
-      description: "Beginnzeitpunkt"
+      description: "Dieser Zeitpunkt ist ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit"
       x-Translation:
-        de: "Beginnzeitpunkt"
+        de: "Dieser Zeitpunkt ist ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit"
       example: "2023-08-01T22:00:00Z"

@@ -11,7 +11,7 @@ components:
         identifierMeasuringPointOperator:
           $ref: './identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
         executionTimeFrom:
-          $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
+          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
         executionTimeUntil:
-          $ref: './executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
+          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
 
