@@ -3,13 +3,13 @@ components:
     marketLocationNetworkOperator:
       required:
       - executionTimeFrom
-      - marketPartnerId
+      - identifierNetworkOperator
       type: object
       x-Translation:
         de: "Netzbetreiber an der Marktlokation"
       properties:
-        marketPartnerId:
-          $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        identifierNetworkOperator:
+          $ref: './identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
         executionTimeFrom:
           $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
         executionTimeUntil:

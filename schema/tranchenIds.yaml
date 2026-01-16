@@ -1,9 +1,0 @@
-components:
-  schemas:
-    tranchenIds:
-      type: array
-      x-Translation:
-        de: "Tranchen-IDs"
-      items:
-        $ref: './tranchenId.yaml#/components/schemas/tranchenId'
-

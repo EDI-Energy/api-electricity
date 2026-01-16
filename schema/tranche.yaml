@@ -4,13 +4,13 @@ components:
       required:
       - trancheSuppliers
       - proportion
-      - tranchenId
+      - identifierTranche
       type: object
       x-Translation:
         de: "Tranche"
       properties:
-        tranchenId:
-          $ref: './tranchenId.yaml#/components/schemas/tranchenId'
+        identifierTranche:
+          $ref: './identifier/maloId.yaml#/components/schemas/maloId'
         proportion:
           $ref: './proportion.yaml#/components/schemas/proportion'
         percentLessHundred:

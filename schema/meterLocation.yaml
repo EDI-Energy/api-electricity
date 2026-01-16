@@ -3,14 +3,14 @@ components:
     meterLocation:
       required:
       - meterLocationMeasuringPointOperators
-      - meloId
+      - identifierMeterLocation
       - meterNumber
       type: object
       x-Translation:
         de: "Zählernummer / Gerätenummer"
       properties:
-        meloId:
-          $ref: './meloId.yaml#/components/schemas/meloId'
+        identifierMeterLocation:
+          $ref: './identifier/meloId.yaml#/components/schemas/meloId'
         meterNumber:
           $ref: './meterNumber.yaml#/components/schemas/meterNumber'
         meterLocationMeasuringPointOperators:

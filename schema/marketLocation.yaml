@@ -5,15 +5,15 @@ components:
       - marketLocationNetworkOperators
       - marketLocationTransmissionSystemOperators
       - energyDirection
-      - maloId
+      - identifierMarketLocation
       - measurementTechnologyClassification
       - marketLocationCharacteristics
       type: object
       x-Translation:
         de: "Marktlokation"
       properties:
-        maloId:
-          $ref: './maloId.yaml#/components/schemas/maloId'
+        identifierMarketLocation:
+          $ref: './identifier/maloId.yaml#/components/schemas/maloId'
         energyDirection:
           $ref: './energyDirection.yaml#/components/schemas/energyDirection'
         measurementTechnologyClassification:

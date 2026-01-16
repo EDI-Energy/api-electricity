@@ -3,12 +3,12 @@ components:
     controllableResource:
       required:
       - controllableResourceMeasuringPointOperators
-      - srId
+      - identifierControllableRessource
       type: object
       x-Translation:
         de: "Steuerbare Ressource"
       properties:
-        srId:
-          $ref: './srId.yaml#/components/schemas/srId'
+        identifierControllableRessource:
+          $ref: './identifier/srId.yaml#/components/schemas/srId'
         controllableResourceMeasuringPointOperators:
           $ref: './controllableResourceMeasuringPointOperators.yaml#/components/schemas/controllableResourceMeasuringPointOperators'

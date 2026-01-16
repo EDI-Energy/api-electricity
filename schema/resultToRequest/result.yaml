@@ -15,7 +15,7 @@ components:
           $ref: './responseCode.yaml#/components/schemas/responseCode'
         freeText:
           $ref: './../freeText.yaml#/components/schemas/freeText'
-        networkOperator:
-          $ref: './../marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        identifierNetworkOperator:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
           description: Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als "networkOperator" anzugeben, an den die Marktlokation abgegeben wurde. 
           

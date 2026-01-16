@@ -3,12 +3,12 @@ components:
     networkLocation:
       required:
       - networkLocationMeasuringPointOperators
-      - neloId
+      - identifierNetworkLocation
       type: object
       x-Translation:
         de: "Netzlokation"
       properties:
-        neloId:
-          $ref: './neloId.yaml#/components/schemas/neloId'
+        identifierNetworkLocation:
+          $ref: './identifier/neloId.yaml#/components/schemas/neloId'
         networkLocationMeasuringPointOperators:
           $ref: './networkLocationMeasuringPointOperators.yaml#/components/schemas/networkLocationMeasuringPointOperators'

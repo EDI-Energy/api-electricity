@@ -9,7 +9,7 @@ components:
       properties:
         locationId:
           oneOf:
-            - $ref: './srId.yaml#/components/schemas/srId'
-            - $ref: './neloId.yaml#/components/schemas/neloId'
+            - $ref: './identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './identifier/neloId.yaml#/components/schemas/neloId'
         stateUnknownControlMeasures:
           $ref: './stateUnknownControlMeasures.yaml#/components/schemas/stateUnknownControlMeasures'

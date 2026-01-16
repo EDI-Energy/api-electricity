@@ -2,11 +2,11 @@ components:
   schemas:
     technicalResource:
       required:
-      - trId
+      - identifierTechnicalResource
       type: object
       x-Translation:
         de: "Technsiche Ressource"
       properties:
-        trId:
-          $ref: './trId.yaml#/components/schemas/trId'
+        identifierTechnicalResource:
+          $ref: './identifier/trId.yaml#/components/schemas/trId'
  

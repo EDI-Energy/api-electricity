@@ -3,13 +3,13 @@ components:
     marketLocationMeasuringPointOperator:
       required:
       - executionTimeFrom
-      - marketPartnerId
+      - identifierMeasuringPointOperator
       type: object
       x-Translation:
-        de: "Messstellenebtreiber an der Marktlokation"
+        de: "Messstellenbetreiber an der Marktlokation"
       properties:
-        marketPartnerId:
-          $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        identifierMeasuringPointOperator:
+          $ref: './identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
         executionTimeFrom:
           $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
         executionTimeUntil:

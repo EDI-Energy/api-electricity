@@ -3,13 +3,13 @@ components:
     trancheSupplier:
       required:
       - executionTimeFrom
-      - marketPartnerId
+      - identifierSupplier
       type: object
       x-Translation:
         de: "Zugeordneter Lieferant an der Tranche"
       properties:
-        marketPartnerId:
-          $ref: './marketPartnerId.yaml#/components/schemas/marketPartnerId'
+        identifierSupplier:
+          $ref: './identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
         executionTimeFrom:
           $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
         executionTimeUntil:
