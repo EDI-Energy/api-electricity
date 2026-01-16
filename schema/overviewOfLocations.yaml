@@ -1,0 +1,23 @@
+components:
+  schemas:
+    overviewOfLocations:
+      description: Es werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranchen, Technische Ressourcen, Steuerbare Ressourcen, etc.) und den jeweils zugeordneten Marktpartner übermittelt.
+      required:
+      - marketLocation
+      type: object
+      x-Translation:
+        de: "Positive Antwort"
+      properties:
+        marketLocation:
+          $ref: './marketLocation.yaml#/components/schemas/marketLocation'
+        tranches:
+          $ref: './tranche/tranches.yaml#/components/schemas/tranches'
+        meterLocations:
+          $ref: './meterLocations.yaml#/components/schemas/meterLocations'
+        technicalResources:
+          $ref: './technicalResource/technicalResources.yaml#/components/schemas/technicalResources'
+        controllableResources:
+          $ref: './controllableResource/controllableResources.yaml#/components/schemas/controllableResources'
+        networkLocations:
+          $ref: './networkLocations.yaml#/components/schemas/networkLocations'
+ 

@@ -10,10 +10,10 @@ components:
         de: "Tranche"
       properties:
         identifierTranche:
-          $ref: './identifier/maloId.yaml#/components/schemas/maloId'
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
         proportion:
-          $ref: './proportion.yaml#/components/schemas/proportion'
+          $ref: './proportionTranche.yaml#/components/schemas/proportionTranche'
         percentLessHundred:
-          $ref: './percentLessHundred.yaml#/components/schemas/percentLessHundred'
+          $ref: './../percentLessHundred.yaml#/components/schemas/percentLessHundred'
         trancheSuppliers:
           $ref: './trancheSuppliers.yaml#/components/schemas/trancheSuppliers'

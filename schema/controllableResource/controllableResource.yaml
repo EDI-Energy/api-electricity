@@ -9,6 +9,6 @@ components:
         de: "Steuerbare Ressource"
       properties:
         identifierControllableRessource:
-          $ref: './identifier/srId.yaml#/components/schemas/srId'
+          $ref: './../identifier/srId.yaml#/components/schemas/srId'
         controllableResourceMeasuringPointOperators:
           $ref: './controllableResourceMeasuringPointOperators.yaml#/components/schemas/controllableResourceMeasuringPointOperators'

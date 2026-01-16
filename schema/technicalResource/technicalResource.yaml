@@ -8,5 +8,5 @@ components:
         de: "Technsiche Ressource"
       properties:
         identifierTechnicalResource:
-          $ref: './identifier/trId.yaml#/components/schemas/trId'
+          $ref: './../identifier/trId.yaml#/components/schemas/trId'
  

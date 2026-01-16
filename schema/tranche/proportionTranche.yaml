@@ -1,6 +1,6 @@
 components:
   schemas:
-   proportion:
+   proportionTranche:
       type: string
       x-Translation:
         de: "Anteil"

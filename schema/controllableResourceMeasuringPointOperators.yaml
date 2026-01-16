@@ -1,8 +1,0 @@
-components:
-  schemas:
-    controllableResourceMeasuringPointOperators:
-      type: array
-      x-Translation:
-        de: "Messstellenebtreiber an den Steuerbare Ressourcen"
-      items:
-        $ref: './srMarketPartner.yaml#/components/schemas/srMarketPartner'
