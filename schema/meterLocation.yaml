@@ -12,7 +12,7 @@ components:
         identifierMeterLocation:
           $ref: './identifier/meloId.yaml#/components/schemas/meloId'
         meterNumber:
-          $ref: './meterNumber.yaml#/components/schemas/meterNumber'
+          $ref: './identifier/meterNumber.yaml#/components/schemas/meterNumber'
         meterLocationMeasuringPointOperators:
           $ref: './meterLocationMeasuringPointOperators.yaml#/components/schemas/meterLocationMeasuringPointOperators'
  

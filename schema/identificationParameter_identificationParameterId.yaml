@@ -12,6 +12,6 @@ components:
         identifierMeterLocation:
           $ref: './identifier/meloIds.yaml#/components/schemas/meloIds'
         meterNumbers:
-          $ref: './meterNumbers.yaml#/components/schemas/meterNumbers'
+          $ref: './identifier/meterNumbers.yaml#/components/schemas/meterNumbers'
         customerNumber:
           $ref: './customerNumber.yaml#/components/schemas/customerNumber'
