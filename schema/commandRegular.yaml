@@ -11,4 +11,4 @@ components:
             - $ref: './identifier/srId.yaml#/components/schemas/srId'
             - $ref: './identifier/neloId.yaml#/components/schemas/neloId'
         executionTimeFrom:
-          $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
+          $ref: './dateAndTime/dateTime.yaml#/components/schemas/dateTime'

@@ -17,7 +17,7 @@ paths:
         style: simple
         explode: false
         schema:
-          $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -33,7 +33,7 @@ paths:
         style: simple
         explode: false
         schema:
-          $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       requestBody:
         content:
          application/json:

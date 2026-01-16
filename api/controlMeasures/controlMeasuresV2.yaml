@@ -23,7 +23,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -39,7 +39,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       requestBody:
         content:
          application/json:
@@ -71,7 +71,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -87,7 +87,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       requestBody:
         content:
          application/json:
@@ -120,7 +120,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -136,7 +136,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -144,7 +144,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
         content:
          application/json:
@@ -177,7 +177,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -193,7 +193,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -201,7 +201,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
         content:
          application/json:
@@ -234,7 +234,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -250,7 +250,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -258,7 +258,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
         content:
          application/json:
@@ -291,7 +291,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -307,7 +307,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -315,7 +315,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
         content:
          application/json:
@@ -348,7 +348,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -364,7 +364,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -372,7 +372,7 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/referenceId.yaml#/components/schemas/referenceId'
+                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
         content:
          application/json:
@@ -405,7 +405,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/transactionId.yaml#/components/schemas/transactionId'
+                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -421,7 +421,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       requestBody:
         content:
          application/json:

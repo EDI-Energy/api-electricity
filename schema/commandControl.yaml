@@ -14,6 +14,6 @@ components:
         maximumPowerValue:
           $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
         executionTimeFrom:
-          $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
+          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
         executionTimeUntil:
-          $ref: './executionTimeUntil.yaml#/components/schemas/executionTimeUntil'
+          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
