@@ -13,7 +13,7 @@ components:
         tranches:
           $ref: './tranche/tranches.yaml#/components/schemas/tranches'
         meterLocations:
-          $ref: './meterLocations.yaml#/components/schemas/meterLocations'
+          $ref: './meterLocation/meterLocations.yaml#/components/schemas/meterLocations'
         technicalResources:
           $ref: './technicalResource/technicalResources.yaml#/components/schemas/technicalResources'
         controllableResources:

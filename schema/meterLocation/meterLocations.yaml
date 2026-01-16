@@ -1,0 +1,8 @@
+components:
+  schemas:
+     meterLocations:
+      type: array
+      x-Translation:
+        de: "Messlokationen"
+      items:
+        $ref: './meterLocation.yaml#/components/schemas/meterLocation'

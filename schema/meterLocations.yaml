@@ -1,8 +1,0 @@
-components:
-  schemas:
-     meterLocations:
-      type: array
-      x-Translation:
-        de: "Zählernummern / Gerätenummern"
-      items:
-        $ref: './meterLocation.yaml#/components/schemas/meterLocation'
