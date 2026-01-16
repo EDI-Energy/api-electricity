@@ -1,0 +1,10 @@
+components:
+  schemas:
+    testFlag:
+      type: boolean
+      description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+      x-Translation:
+        de: "Test Kennzeichen"
+      example: true
+      nullable: false
+      default: false

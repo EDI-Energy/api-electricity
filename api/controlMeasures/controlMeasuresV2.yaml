@@ -23,7 +23,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -31,7 +31,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -39,7 +39,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
@@ -71,7 +79,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -79,7 +87,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -87,7 +95,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
@@ -120,7 +136,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -128,7 +144,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -136,7 +152,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -144,7 +160,15 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
@@ -177,7 +201,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -185,7 +209,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -193,7 +217,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -201,7 +225,15 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
@@ -234,7 +266,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -242,7 +274,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -250,7 +282,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -258,7 +290,15 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
@@ -291,7 +331,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -299,7 +339,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -307,7 +347,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -315,12 +355,20 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
-           schema:
-             $ref: '../../schema/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
+          schema:
+            $ref: '../../schema/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
       responses:
         "202":
           description: accepted
@@ -348,7 +396,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -356,7 +404,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -364,7 +412,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
@@ -372,7 +420,15 @@ paths:
         style: form
         explode: false
         schema:
-                $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:
@@ -405,7 +461,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
@@ -413,7 +469,7 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
@@ -421,7 +477,15 @@ paths:
         style: simple
         explode: false
         schema:
-                $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
          application/json:

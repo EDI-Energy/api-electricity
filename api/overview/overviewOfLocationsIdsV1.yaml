@@ -35,12 +35,20 @@ paths:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
-        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage (Wert aus transactionId, Schritt1 des UC Ermittlung der MaLo-ID der Marktlokation)."
+        description: "Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage."
         required: true
         style: form
         explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
+      - name: testFlag
+        in: query
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
           application/json:
