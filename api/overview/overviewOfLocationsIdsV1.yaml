@@ -53,7 +53,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '../../schema/resultPositive.yaml#/components/schemas/resultPositive'
+              $ref: '../../schema/overviewOfLocations.yaml#/components/schemas/overviewOfLocations'
       responses:
         "202":
           description: accepted
