@@ -1,6 +1,0 @@
-components:
-  schemas:
-    marketLocationProperties:
-      type: array
-      items:
-        $ref: './marketLocationProperties.yaml#/components/schemas/marketLocationProperties'

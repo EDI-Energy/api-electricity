@@ -2,37 +2,37 @@ components:
   schemas:
     marketLocation:
       required:
-      - marketLocationNetworkOperators
-      - marketLocationTransmissionSystemOperators
+      - networkOperators
+      - transmissionSystemOperators
       - energyDirection
       - identifierMarketLocation
       - measurementTechnologyClassification
-      - marketLocationCharacteristics
+      - characteristics
       type: object
       x-Translation:
         de: "Marktlokation"
       properties:
         identifierMarketLocation:
-          $ref: './identifier/maloId.yaml#/components/schemas/maloId'
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
         energyDirection:
           $ref: './energyDirection.yaml#/components/schemas/energyDirection'
         measurementTechnologyClassification:
           $ref: './measurementTechnologyClassification.yaml#/components/schemas/measurementTechnologyClassification'
-        marketLocationCharacteristics:
+        characteristics:
           $ref: './marketLocationCharacteristics.yaml#/components/schemas/marketLocationCharacteristics'        
-        marketLocationNetworkOperators:
+        networkOperators:
           $ref: './marketLocationNetworkOperators.yaml#/components/schemas/marketLocationNetworkOperators'
-        marketLocationMeasuringPointOperators:
+        measuringPointOperators:
           $ref: './marketLocationMeasuringPointOperators.yaml#/components/schemas/marketLocationMeasuringPointOperators'
-        marketLocationTransmissionSystemOperators:
+        transmissionSystemOperators:
           $ref: './marketLocationTransmissionSystemOperators.yaml#/components/schemas/marketLocationTransmissionSystemOperators'
-        marketLocationSuppliers:
+        suppliers:
           $ref: './marketLocationSuppliers.yaml#/components/schemas/marketLocationSuppliers'
-        marketLocationName:
-          $ref: './person/name.yaml#/components/schemas/name'
-        marketLocationAddress:
-          $ref: './address/address.yaml#/components/schemas/address'
-        marketLocationLandParcels:
-          $ref: './landParcels/landParcels.yaml#/components/schemas/landParcels'
-        marketLocationGeographicCoordinates:
-          $ref: './geographicCoordinates/geographicCoordinates.yaml#/components/schemas/geographicCoordinates'
+        name:
+          $ref: './../person/name.yaml#/components/schemas/name'
+        address:
+          $ref: './../address/address.yaml#/components/schemas/address'
+        landParcels:
+          $ref: './../landParcels/landParcels.yaml#/components/schemas/landParcels'
+        geographicCoordinates:
+          $ref: './../geographicCoordinates/geographicCoordinates.yaml#/components/schemas/geographicCoordinates'

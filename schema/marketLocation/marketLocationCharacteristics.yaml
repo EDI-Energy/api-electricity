@@ -11,6 +11,6 @@ components:
         marketLocationCharacteristic:
           $ref: './marketLocationCharacteristic.yaml#/components/schemas/marketLocationCharacteristic'
         executionTimeFrom:
-          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
+          $ref: './../dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
         executionTimeUntil:
-          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
+          $ref: './../dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'

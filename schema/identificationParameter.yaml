@@ -13,7 +13,7 @@ components:
           $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
           description: "Zeitpunkt zu dem die Identifikation stattfinden soll"
         energyDirection:
-          $ref: './energyDirection.yaml#/components/schemas/energyDirection'
+          $ref: './marketLocation/energyDirection.yaml#/components/schemas/energyDirection'
         identificationParameterId:
           $ref: './identificationParameter_identificationParameterId.yaml#/components/schemas/identificationParameter_identificationParameterId'
         identificationParameterAddress:

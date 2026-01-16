@@ -6,10 +6,10 @@ components:
       - marketLocation
       type: object
       x-Translation:
-        de: "Positive Antwort"
+        de: "Übersicht von Lokationen"
       properties:
         marketLocation:
-          $ref: './marketLocation.yaml#/components/schemas/marketLocation'
+          $ref: './marketLocation/marketLocation.yaml#/components/schemas/marketLocation'
         tranches:
           $ref: './tranche/tranches.yaml#/components/schemas/tranches'
         meterLocations:

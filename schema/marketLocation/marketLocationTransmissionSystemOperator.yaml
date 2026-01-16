@@ -9,14 +9,8 @@ components:
         de: "Übertragungsnetzbetreiber an der Marktlokation"
       properties:
         identifierTransmissionSystemOperator:
-          $ref: './identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
         executionTimeFrom:
-          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
+          $ref: './../dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
         executionTimeUntil:
-          $ref: './dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
-
-
-
-
-
- 
+          $ref: './../dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
