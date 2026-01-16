@@ -10,7 +10,7 @@ components:
         de: "Identifikationsparameter"
       properties:
         identificationDateTime:
-          $ref: './dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'
+          $ref: './dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
           description: "Zeitpunkt zu dem die Identifikation stattfinden soll"
         energyDirection:
           $ref: './marketLocation/energyDirection.yaml#/components/schemas/energyDirection'
