@@ -1,0 +1,14 @@
+components:
+  schemas:
+    commandRegular:
+      required:
+      - locationId
+      - executionTimeFrom
+      type: object
+      properties:
+        locationId:
+          oneOf:
+            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+        executionTimeFrom:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'

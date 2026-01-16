@@ -9,11 +9,11 @@ components:
       properties:
         locationId:
           oneOf:
-            - $ref: './identifier/srId.yaml#/components/schemas/srId'
-            - $ref: './identifier/neloId.yaml#/components/schemas/neloId'
+            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
         maximumPowerValue:
           $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
         executionTimeFrom:
-          $ref: './dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'
+          $ref: './../dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'
         executionTimeUntil:
-          $ref: './dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'
+          $ref: './../dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'

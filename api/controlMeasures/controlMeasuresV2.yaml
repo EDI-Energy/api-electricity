@@ -52,7 +52,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/commandControl.yaml#/components/schemas/commandControl'
+             $ref: '../../schema/commandControl/commandControl.yaml#/components/schemas/commandControl'
       responses:
         "202":
           description: accepted  
@@ -108,7 +108,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/commandRegular.yaml#/components/schemas/commandRegular'
+             $ref: '../../schema/commandControl/commandRegular.yaml#/components/schemas/commandRegular'
       responses:
         "202":
           description: accepted
@@ -173,7 +173,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/preliminaryResultPositiveControlMeasures.yaml#/components/schemas/preliminaryResultPositiveControlMeasures'
+             $ref: '../../schema/commandControl/preliminaryResultPositiveControlMeasures.yaml#/components/schemas/preliminaryResultPositiveControlMeasures'
       responses:
         "202":
           description: accepted
@@ -238,7 +238,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
+             $ref: '../../schema/commandControl/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
       responses:
         "202":
           description: accepted
@@ -303,7 +303,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/resultPositiveControlMeasures.yaml#/components/schemas/resultPositiveControlMeasures'
+             $ref: '../../schema/commandControl/resultPositiveControlMeasures.yaml#/components/schemas/resultPositiveControlMeasures'
       responses:
         "202":
           description: accepted
@@ -368,7 +368,7 @@ paths:
         content:
          application/json:
           schema:
-            $ref: '../../schema/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
+            $ref: '../../schema/commandControl/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
       responses:
         "202":
           description: accepted
@@ -433,7 +433,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/resultUnknownControlMeasures.yaml#/components/schemas/resultUnknownControlMeasures'
+             $ref: '../../schema/commandControl/resultUnknownControlMeasures.yaml#/components/schemas/resultUnknownControlMeasures'
       responses:
         "202":
           description: accepted
@@ -490,7 +490,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/commandInformation.yaml#/components/schemas/commandInformation'
+             $ref: '../../schema/commandControl/commandInformation.yaml#/components/schemas/commandInformation'
       responses:
         "202":
           description: accepted

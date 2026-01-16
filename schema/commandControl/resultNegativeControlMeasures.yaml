@@ -10,8 +10,8 @@ components:
       properties:
         locationId:
           oneOf:
-            - $ref: './identifier/srId.yaml#/components/schemas/srId'
-            - $ref: './identifier/neloId.yaml#/components/schemas/neloId' 
+            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId' 
         stateNegativeControlMeasures:
           $ref: './stateNegativeControlMeasures.yaml#/components/schemas/stateNegativeControlMeasures'
         reasonNegativeControlMeasures:
