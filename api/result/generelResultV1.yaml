@@ -25,7 +25,7 @@ paths:
         style: simple
         explode: false
         schema:
-          $ref: '../../schema/creationDateTime.yaml#/components/schemas/creationDateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
