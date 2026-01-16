@@ -19,5 +19,5 @@ components:
         controllableResources:
           $ref: './controllableResource/controllableResources.yaml#/components/schemas/controllableResources'
         networkLocations:
-          $ref: './networkLocations.yaml#/components/schemas/networkLocations'
+          $ref: './networkLocation/networkLocations.yaml#/components/schemas/networkLocations'
  

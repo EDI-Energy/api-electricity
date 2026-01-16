@@ -9,6 +9,6 @@ components:
         de: "Netzlokation"
       properties:
         identifierNetworkLocation:
-          $ref: './identifier/neloId.yaml#/components/schemas/neloId'
+          $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
         networkLocationMeasuringPointOperators:
           $ref: './networkLocationMeasuringPointOperators.yaml#/components/schemas/networkLocationMeasuringPointOperators'
