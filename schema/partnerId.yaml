@@ -1,9 +1,0 @@
-components:
-  schemas:
-    partnerId:
-      type: string
-      pattern: ^\d{13}$
-      description: "Identifiziert den Marktpartner (Marktpartner-ID)"
-      x-Translation:
-        de: "Marktpartner-ID"
-      example: "4041407000008"

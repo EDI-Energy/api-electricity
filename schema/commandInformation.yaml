@@ -11,4 +11,4 @@ components:
             - $ref: './commandControl.yaml#/components/schemas/commandControl'
             - $ref: './commandRegular.yaml#/components/schemas/commandRegular'
         partnerId:
-          $ref: './partnerId.yaml#/components/schemas/partnerId'
+          $ref: './identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
