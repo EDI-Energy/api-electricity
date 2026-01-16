@@ -11,6 +11,6 @@ components:
         identifierTransmissionSystemOperator:
           $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
         executionTimeFrom:
-          $ref: './../dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
+          $ref: './../dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'
         executionTimeUntil:
-          $ref: './../dateAndTime/zeroClockLegalGermanTime.yaml#/components/schemas/zeroClockLegalGermanTime'
+          $ref: './../dateAndTime/zeroTimeLegalGermanTime.yaml#/components/schemas/zeroTimeLegalGermanTime'
