@@ -1,12 +1,16 @@
 components:
   schemas:
-   marketLocationCharacteristic:
-      type: string
-      description: "Eigenschaft der Marktlokation. nonActive=ruhende Marktlokation, customerFacility=Marktlokation ist eine Kundenanlage, standard=alle \"Standard\" Marktlokationen die nicht unter die Eigenschaft \ruhende Marktlokation\" und \"Kundenanlage\" fallen."
-      example: "standard"
+    marketLocationCharacteristic:
+      required:
+      - executionTimeFrom
+      - marketLocationProperty
+      type: object
       x-Translation:
         de: "Eigenschaft der Marktlokation"
-      enum:
-      - customerFacility
-      - nonActive
-      - standard
+      properties:
+        marketLocationProperty:
+          $ref: './marketLocationProperty.yaml#/components/schemas/marketLocationProperty'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
