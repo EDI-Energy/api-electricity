@@ -27,8 +27,7 @@ paths:
       tags:
       - Anfrage MaLo-ID der Marktlokation
       summary: Anfrage MaLo-ID der Marktlokation
-      description: "Inhaltsdatensicherungsebene:
-Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
       operationId: uploadFile
       parameters:
       - name: transactionId
@@ -75,12 +74,11 @@ Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittst
           description: Internal Server Error
   /maloId/dataForMarketLocationNegative/v1:
     post:
+      deprecated: true 
       tags:
       - Rückmeldung auf Anfrage
-      eprecated: true #Deprecated ab dem 01.10.2026. 00:00 Uhr 
       summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description: "Inhaltsdatensicherungsebene:
-Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
       parameters:
       - name: transactionId
         in: header
@@ -136,12 +134,11 @@ Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittst
           description: Internal Server Error
   /maloId/dataForMarketLocationPositive/v1:
     post:
+      deprecated: true
       tags:
       - Rückmeldung auf Anfrage
-      eprecated: true #Deprecated ab dem 01.10.2026. 00:00 Uhr 
       summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description: "Inhaltsdatensicherungsebene:
-Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
       operationId: ""
       parameters:
       - name: transactionId
