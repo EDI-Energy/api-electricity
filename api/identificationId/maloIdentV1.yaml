@@ -23,6 +23,7 @@ tags:
 paths:
   /maloId/request/v1:
     post:
+      deprecated: true #Deprecated ab dem 01.10.2026. 00:00 Uhr 
       tags:
       - Anfrage MaLo-ID der Marktlokation
       summary: Anfrage MaLo-ID der Marktlokation
@@ -76,6 +77,7 @@ Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittst
     post:
       tags:
       - Rückmeldung auf Anfrage
+      eprecated: true #Deprecated ab dem 01.10.2026. 00:00 Uhr 
       summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
       description: "Inhaltsdatensicherungsebene:
 Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
@@ -136,6 +138,7 @@ Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittst
     post:
       tags:
       - Rückmeldung auf Anfrage
+      eprecated: true #Deprecated ab dem 01.10.2026. 00:00 Uhr 
       summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
       description: "Inhaltsdatensicherungsebene:
 Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
