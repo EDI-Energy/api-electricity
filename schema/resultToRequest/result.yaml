@@ -1,7 +1,7 @@
 components:
   schemas:
     result:
-      description: Hier wird bei Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben.
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als \"networkOperator\" anzugeben, an den die Marktlokation abgegeben wurde."
       x-Translation:
         de: "Ergebnis"
       required:
@@ -13,9 +13,7 @@ components:
           $ref: './decisionTree.yaml#/components/schemas/decisionTree'
         responseCode:
           $ref: './responseCode.yaml#/components/schemas/responseCode'
-        freeText:
+        reason:
           $ref: './../freeText.yaml#/components/schemas/freeText'
         identifierNetworkOperator:
           $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
-          description: Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als "networkOperator" anzugeben, an den die Marktlokation abgegeben wurde. 
-          

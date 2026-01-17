@@ -9,6 +9,8 @@ paths:
     post:
       summary: Antwort auf eine Anfrage
       description: Antwort auf eine Anfrage
+      tags:
+        - Antwort auf eine Anfrage
       parameters:
       - name: transactionId
         in: header
