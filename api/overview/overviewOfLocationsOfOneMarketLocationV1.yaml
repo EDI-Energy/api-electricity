@@ -4,7 +4,7 @@ info: # Allgemeine Infos zur Schnittstelle
   version: 1.0.0
   description: "Mit diesem API-Webdienste werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranche(n), Technische Ressource(n), Steuerbare Ressource(n), etc.) und den jeweils zugeordneten Marktpartner übermittelt. Zudem werden weitere Eigenschfaten der Marktlokation übermittelt." 
 paths:
-  /result/overviewOfLocationsOfOneMarketLocation/v1:
+  /overview/overviewOfLocationsOfOneMarketLocation/v1:
     post:
       summary: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
       description: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
