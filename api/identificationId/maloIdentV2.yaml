@@ -9,6 +9,8 @@ paths:
     post:
       summary: Anfrage MaLo-ID der Marktlokation
       description: Anfrage MaLo-ID der Marktlokation
+      tags:
+        - Anfrage MaLo-ID der Marktlokation
       parameters:
       - name: transactionId
         in: header

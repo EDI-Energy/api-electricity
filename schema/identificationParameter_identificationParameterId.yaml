@@ -7,9 +7,9 @@ components:
       properties:
         identifierMarketLocation:
           $ref: './identifier/maloId.yaml#/components/schemas/maloId'
-        identifierMarketTranche:
+        identifierMarketTranches:
           $ref: './identifier/maloIds.yaml#/components/schemas/maloIds'
-        identifierMeterLocation:
+        identifierMeterLocations:
           $ref: './identifier/meloIds.yaml#/components/schemas/meloIds'
         meterNumbers:
           $ref: './identifier/meterNumbers.yaml#/components/schemas/meterNumbers'

@@ -1,8 +1,6 @@
 components:
   schemas:
     naturalPersonName:
-      required:
-      - surname
       type: object
       x-Translation:
         de: "Natürliche Person"
