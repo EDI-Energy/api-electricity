@@ -4,7 +4,7 @@ components:
       required:
       - executionTimeFrom
       - marketLocationCharacteristic
-      type: object
+      type: array
       x-Translation:
         de: "Eigenschaft der Marktlokation"
       properties:

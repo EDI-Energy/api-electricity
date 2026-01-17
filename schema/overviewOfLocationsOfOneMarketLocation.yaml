@@ -1,7 +1,7 @@
 components:
   schemas:
     overviewOfLocationsOfOneMarketLocation:
-      description: Es werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranchen, Technische Ressourcen, Steuerbare Ressourcen, etc.) und den jeweils zugeordneten Marktpartner übermittelt.
+      description: "Mit diesem API-Webdienste werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranche(n), Technische Ressource(n), Steuerbare Ressource(n), etc.) und den jeweils zugeordneten Marktpartner übermittelt. Zudem werden weitere Eigenschfaten der Marktlokation übermittelt." 
       required:
       - marketLocation
       type: object

@@ -2,12 +2,14 @@ openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
   title: EDI@Energy API-Webdienste zur Übermittlung einer Übersicht von Lokation-IDs
   version: 1.0.0
-  description: Mit diesem API-Webdienste werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranchen, Technische Ressourcen, Steuerbare Ressourcen, etc.) und den jeweils zugeordneten Marktpartner übermittelt.
+  description: "Mit diesem API-Webdienste werden alle mit einer Marktlokation referenzierten Lokationen (Netzlokation, Messlokation(en), Tranche(n), Technische Ressource(n), Steuerbare Ressource(n), etc.) und den jeweils zugeordneten Marktpartner übermittelt. Zudem werden weitere Eigenschfaten der Marktlokation übermittelt." 
 paths:
   /result/overviewOfLocationsOfOneMarketLocation/v1:
     post:
-      summary: Übermittlung der Übsersicht aller einer Marktlokation zugordneten Lokationen.
+      summary: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
       description: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
+      tags:
+        -  Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
       parameters:
       - name: transactionId
         in: header
