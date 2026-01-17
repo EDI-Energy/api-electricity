@@ -39,10 +39,11 @@ paths:
 
   /[Post]/steuerbefehl/konfiguration/:
     post:
+      deprecated: true
       tags:
       - Anweisung Steuerbefehl
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: uploadFile
       parameters:
       - name: transactionId
@@ -135,10 +136,11 @@ paths:
 
   /[Post]/steuerbefehl/initialZustand/:
     post:
+      deprecated: true
       tags:
       - Anweisung Steuerbefehl
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf den ursprünglichen Zustand.
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       parameters:
       - name: transactionId
         in: header
@@ -225,10 +227,11 @@ paths:
 
   /[Post]/steuerbefehl/vorlaeufigePositiveAntwort/:
     post:
+      deprecated: true
       tags:
       - Mitteilung zum weiteren Vorgehen
       summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -334,10 +337,11 @@ paths:
 
   /[Post]/steuerbefehl/vorlaeufigeNegativeAntwort/:
     post:
+      deprecated: true
       tags:
       - Mitteilung zum weiteren Vorgehen
       summary: Negative Mitteilung zum weiteren Vorgehen
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -455,10 +459,11 @@ paths:
 
   /[Post]/steuerbefehl/positiveAntwort/:
     post:
+      deprecated: true
       tags:
       - Antwort Steuerbefehl
       summary: Positive Antwort auf den Steuerbefehl
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -561,10 +566,11 @@ paths:
 
   /[Post]/steuerbefehl/negativeAntwort/:
     post:
+      deprecated: true
       tags:
       - Antwort Steuerbefehl
       summary: Negative Antwort auf den Steuerbefehl
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -672,10 +678,11 @@ paths:
 
   /[Post]/steuerbefehl/informationAnweisung/:
     post:
+      deprecated: true
       tags:
       - Information Steuerbefehl Anweisender
       summary: Information zum Steuerbefehl an Anweisenden, dass finaler Status noch nicht vorliegt.
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -783,10 +790,11 @@ paths:
 
   /[Post]/steuerbefehl/information/:
     post:
+      deprecated: true
       tags:
       - Information Steuerbefehl Berechtigte
       summary: Information
-      description: ""
+      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
       operationId: ""
       parameters:
 
