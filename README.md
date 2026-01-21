@@ -1,8 +1,8 @@
 # Allgemeine Informationen
-Dieses Repository enthält alle aktuell gültigen, zukünftig gültigen und zur Konsultation gestellten Schemas und API-Webdienste, die durch EDI@Energy veröffentlicht werden. Grundsätzlich gilt, dass aktuell und zukünftige Versionen über entsprechende Releases gekennzeichnet werden. Releases enthalten immer den Hinweis "anzuwenden ab ...".
+Dieses Repository enthält alle aktuell gültigen, zukünftig gültigen und zur Konsultation gestellten Schemas und API-Webdienste, die durch EDI@Energy veröffentlicht werden. Grundsätzlich gilt, dass aktuelle und zukünftige Versionen über entsprechende Releases gekennzeichnet sind. Releases enthalten immer den Hinweis "anzuwenden ab ...".
 
 **Beachten Sie folgende Hinweise zur Stuktur des Repositories**
-- Der Branch "main" entspricht immer der aktuell gültige Version.
+- Der Branch "main" entspricht immer der aktuell gültigen Version.
 - Der Branch "YYYY-MM-DD-consultation" entspricht immer der zur Konsultation gestellten Version. Bitte beziehen Sie Ihre Konsultationsbeiträge ausschließlich auf den aktuell zur Konsultation stehenden Branch und beachten Sie die Hinweise zur Einreichung von Konsultationsbeiträgen.
 
 # Einreichen von Konsultationsbeiträgen / Anlegen von Issues
