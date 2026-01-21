@@ -14,7 +14,7 @@ assignees: ''
 **Auf welche Schnittstelle bzw. welches Schema bezieht sich Ihre Rückmeldung?**  
 Bitte fügen Sie hier den Link zur entsprechenden Position in der YAML-Datei ein (siehe Klickanleitung)
 
-Beispiel: https://github.com/EDI-Energy/apis-demo/blob/7f896757a020bd01d4421261650ca8d4ae44582a/schemas/city.yaml#L5
+> Den Link hier einfügen
 ---
 
 **Hängt Ihre Rückmeldung mit einem konkreten Problem oder einer Unklarheit zusammen? Bitte beschreiben Sie dieses.**  
