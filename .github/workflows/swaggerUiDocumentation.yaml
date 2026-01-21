@@ -1,0 +1,576 @@
+name: "Swagger-Dokumentation veröffentlichen"
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: "Checkout (für Branch-Erkennung)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Remote-Branches holen"
+        run: |
+          git fetch --all --prune
+
+      - name: "Consultation-Branch bestimmen (falls vorhanden)"
+        id: consult
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          CANDIDATE="$(git for-each-ref --format='%(refname:short)' --sort=-committerdate refs/remotes/origin \
+            | sed 's|^origin/||' \
+            | grep -E 'consultation$' \
+            | head -n 1 || true)"
+
+          if [[ -z "$CANDIDATE" ]]; then
+            echo "No consultation branch found."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "exists=true" >> "$GITHUB_OUTPUT"
+          echo "branch=$CANDIDATE" >> "$GITHUB_OUTPUT"
+          echo "Using consultation branch: $CANDIDATE"
+
+      - name: "Future-Branch bestimmen (falls vorhanden: endet auf -04-01 oder 10-01)"
+        id: future
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          CANDIDATE="$(git for-each-ref --format='%(refname:short)' --sort=-committerdate refs/remotes/origin \
+            | sed 's|^origin/||' \
+            | grep -E '(-04-01|10-01)$' \
+            | head -n 1 || true)"
+
+          if [[ -z "$CANDIDATE" ]]; then
+            echo "No future branch found."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "exists=true" >> "$GITHUB_OUTPUT"
+          echo "branch=$CANDIDATE" >> "$GITHUB_OUTPUT"
+          echo "Using future branch: $CANDIDATE"
+
+      - name: "Site/Work-Verzeichnisse vorbereiten"
+        run: |
+          rm -rf work site
+          mkdir -p work/main work/consultation work/future
+          mkdir -p site/aktuell-gueltig/specs
+          mkdir -p site/konsultation/specs
+          mkdir -p site/zukuenftig-gueltig/specs
+          touch site/.nojekyll
+
+      - name: "Installiere Redocly CLI (für Bundling)"
+        run: npm i -g @redocly/cli@2.14.4
+
+      - name: "Checkout main (Aktuell gültig)"
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: work/main
+          fetch-depth: 0
+
+      - name: "Aktuell gültig: Bündelt Specs nach site/aktuell-gueltig/specs"
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd work/main
+
+          if [[ -d "api" ]]; then
+            SPEC_DIR="api"
+          elif [[ -d "API" ]]; then
+            SPEC_DIR="API"
+          else
+            echo "Neither 'api/' nor 'API/' exists in main branch."
+            exit 1
+          fi
+
+          mapfile -t SPECS < <(find "$SPEC_DIR" -type f \( -iname '*.yaml' -o -iname '*.yml' \) | sort)
+          if [ ${#SPECS[@]} -eq 0 ]; then
+            echo "No YAML specs found in folder $SPEC_DIR/ (main)."; exit 1
+          fi
+
+          for spec in "${SPECS[@]}"; do
+            rel="${spec#${SPEC_DIR}/}"
+            out="../../site/aktuell-gueltig/specs/$rel"
+            mkdir -p "$(dirname "$out")"
+            echo "Bundle (main) $spec -> $out"
+            redocly bundle "$spec" --output "$out"
+          done
+
+      - name: "Aktuell gültig: erstellt specs.json"
+        run: |
+          python3 - <<'PY'
+          import json, os
+          base = 'site/aktuell-gueltig/specs'
+          paths=[]
+          for root,_,files in os.walk(base):
+              for f in files:
+                  if f.lower().endswith(('.yaml','.yml','.json')):
+                      full=os.path.join(root,f)
+                      rel=os.path.relpath(full, 'site/aktuell-gueltig').replace('\\','/')
+                      paths.append(rel)  
+          paths.sort()
+          with open('site/aktuell-gueltig/specs.json','w', encoding='utf-8') as fh:
+              json.dump(paths, fh, ensure_ascii=False, indent=2)
+          print(open('site/aktuell-gueltig/specs.json','r', encoding='utf-8').read())
+          PY
+
+      - name: "Checkout consultation-Branch"
+        if: steps.consult.outputs.exists == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.consult.outputs.branch }}
+          path: work/consultation
+          fetch-depth: 0
+
+      - name: "Zur Konsultation gestellt: Bündelt Specs nach site/konsultation/specs"
+        if: steps.consult.outputs.exists == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd work/consultation
+
+          if [[ -d "API" ]]; then
+            SPEC_DIR="API"
+          elif [[ -d "api" ]]; then
+            SPEC_DIR="api"
+          else
+            echo "Neither 'API/' nor 'api/' exists in consultation branch."
+            exit 1
+          fi
+
+          mapfile -t SPECS < <(find "$SPEC_DIR" -type f \( -iname '*.yaml' -o -iname '*.yml' \) | sort)
+          if [ ${#SPECS[@]} -eq 0 ]; then
+            echo "No YAML specs found in folder $SPEC_DIR/ (consultation)."; exit 1
+          fi
+
+          for spec in "${SPECS[@]}"; do
+            rel="${spec#${SPEC_DIR}/}"
+            out="../../site/konsultation/specs/$rel"
+            mkdir -p "$(dirname "$out")"
+            echo "Bundle (consultation) $spec -> $out"
+            redocly bundle "$spec" --output "$out"
+          done
+
+      - name: "Zur Konsultation gestellt: erstellt specs.json"
+        if: steps.consult.outputs.exists == 'true'
+        run: |
+          python3 - <<'PY'
+          import json, os
+          base = 'site/konsultation/specs'
+          paths=[]
+          for root,_,files in os.walk(base):
+              for f in files:
+                  if f.lower().endswith(('.yaml','.yml','.json')):
+                      full=os.path.join(root,f)
+                      rel=os.path.relpath(full, 'site/konsultation').replace('\\','/')
+                      paths.append(rel)  
+          paths.sort()
+          with open('site/konsultation/specs.json','w', encoding='utf-8') as fh:
+              json.dump(paths, fh, ensure_ascii=False, indent=2)
+          print(open('site/konsultation/specs.json','r', encoding='utf-8').read())
+          PY
+
+      - name: "Zur Konsultation gestellt: Fallback-Seite, falls kein Branch existiert"
+        if: steps.consult.outputs.exists != 'true'
+        run: |
+          cat > site/konsultation/index.html <<'HTML'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>API-Dokumentation – Zur Konsultation gestellt</title>
+            <style>
+              body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
+              a { color: inherit; }
+              .box { border: 1px solid #ddd; border-radius: 12px; padding: 14px; max-width: 820px; }
+              code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
+            </style>
+          </head>
+          <body>
+            <h1>Zur Konsultation gestellt</h1>
+            <div class="box">
+              <p>Derzeit ist keine Konsultationsversion veröffentlicht.</p>
+              <p><a href="../aktuell-gueltig/">Zur aktuell gültigen Version</a></p>
+            </div>
+          </body>
+          </html>
+          HTML
+
+      - name: "Checkout future-Branch"
+        if: steps.future.outputs.exists == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.future.outputs.branch }}
+          path: work/future
+          fetch-depth: 0
+
+      - name: "Zukünftig gültig: Bündelt Specs nach site/zukuenftig-gueltig/specs"
+        if: steps.future.outputs.exists == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd work/future
+
+          if [[ -d "API" ]]; then
+            SPEC_DIR="API"
+          elif [[ -d "api" ]]; then
+            SPEC_DIR="api"
+          else
+            echo "Neither 'API/' nor 'api/' exists in future branch."
+            exit 1
+          fi
+
+          mapfile -t SPECS < <(find "$SPEC_DIR" -type f \( -iname '*.yaml' -o -iname '*.yml' \) | sort)
+          if [ ${#SPECS[@]} -eq 0 ]; then
+            echo "No YAML specs found in folder $SPEC_DIR/ (future)."; exit 1
+          fi
+
+          for spec in "${SPECS[@]}"; do
+            rel="${spec#${SPEC_DIR}/}"
+            out="../../site/zukuenftig-gueltig/specs/$rel"
+            mkdir -p "$(dirname "$out")"
+            echo "Bundle (future) $spec -> $out"
+            redocly bundle "$spec" --output "$out"
+          done
+
+      - name: "Zukünftig gültig: erstellt specs.json"
+        if: steps.future.outputs.exists == 'true'
+        run: |
+          python3 - <<'PY'
+          import json, os
+          base = 'site/zukuenftig-gueltig/specs'
+          paths=[]
+          for root,_,files in os.walk(base):
+              for f in files:
+                  if f.lower().endswith(('.yaml','.yml','.json')):
+                      full=os.path.join(root,f)
+                      rel=os.path.relpath(full, 'site/zukuenftig-gueltig').replace('\\','/')
+                      paths.append(rel)  
+          paths.sort()
+          with open('site/zukuenftig-gueltig/specs.json','w', encoding='utf-8') as fh:
+              json.dump(paths, fh, ensure_ascii=False, indent=2)
+          print(open('site/zukuenftig-gueltig/specs.json','r', encoding='utf-8').read())
+          PY
+
+      - name: "Zukünftig gültig: Fallback-Seite, falls kein Branch existiert"
+        if: steps.future.outputs.exists != 'true'
+        run: |
+          cat > site/zukuenftig-gueltig/index.html <<'HTML'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>API-Dokumentation – Zukünftig gültig</title>
+            <style>
+              body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
+              a { color: inherit; }
+              .box { border: 1px solid #ddd; border-radius: 12px; padding: 14px; max-width: 820px; }
+              code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
+            </style>
+          </head>
+          <body>
+            <h1>Zukünftig gültig</h1>
+            <div class="box">
+              <p>Derzeit ist keine zukünftig gültige Version veröffentlicht.</p>
+              <p><a href="../aktuell-gueltig/">Zur aktuell gültigen Version</a></p>
+            </div>
+          </body>
+          </html>
+          HTML
+
+      - name: "Erstellt Swagger UI (Aktuell gültig + Zur Konsultation gestellt + Zukünftig gültig) + Startseite"
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          make_ui () {
+            local target_dir="$1"   
+            local title="$2"
+            local h1="$3"
+
+            cat > "${target_dir}/index.html" <<'HTML'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title><!--TITLE--></title>
+
+            <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css" />
+            <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+            <script src="https://unpkg.com/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+            <style>
+              :root { --pad: 14px; }
+              body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:#fff; color:#111; }
+              header {
+                position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid #eee;
+                display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; padding: var(--pad);
+                box-shadow: 0 2px 14px rgba(0,0,0,.04);
+              }
+              header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+              nav { font-size: 13px; color:#555; margin-top: 2px; }
+              nav a { color: inherit; text-decoration: none; border-bottom: 1px dashed #bbb; }
+              .controls { display: flex; gap: 10px; align-items: center; }
+              .controls input, .controls select, .controls button {
+                padding: 8px 10px; border-radius: 10px; border: 1px solid #ddd; font-size: 14px;
+              }
+              .controls button { cursor: pointer; }
+              #swagger-ui { padding: var(--pad); }
+              .hint { color:#666; font-size: 13px; }
+              .swagger-ui .topbar { display: none !important; }
+              @media (prefers-color-scheme: dark) {
+                body { background:#0b0c10; color:#e6e6e6; }
+                header { background:#0b0c10; border-bottom-color:#222; }
+                .controls input, .controls select, .controls button { background:#121318; color:#e6e6e6; border-color:#2a2d36; }
+                .hint { color:#aaa; }
+                nav { color:#aaa; }
+                nav a { border-bottom-color:#666; }
+              }
+            </style>
+          </head>
+          <body>
+            <header>
+              <div>
+                <h1><!--H1--></h1>
+                <nav>
+                  <a href="../aktuell-gueltig/">Aktuell gültig</a> ·
+                  <a href="../konsultation/">Zur Konsultation gestellt</a> ·
+                  <a href="../zukuenftig-gueltig/">Zukünftig gültig</a>
+                </nav>
+              </div>
+              <div class="controls">
+                <input id="filter" type="search" placeholder="API-Webdienst suchen…" aria-label="Filter" />
+                <select id="spec-select"></select>
+                <button id="copy-link" title="Link kopieren">Link kopieren</button>
+              </div>
+              <span class="hint" id="count"></span>
+            </header>
+
+            <div id="swagger-ui"></div>
+
+            <script>
+              const v = `?v=${Date.now()}`;
+              const $ = (s) => document.querySelector(s);
+
+              const groupKey = (relPath) => {
+                const parts = relPath.replace(/^specs\//,'').split('/');
+                if (parts.length >= 2) return parts[0] + ' \u203A ' + parts[1];
+                if (parts.length >= 1) return parts[0];
+                return 'Root';
+              };
+              const baseName = (p) => p.split('/').pop();
+
+              async function readMeta(path) {
+                try {
+                  const res = await fetch(path + v);
+                  const text = await res.text();
+                  let obj;
+                  try { obj = JSON.parse(text); }
+                  catch { obj = jsyaml.load(text); }
+                  const title = obj?.info?.title?.trim();
+                  const version = obj?.info?.version?.trim();
+                  return { path, title: title || baseName(path), version: version || '' };
+                } catch {
+                  return { path, title: baseName(path), version: '' };
+                }
+              }
+              function labelFor(m) { return m.version ? `${m.title} · v${m.version}` : m.title; }
+
+              function buildSelect(items) {
+                const sel = $('#spec-select');
+                sel.innerHTML = '';
+                const groups = new Map();
+                for (const it of items) {
+                  const g = groupKey(it.path);
+                  if (!groups.has(g)) groups.set(g, []);
+                  groups.get(g).push(it);
+                }
+                for (const g of [...groups.keys()].sort((a,b)=>a.localeCompare(b,'de'))) {
+                  const og = document.createElement('optgroup');
+                  og.label = g;
+                  const arr = groups.get(g).sort((a,b)=>labelFor(a).localeCompare(labelFor(b),'de'));
+                  for (const it of arr) {
+                    const opt = document.createElement('option');
+                    opt.value = it.path;
+                    opt.textContent = labelFor(it);
+                    opt.title = it.path;
+                    og.appendChild(opt);
+                  }
+                  sel.appendChild(og);
+                }
+                $('#count').textContent = `${items.length} API-Webdienst${items.length===1?'':'e'}`;
+              }
+
+              function filterSelect(query) {
+                const q = query.trim().toLowerCase();
+                const sel = $('#spec-select');
+                let shown = 0;
+                for (const og of sel.querySelectorAll('optgroup')) {
+                  let groupShown = 0;
+                  for (const opt of og.children) {
+                    const match = !q || opt.textContent.toLowerCase().includes(q);
+                    opt.hidden = !match;
+                    if (match) groupShown++;
+                  }
+                  og.hidden = groupShown === 0;
+                  shown += groupShown;
+                }
+                $('#count').textContent = `${shown} von ${sel.querySelectorAll('option').length} APIs`;
+                const firstVisible = sel.querySelector('option:not([hidden])');
+                if (firstVisible) sel.value = firstVisible.value;
+              }
+
+              let ui = null;
+              function loadUI(url) {
+                ui = SwaggerUIBundle({
+                  url,
+                  dom_id: '#swagger-ui',
+                  deepLinking: true,
+                  docExpansion: 'list',
+                  defaultModelsExpandDepth: 0,
+                  persistAuthorization: true,
+                  tryItOutEnabled: true,
+                });
+              }
+
+              (async function init() {
+                const list = await (await fetch('specs.json' + v)).json(); // ["specs/...yaml", ...]
+                const metas = await Promise.all(list.map(readMeta));
+                buildSelect(metas);
+
+                const params = new URLSearchParams(location.search);
+                const fromUrl = params.get('spec');
+                const initial = fromUrl && list.includes(fromUrl) ? fromUrl : $('#spec-select').value;
+
+                $('#spec-select').value = initial;
+                loadUI(initial + v);
+
+                $('#filter').addEventListener('input', (e) => filterSelect(e.target.value));
+
+                $('#spec-select').addEventListener('change', (e) => {
+                  const path = e.target.value;
+                  const params = new URLSearchParams(location.search);
+                  params.set('spec', path);
+                  history.replaceState(null, '', `?${params.toString()}`);
+                  loadUI(path + v);
+                });
+
+                $('#copy-link').addEventListener('click', async () => {
+                  const path = $('#spec-select').value;
+                  const url = new URL(location.href);
+                  url.searchParams.set('spec', path);
+                  try {
+                    await navigator.clipboard.writeText(url.toString());
+                    const btn = $('#copy-link'); const old = btn.textContent;
+                    btn.textContent = 'Kopiert ✓'; setTimeout(()=>btn.textContent=old, 1200);
+                  } catch {}
+                });
+              })();
+            </script>
+          </body>
+          </html>
+          HTML
+
+            sed -i "s|<!--TITLE-->|${title}|g" "${target_dir}/index.html"
+            sed -i "s|<!--H1-->|${h1}|g" "${target_dir}/index.html"
+          }
+
+          make_ui "site/aktuell-gueltig" "API-Dokumentation – Aktuell gültig" "Aktuell gültig"
+
+          if [[ "${{ steps.consult.outputs.exists }}" == "true" ]]; then
+            make_ui "site/konsultation" "API-Dokumentation – Zur Konsultation gestellt" "Zur Konsultation gestellt"
+          fi
+
+          if [[ "${{ steps.future.outputs.exists }}" == "true" ]]; then
+            make_ui "site/zukuenftig-gueltig" "API-Dokumentation – Zukünftig gültig" "Zukünftig gültig"
+          fi
+
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="de">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>API-Dokumentation</title>
+            <style>
+              body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin: 40px; }
+              a { display: inline-block; padding: 12px 14px; border: 1px solid #ddd; border-radius: 12px; text-decoration: none; color: inherit; margin-right: 10px; }
+              a:hover { background: rgba(0,0,0,.03); }
+              h1 { color: #C20000; }
+              .item { margin: 14px 0; }
+              .meta { color: #666; margin: 6px 0 0 0; }
+              code { background: rgba(0,0,0,.06); padding: 2px 6px; border-radius: 8px; }
+            </style>
+          </head>
+          <body>
+            <h1>API-Dokumentation</h1>
+            <p>Bitte wählen:</p>
+
+            <div class="item">
+              <p>
+                <a href="./aktuell-gueltig/">Aktuell gültig</a><br />
+                <span class="meta"><code>main</code></span><br />
+                <span class="meta">enthält die aktuell gültigen Versionen</span>
+              </p>
+            </div>
+
+            <div class="item">
+              <p>
+                <a href="./konsultation/">Zur Konsultation gestellt</a><br />
+                <span class="meta"><code><!--CONSULT_BRANCH--></code></span><br />
+                <span class="meta">enthält die aktuell gültigen und zur Konsultation gestellten Versionen</span>
+              </p>
+            </div>
+
+            <div class="item">
+              <p>
+                <a href="./zukuenftig-gueltig/">Zukünftig gültig</a><br />
+                <span class="meta"><code><!--FUTURE_BRANCH--></code></span><br />
+                <span class="meta">enthält die aktuell gültigen und zukünftig gültigen Versionen</span>
+              </p>
+            </div>
+          </body>
+          </html>
+          HTML
+
+          sed -i "s|<!--CONSULT_BRANCH-->|${{ steps.consult.outputs.branch }}|g" site/index.html
+          sed -i "s|<!--FUTURE_BRANCH-->|${{ steps.future.outputs.branch }}|g" site/index.html
+
+      - name: "Hochladen des Pages Artifakts"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: "Deploy to GitHub Pages"
+        id: deploy
+        uses: actions/deploy-pages@v4
