@@ -6,10 +6,10 @@ info: # Allgemeine Infos zur Schnittstelle
 paths:
   /overview/overviewOfLocationsOfOneMarketLocation/v1:
     post:
-      summary: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
-      description: Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
+      summary: Übermittlung der Übersicht aller einer Marktlokation zugeordneten Lokationen.
+      description: Übermittlung der Übersicht aller einer Marktlokation zugeordneten Lokationen.
       tags:
-        -  Übermittlung der Übersicht aller einer Marktlokation zugordneten Lokationen.
+        -  Übermittlung der Übersicht aller einer Marktlokation zugeordneten Lokationen.
       parameters:
       - name: transactionId
         in: header
