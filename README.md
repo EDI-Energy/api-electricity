@@ -1,5 +1,5 @@
 # Allgemeine Informationen
-Dieses Repository enthält alle aktuell gültigen, zukünftig gültigen und zur Konsultation gestellten Schemas und API-Webdienste, die durch EDI@Energy veröffentlicht werden. Grundsätzlich gilt, dass aktuelle und zukünftige Versionen über entsprechende Releases gekennzeichnet sind. Releases enthalten immer den Hinweis "anzuwenden ab ...".
+Dieses Repository enthält alle aktuell gültigen, zukünftig gültigen und zur Konsultation gestellten Schemas und API-Webdienste zur Umsetzung der Prozesse aus den Festlegungen der Bundesnetzagentur (z. B. GPKE, WiM-Strom, MaBiS etc.), die durch EDI@Energy veröffentlicht werden. Grundsätzlich gilt, dass aktuelle und zukünftige Versionen über entsprechende Releases gekennzeichnet sind. Releases enthalten immer den Hinweis "anzuwenden ab ...".
 
 **Beachten Sie folgende Hinweise zur Stuktur des Repositories**
 - Der Branch "main" entspricht immer der aktuell gültigen Version.
