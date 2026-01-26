@@ -2,7 +2,7 @@ openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
 info: # Allgemeine Infos zur Schnittstelle
   title: EDI@Energy API-Webdienst zur Ermittlung der MaLo-ID der Marktlokation
   version: 2.0.0
-  description: Mit diesen API-Webdienst wird die Ermittlung der MaLo-ID der Marktlokation umgesestzt.
+  description: Mit diesen API-Webdienst wird die Ermittlung der MaLo-ID der Marktlokation umgesetzt.
 
 paths:
   /maloId/request/v2:
