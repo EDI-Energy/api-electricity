@@ -47,7 +47,7 @@ paths:
       - name: testFlag
         in: query
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: true
+        required: false
         style: form
         explode: false
         schema:
