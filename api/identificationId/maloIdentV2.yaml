@@ -31,10 +31,9 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
-        in: query
+        in: header
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
-        style: form
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -67,32 +66,30 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs des sendenden Marktpartners.
         required: true
-        style: simple
-        explode: false
         schema:
-          $ref: '#/components/schemas/transactionId'
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
-        explode: false
         schema:
-          $ref: '#/components/schemas/creationDateTime'
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
         required: false
-        style: simple
-        explode: false
         schema:
-          $ref: '#/components/schemas/initialTransactionId'
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: header
+        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        required: false
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
         required: true
-        style: form
-        explode: false
         schema:
           $ref: '#/components/schemas/referenceId'
       requestBody:
@@ -125,39 +122,37 @@ paths:
           in: header
           description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs des sendenden Marktpartners.
           required: true
-          style: simple
-          explode: false
           schema:
-            $ref: '#/components/schemas/transactionId'
+            $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
         - name: creationDateTime
           in: header
           description: Zeitpunkt an dem der Aufruf erstellt wurde
           required: true
-          style: simple
-          explode: false
           schema:
-            $ref: '#/components/schemas/creationDateTime'
+            $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
         - name: initialTransactionId
           in: header
           description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
           required: false
-          style: simple
-          explode: false
           schema:
-            $ref: '#/components/schemas/initialTransactionId'
+            $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+        - name: testFlag
+          in: header
+          description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+          required: false
+          schema:
+            $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
         - name: referenceId
           in: query
           description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Aufrufs.
           required: true
-          style: form
-          explode: false
           schema:
             $ref: '#/components/schemas/referenceId'
       requestBody:
           content:
             application/json:
               schema:
-                $ref: '../../schema/resultToRequest/result.yaml#/components/schemas/result'
+                $ref: ../../schema/resultToRequest/result.yaml#/components/schemas/result
       responses:
         "202":
           description: accepted
