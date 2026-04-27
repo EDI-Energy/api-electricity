@@ -20,28 +20,24 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
         in: query
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -72,21 +68,18 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
@@ -94,7 +87,6 @@ paths:
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -126,21 +118,18 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
@@ -148,7 +137,6 @@ paths:
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -156,7 +144,6 @@ paths:
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -188,21 +175,18 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
@@ -210,7 +194,6 @@ paths:
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -218,7 +201,6 @@ paths:
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -250,21 +232,18 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
@@ -272,7 +251,6 @@ paths:
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -280,7 +258,6 @@ paths:
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -312,21 +289,18 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
@@ -334,7 +308,6 @@ paths:
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -342,7 +315,6 @@ paths:
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -374,35 +346,30 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
         in: query
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -434,21 +401,18 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
       - name: creationDateTime
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
       - name: initialTransactionId
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
@@ -456,7 +420,6 @@ paths:
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
         style: form
-        explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
