@@ -5,11 +5,11 @@ components:
       x-Translation:
         de: "Identfikationsparameter IDs"
       properties:
-        identifierMarketLocation:
+        marketLocationId:
           $ref: './identifier/maloId.yaml#/components/schemas/maloId'
-        identifierMarketTranches:
+        marketTranchesIds:
           $ref: './identifier/maloIds.yaml#/components/schemas/maloIds'
-        identifierMeterLocations:
+        meterLocationsIds:
           $ref: './identifier/meloIds.yaml#/components/schemas/meloIds'
         meterNumbers:
           $ref: './identifier/meterNumbers.yaml#/components/schemas/meterNumbers'
