@@ -20,7 +20,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -28,7 +27,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -36,7 +34,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -44,7 +41,6 @@ paths:
         in: query
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
-        style: form
         explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
@@ -76,7 +72,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -84,7 +79,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -92,7 +86,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -133,7 +126,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -141,7 +133,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -149,7 +140,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -198,7 +188,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -206,7 +195,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -214,7 +202,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -263,7 +250,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -271,7 +257,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -279,7 +264,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -328,7 +312,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -336,7 +319,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -344,7 +326,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -393,7 +374,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -401,7 +381,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -409,7 +388,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
@@ -417,7 +395,6 @@ paths:
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
-        style: form
         explode: false
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
@@ -425,7 +402,6 @@ paths:
         in: query
         description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
         required: false
-        style: form
         explode: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
@@ -458,7 +434,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Information über den bestätigten Steuerbefehl des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -466,7 +441,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -474,7 +448,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'

@@ -16,7 +16,6 @@ paths:
         in: header
         description: Externe Transaktions-Id zur eindeutigen Identifikation der Anfrage des sendenden Marktpartners.
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
@@ -24,7 +23,6 @@ paths:
         in: header
         description: Zeitpunkt an dem der Aufruf erstellt wurde
         required: true
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
@@ -32,7 +30,6 @@ paths:
         in: header
         description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
         required: false
-        style: simple
         explode: false
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
