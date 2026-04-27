@@ -23,11 +23,11 @@ tags:
 paths:
   /maloId/request/v1:
     post:
-      deprecated: true #Deprecated ab dem 01.10.2026. 00:00 Uhr 
+      deprecated: true #Deprecated ab dem 01.10.2027. 00:00 Uhr 
       tags:
       - Anfrage MaLo-ID der Marktlokation
       summary: Anfrage MaLo-ID der Marktlokation
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
       operationId: uploadFile
       parameters:
       - name: transactionId
@@ -78,7 +78,7 @@ paths:
       tags:
       - Rückmeldung auf Anfrage
       summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
       parameters:
       - name: transactionId
         in: header
@@ -138,7 +138,7 @@ paths:
       tags:
       - Rückmeldung auf Anfrage
       summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr. \nInhaltsdatensicherungsebene: Der API-Aufruf mit der enthaltenen Payload der hier spezifizierten API-Schnittstellen  wird signiert."
       operationId: ""
       parameters:
       - name: transactionId

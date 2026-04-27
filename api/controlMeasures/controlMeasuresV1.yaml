@@ -43,7 +43,7 @@ paths:
       tags:
       - Anweisung Steuerbefehl
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: uploadFile
       parameters:
       - name: transactionId
@@ -140,7 +140,7 @@ paths:
       tags:
       - Anweisung Steuerbefehl
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf den ursprünglichen Zustand.
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       parameters:
       - name: transactionId
         in: header
@@ -231,7 +231,7 @@ paths:
       tags:
       - Mitteilung zum weiteren Vorgehen
       summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -341,7 +341,7 @@ paths:
       tags:
       - Mitteilung zum weiteren Vorgehen
       summary: Negative Mitteilung zum weiteren Vorgehen
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -463,7 +463,7 @@ paths:
       tags:
       - Antwort Steuerbefehl
       summary: Positive Antwort auf den Steuerbefehl
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -570,7 +570,7 @@ paths:
       tags:
       - Antwort Steuerbefehl
       summary: Negative Antwort auf den Steuerbefehl
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -682,7 +682,7 @@ paths:
       tags:
       - Information Steuerbefehl Anweisender
       summary: Information zum Steuerbefehl an Anweisenden, dass finaler Status noch nicht vorliegt.
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: ""
       parameters:
       
@@ -794,7 +794,7 @@ paths:
       tags:
       - Information Steuerbefehl Berechtigte
       summary: Information
-      description: "Deprecated ab dem 01.10.2026. 00:00 Uhr."
+      description: "Deprecated ab dem 01.10.2027. 00:00 Uhr."
       operationId: ""
       parameters:
 
