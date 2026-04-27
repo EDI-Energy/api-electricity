@@ -55,3 +55,119 @@ paths:
           description: Method not allowed
         "500":
           description: Internal Server Error
+    
+  /maloId/dataForMarketLocationPositive/v2:
+    post:
+      tags:
+      - Rückmeldung auf Anfrage
+      summary: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description: Postive Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs des sendenden Marktpartners.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/creationDateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          $ref: '#/components/schemas/initialTransactionId'
+      - name: referenceId
+        in: query
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
+        required: true
+        style: form
+        explode: false
+        schema:
+          $ref: '#/components/schemas/referenceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '../../schema/overviewOfLocationsOfOneMarketLocation.yaml#/components/schemas/overviewOfLocationsOfOneMarketLocation'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
+  
+  /maloId/dataForMarketLocationNegative/v2:
+    post:
+      summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      tags:
+        - Rückmeldung auf Anfrage
+      parameters:
+        - name: transactionId
+          in: header
+          description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs des sendenden Marktpartners.
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: '#/components/schemas/transactionId'
+        - name: creationDateTime
+          in: header
+          description: Zeitpunkt an dem der Aufruf erstellt wurde
+          required: true
+          style: simple
+          explode: false
+          schema:
+            $ref: '#/components/schemas/creationDateTime'
+        - name: initialTransactionId
+          in: header
+          description: Zur Angabe des Idempodenzschlüssel im Falle eines Retry.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            $ref: '#/components/schemas/initialTransactionId'
+        - name: referenceId
+          in: query
+          description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Aufrufs.
+          required: true
+          style: form
+          explode: false
+          schema:
+            $ref: '#/components/schemas/referenceId'
+      requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: '../../schema/resultToRequest/result.yaml#/components/schemas/result'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error
