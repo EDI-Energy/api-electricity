@@ -61,8 +61,7 @@ paths:
     post:
       tags:
         - Übersicht Zählzeit
-      summary: >-
-       Übermittlung der Übersicht der Zählzeiten eines LF
+      summary: Übermittlung der Übersicht der Zählzeiten eines LF
       description: ""
       parameters:
       - name: transactionId

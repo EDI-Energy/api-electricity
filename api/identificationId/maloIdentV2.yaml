@@ -7,10 +7,10 @@ info: # Allgemeine Infos zur Schnittstelle
 paths:
   /maloId/request/v2:
     post:
+      tags: 
+        - Anfrage MaLo-ID der Marktlokation
       summary: Anfrage MaLo-ID der Marktlokation
       description: Anfrage MaLo-ID der Marktlokation
-      tags:
-        - Anfrage MaLo-ID der Marktlokation
       parameters:
       - name: transactionId
         in: header
@@ -117,10 +117,10 @@ paths:
   
   /maloId/dataForMarketLocationNegative/v2:
     post:
-      summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
-      description: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
       tags:
         - Rückmeldung auf Anfrage
+      summary: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
+      description: Negative Rückmeldung auf die Anfrage der MaLo-ID der Marktlokation.
       parameters:
         - name: transactionId
           in: header
