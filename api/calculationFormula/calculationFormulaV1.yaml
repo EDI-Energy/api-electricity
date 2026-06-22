@@ -56,6 +56,8 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '422': 
+          description: Unprocessable Entity
         '500':
           description: Internal Server Error1
   /calculationFormula/location/response/v1:
@@ -116,6 +118,8 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '422': 
+          description: Unprocessable Entity
         '500':
           description: Internal Server Error1
   /calculationFormula/location/termination/v1:
@@ -168,6 +172,8 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '422': 
+          description: Unprocessable Entity
         '500':
           description: Internal Server Error1
   /calculationFormula/malo/v1:
@@ -221,6 +227,8 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '422': 
+          description: Unprocessable Entity
         '500':
           description: Internal Server Error1
   /calculationFormula/malo/response/v1:
@@ -280,5 +288,7 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '422': 
+          description: Unprocessable Entity
         '500':
           description: Internal Server Error1
