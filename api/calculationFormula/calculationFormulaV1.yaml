@@ -1,13 +1,8 @@
 openapi: 3.0.0
 info:
-  title: >-
-    EDI@Energy API-Webdienst zur Übermittlung von Berechnungsformeln für
-    Berechnungsziele von Energiemengen für Marktlokationen, Netzlokationen und
-    Tranchen, einschließlich ihrer Verwendungszwecke, sowie zur Übermittlung der
-    zugehörigen Antworten und zur Beendigung der Berechnungsvorgänge.
+  title: EDI@Energy API-Webdienst zur Übermittlung von Berechnungsformeln
   version: 1.0.0
-  description: >-
-    Mit diesem API-Webdienst wird die Übermittlung von Berechnungsformeln für
+  description: Mit diesem API-Webdienst wird die Übermittlung von Berechnungsformeln für
     Berechnungsziele von Energiemengen für Marktlokationen, Netzlokationen und
     Tranchen, einschließlich ihrer Verwendungszwecke, sowie zur Übermittlung der
     zugehörigen Antworten und zur Beendigung der Berechnungsvorgänge realisiert.
@@ -15,20 +10,15 @@ paths:
   /calculationFormula/location/v1:
     post:
       tags:
-        - >-
-          Berechnungsformel Lokation
-      summary: >-
-        Übermittlung der Berechnungsformel für ein Berechnungsziel einer Marktlokation/Netzlokation
-      description: >-
-        Übermittlung der Berechnungsformel für ein Berechnungsziel von
+        - Berechnungsformel Lokation
+      summary: Übermittlung der Berechnungsformel für ein Berechnungsziel einer Marktlokation/Netzlokation
+      description: Übermittlung der Berechnungsformel für ein Berechnungsziel von
         Energiemengen einer Marktlokation oder einer Netzlokation, für die
         genannten Verwendungszwecke, auf Basis von Werten von Messlokationen.
       parameters:
         - name: transactionId
           in: header
-          description: >-
-            Externe Transaktions-Id zur eindeutigen Identifikation der
-            Übermittlung einer Berechnungsformel des sendenden NB.
+          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer Berechnungsformel des sendenden NB.
           required: true
           schema:
             $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
@@ -71,23 +61,17 @@ paths:
   /calculationFormula/location/response/v1:
     post:
       tags:
-        - >-
-          Berechnungsformel Lokation
-      summary: >-
-        Übermittlung der Antwort auf eine Berechnungsformel für ein
+        - Berechnungsformel Lokation
+      summary: Übermittlung der Antwort auf eine Berechnungsformel für ein
         Berechnungsziel einer Marktlokation/Netzlokation
-      description: >-
-        Übermittlung der Antwort auf eine Berechnungsformel für ein
+      description: Übermittlung der Antwort auf eine Berechnungsformel für ein
         Berechnungsziel von Energiemengen einer Marktlokation oder einer
         Netzlokation, für die genannten Verwendungszwecke, auf Basis von Werten
         von Messlokationen.
       parameters:
         - name: transactionId
           in: header
-          description: >-
-            Externe Transaktions-Id zur eindeutigen Identifikation der
-            Übermittlung der Antwort auf eine Berechnungsformel des sendenden
-            NB.
+          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Antwort auf eine Berechnungsformel des sendenden NB.
           required: true
           schema:
             $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
@@ -106,8 +90,7 @@ paths:
         - name: referenceId
           in: header
           description: >-
-            Externe Vorgangsreferenz zur eindeutigen Identifikation der
-            ursprünglichen Anfrage.
+            Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
           required: true
           schema:
             $ref: ../../schema/header/referenceId.yaml#/components/schemas/referenceId
@@ -138,19 +121,15 @@ paths:
   /calculationFormula/location/termination/v1:
     post:
       tags:
-        - >-
-          Beendigung Berechnungsformel Lokation
-      summary: >-
-        Beendigung der Berechnungsformel für ein Berechnungsziel Marktlokation/Netzlokation
-      description: >-
-        Beendigung der Berechnungsformel für ein Berechnungsziel von
+        - Beendigung Berechnungsformel Lokation
+      summary: Beendigung der Berechnungsformel für ein Berechnungsziel Marktlokation/Netzlokation
+      description: Beendigung der Berechnungsformel für ein Berechnungsziel von
         Energiemengen einer Marktlokation oder einer Netzlokation auf Basis von
         Werten von Messlokationen.
       parameters:
         - name: transactionId
           in: header
-          description: >-
-            Externe Transaktions-Id zur eindeutigen Identifikation der
+          description: Externe Transaktions-Id zur eindeutigen Identifikation der
             Beendigung einer Berechnungsformel des sendenden NB.
           required: true
           schema:
@@ -194,12 +173,9 @@ paths:
   /calculationFormula/malo/v1:
     post:
       tags:
-        - >-
-          Berechnungsformel Lokation
-      summary: >-
-        Übermittlung der Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
-      description: >-
-        Übermittlung der Berechnungsformel für ein Berechnungsziel von
+        - Berechnungsformel Lokation
+      summary: Übermittlung der Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
+      description: Übermittlung der Berechnungsformel für ein Berechnungsziel von
         Energiemengen einer Marktlokation oder einer Tranche (z.B. Energie Sharing,
         gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.), für
         die genannten Verwendungszwecke, auf Basis von Energiemengen von
@@ -207,9 +183,7 @@ paths:
       parameters:
         - name: transactionId
           in: header
-          description: >-
-            Externe Transaktions-Id zur eindeutigen Identifikation der
-            Übermittlung einer Berechnungsformel des sendenden NB.
+          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer Berechnungsformel des sendenden NB.
           required: true
           schema:
             $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
@@ -252,12 +226,9 @@ paths:
   /calculationFormula/malo/response/v1:
     post:
       tags:
-        - >-
-          Berechnungsformel Lokation
-      summary: >-
-        Übermittlung der Antwort auf eineBerechnungsformel für ein Berechnungsziel Marktlokation/Tranche
-      description: >-
-        Übermittlung der Antwort auf eine Berechnungsformel für ein
+        - Berechnungsformel Lokation
+      summary: Übermittlung der Antwort auf eineBerechnungsformel für ein Berechnungsziel Marktlokation/Tranche
+      description: Übermittlung der Antwort auf eine Berechnungsformel für ein
         Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche
         (z.B. Energie Sharing, gemeinschaftliche Gebäudeversorgung, virtueller
         Summenzähler, etc.), für die genannten Verwendungszwecke, auf Basis von
@@ -265,10 +236,7 @@ paths:
       parameters:
         - name: transactionId
           in: header
-          description: >-
-            Externe Transaktions-Id zur eindeutigen Identifikation der
-            Übermittlung der Antwort auf eine Berechnungsformel des sendenden
-            NB.
+          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Antwort auf eine Berechnungsformel des sendenden NB.
           required: true
           schema:
             $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
@@ -286,9 +254,7 @@ paths:
             $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
         - name: referenceId
           in: header
-          description: >-
-            Externe Vorgangsreferenz zur eindeutigen Identifikation der
-            ursprünglichen Anfrage.
+          description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
           required: true
           schema:
             $ref: ../../schema/header/referenceId.yaml#/components/schemas/referenceId
