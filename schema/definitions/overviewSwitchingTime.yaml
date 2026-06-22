@@ -17,6 +17,6 @@ components:
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        lsitOfSwitchingTimes:
+        listOfSwitchingTimes:
           $ref: './switchingTimes.yaml#/components/schemas/switchingTimes'
           description: "Liste der Schaltzeiten" 
