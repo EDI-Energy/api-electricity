@@ -9,7 +9,7 @@ components:
         de: "Zeitscheibe einer Marktlokation"
       properties:
         maloId:
-          $ref: './maloId.yaml#/components/schemas/maloId'
+          $ref: './maloId.yaml#/components/identifier/schemas/maloId'
         executionTimeFrom:
           $ref: './executionTimeFrom.yaml#/components/schemas/executionTimeFrom'
         executionTimeUntil:
