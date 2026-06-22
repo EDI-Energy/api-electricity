@@ -55,5 +55,7 @@ paths:
           description: Not Found
         "405":
           description: Method not allowed
+        "422": 
+          description: Unprocessable Entity
         "500":
           description: Internal Server Error
