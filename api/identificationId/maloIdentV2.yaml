@@ -82,10 +82,10 @@ paths:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
         in: header
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       - name: referenceId
         in: query
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
@@ -138,7 +138,7 @@ paths:
             $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
         - name: testFlag
           in: header
-          description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+          description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
           required: false
           schema:
             $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'

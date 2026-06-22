@@ -35,7 +35,7 @@ paths:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
         in: header
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
         required: true
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'

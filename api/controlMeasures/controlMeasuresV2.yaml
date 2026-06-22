@@ -35,11 +35,11 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -83,12 +83,11 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
-        style: form
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -140,12 +139,11 @@ paths:
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
-        style: form
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -197,12 +195,11 @@ paths:
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
-        style: form
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -254,12 +251,11 @@ paths:
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
-        style: form
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -311,12 +307,11 @@ paths:
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
-        style: form
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -367,11 +362,11 @@ paths:
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
@@ -416,12 +411,11 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: testFlag
-        in: query
-        description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
-        required: false
-        style: form
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
         schema:
-          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
          application/json:
