@@ -14,7 +14,7 @@ paths:
     post:
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
       description: ""
-      operationId: uploadFile
+      operationId: ""
       parameters:
       - name: transactionId
         in: header
