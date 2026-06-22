@@ -1,0 +1,16 @@
+components:
+  schemas:
+    locationBundleNeloReference:
+      required:
+      - regardNeloId
+      - meloIds
+      type: object
+      x-Translation:
+        de: "Eine Netzlokation mit ihren zugehörigen Messlokationen"
+      properties:
+        regardNeloId:
+          $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+          description: "Identifiziert die Netzlokation mittels einer eindeutigen ID welcher weiterer Messlokationen zugeordnet werden"
+        meloIds:
+          $ref: './../identifier/meloIds.yaml#/components/schemas/meloIds'
+          description: "Die Liste der Messlokationen, die der Netzlokation zugeordnet sind"

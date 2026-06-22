@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleObjectsClearing:
+      type: array
+      x-Translation:
+        de: "Lokationsbündel-Objekte"
+      items:
+        $ref: './locationBundleObjectClearing.yaml#/components/schemas/locationBundleObjectClearing'

@@ -1,0 +1,11 @@
+components:
+  schemas:
+    complaintReasonDefinitionOverview:
+      type: string
+      description: "Reklamationsgrund für die Übersicht einer Definition"
+      x-Translation:
+        de: "Reklamationsgrund"
+      example: "missing"
+      enum:
+      - missing
+      - implausible

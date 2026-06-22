@@ -1,0 +1,9 @@
+components:
+  schemas:
+    networkOperatorChangePackageId:
+      pattern: "^P[A-Z\\d]{9}\\d$"
+      type: string
+      description: "Identifiziert das Netzbetreiberwechselpaket mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Netzbetreiberwechselpaket ID"
+      example: "P1234848431"

@@ -1,0 +1,9 @@
+components:
+  schemas:
+    purposeOfUse:
+      pattern: "V\\d{2}"
+      type: string
+      description: "Angabe des Verwendungszwecks aus dem Edi@Energy Dokument 'Codeliste der Verwendungszwecke'"
+      x-Translation:
+        de: "Verwendungszweck"
+      example: "V01"

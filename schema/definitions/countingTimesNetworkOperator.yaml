@@ -1,0 +1,10 @@
+components:
+  schemas:
+    countingTimesNetworkOperator:
+      type: array
+      minItems: 0
+      description: "Liste der Zählzeiten des NB"
+      x-Translation:
+        de: "Liste der Zählzeiten des NB"
+      items:
+        $ref: './countingTimeNetworkOperator.yaml#/components/schemas/countingTimeNetworkOperator'

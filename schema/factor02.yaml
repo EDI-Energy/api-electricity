@@ -1,0 +1,9 @@
+components: 
+  schemas:
+    factor02:
+      pattern: "^(?!(?:0|1)\\.000000$)(?:0|1\\d*)\\.\\d{6}$"
+      type: string
+      description: "Faktor größer 0 nicht 1 und kleiner 2 mit sechs Nachkommastellen"
+      x-Translation:
+        de: "Faktor größer 0 nicht 1 und kleiner 2 mit sechs Nachkommastellen"
+      example: "0.702059"

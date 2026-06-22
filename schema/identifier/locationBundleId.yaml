@@ -1,0 +1,9 @@
+components:
+  schemas:
+    locationBundleId:
+      pattern: "^F[A-Z\\d]{9}\\d$"
+      type: string
+      description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Lokationsbündel ID"
+      example: "F1234848431"

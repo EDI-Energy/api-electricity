@@ -1,0 +1,11 @@
+components:
+  schemas:
+    energyDirection:
+      type: string
+      description: "Energieflussrichtung"
+      x-Translation:
+        de: "Energieflussrichtung"
+      example: "consumption"
+      enum:
+      - consumption
+      - production

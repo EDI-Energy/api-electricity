@@ -1,0 +1,10 @@
+components:
+  schemas:
+    listCalculationFormulasLocation:
+      type: array
+      minItems: 1
+      description: "Liste von Berechnungsformeln, die zur Ermittlung der Energiemenge der Marktlokation bzw. der Netzlokation für de genannten Verwendungszwecke notwendig sind. Pro Zeitraum wird eine Berechnungsformel übermittelt."
+      x-Translation:
+        de: "Liste von Berechnungsformeln, die zur Ermittlung der Energiemenge der Marktlokation bzw. der Netzlokation für de genannten Verwendungszwecke notwendig sind. Pro Zeitraum wird eine Berechnungsformel übermittelt."
+      items:
+        $ref: './calculationFormulaLocationTimePeriod.yaml#/components/schemas/calculationFormulaLocationTimePeriod'

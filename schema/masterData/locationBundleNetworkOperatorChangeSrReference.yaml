@@ -1,0 +1,16 @@
+components:
+  schemas:
+    locationBundleNetworkOperatorChangeSrReference:
+      required:
+      - regardSrId
+      - Messtellenbetreiber
+      type: object
+      x-Translation:
+        de: "Eine steuerbare Ressource mit ihren zugehörigen Marktpartnern"
+      properties:
+        regardSrId:
+          $ref: './../identifier/srId.yaml#/components/schemas/srId'
+          description: "Identifiziert die steuerbare Ressource mittels einer eindeutigen ID"
+        Messtellenbetreiber:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          description: "Messtellenbetreiber, der der steuerbaren Ressource zugeordnet ist"

@@ -1,0 +1,9 @@
+components:
+  schemas:
+    codeAn10:
+      type: string
+      pattern: "^[A-Za-z0-9]{1,10}$"
+      description: "Code alphanumerisch bis zu zehn Stellen (an..10)"
+      x-Translation:
+        de: "Code alphanumerisch bis zu zehn Stellen"
+      example: "Code123"

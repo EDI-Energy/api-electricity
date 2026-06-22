@@ -1,0 +1,9 @@
+components:
+  schemas:
+      codeRegisterNetworkOperators:
+        type: array
+        minItems: 2
+        x-Translation:
+          de: "Code der Register"
+        items:
+          $ref: './codeRegisterNetworkOperator.yaml#/components/schemas/codeRegisterNetworkOperator'

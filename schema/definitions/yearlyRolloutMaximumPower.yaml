@@ -1,0 +1,15 @@
+components:
+  schemas:
+    yearlyRolloutMaximumPower:
+      required:
+      - executionTimeFrom
+      - maxPower
+      type: object
+      description: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Leistung."
+      x-Translation:
+        de: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Leistung."
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+        maxPower:
+          $ref: './maximumPower.yaml#/components/schemas/maximumPower'

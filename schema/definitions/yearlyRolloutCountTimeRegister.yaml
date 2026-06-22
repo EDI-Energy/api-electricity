@@ -1,0 +1,15 @@
+components:
+  schemas:
+    yearlyRolloutCountTimeRegister:
+      required:
+      - executionTimeFrom
+      - codeRegister
+      type: object
+      description: "Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
+      x-Translation:
+        de: "Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+        codeRegister:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'

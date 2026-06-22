@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleObjectsClearingNoDatas:
+      type: array
+      x-Translation:
+        de: "Keine Lokationsbündel-Objekte"
+      items:
+        $ref: './locationBundleObjectClearingNoData.yaml#/components/schemas/locationBundleObjectClearingNoData'

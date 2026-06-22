@@ -1,0 +1,20 @@
+components:
+  schemas:
+    locationBundleEnergyObject:
+      required:
+      - executionDateTime
+      - locationBundleType
+      - maloReferences
+      type: object
+      x-Translation:
+        de: "Energie-Lokationsbündel verbrauchende Marktlokation"
+      properties:
+        executionDateTime:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Das Datum ab dem das Energie-Lokationsbündel in der Zusammensetzung der verbrauchendenMarktlokationen gültig ist"
+        locationBundleType:
+          $ref: './locationBundleType.yaml#/components/schemas/locationBundleType'
+          description: "Art des Energie-Lokationsbündels, d.h. Hintergrund der Gruppierung der aufgeführten Marktlokationen"
+        maloReferences:
+          $ref: './locationBundleEnergyMalos.yaml#/components/schemas/locationBundleEnergyMalos'
+          description: "Die Liste der verbrauchenden Marklokationen, die dem Energie-Lokationsbündel zugeordnet sind und zu der Zeitscheibe gültig sind"

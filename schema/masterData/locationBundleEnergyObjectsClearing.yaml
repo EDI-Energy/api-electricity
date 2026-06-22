@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleEnergyObjectsClearing:
+      type: array
+      x-Translation:
+        de: "Lokationsbündel-Energy-Marktlokationen"
+      items:
+        $ref: './locationBundleEnergyObjectClearing.yaml#/components/schemas/locationBundleEnergyObjectClearing'

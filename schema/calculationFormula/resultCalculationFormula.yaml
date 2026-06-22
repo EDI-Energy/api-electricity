@@ -1,0 +1,9 @@
+components:
+  schemas:
+    resultCalculationFormula:
+      type: "string"
+      pattern: "^\\s*=\\s*(?:(?:MIN|MAX|Positivwert)\\s*\\(|[A-Za-z0-9]{5}|[+\\-*\\/(),]|\\s)+\\s*$"
+      description: "Die ausgeschriebene Berechnungsformel die folgende Elemente enthalten kann: - die Funktionen MIN, MAX und Positivwert, - die Parameter-IDs, - die Operatoren +, -, *, /, (, ) und - Leerzeichen. Es muss mit einem Gleichheitszeichen beginnen."
+      x-Translation:
+        de: "Die ausgeschriebene Berechnungsformel"
+      example: "=Me123+MIN(Me123,Me124)*Positivwert(Me125-Me126)"

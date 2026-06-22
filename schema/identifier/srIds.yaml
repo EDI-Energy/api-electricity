@@ -1,0 +1,8 @@
+components:
+  schemas:
+    srIds:
+      type: array
+      x-Translation:
+        de: "Steuerbare Ressource IDs"
+      items:
+        $ref: './srId.yaml#/components/schemas/srId'

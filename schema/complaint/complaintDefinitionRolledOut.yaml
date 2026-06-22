@@ -1,0 +1,17 @@
+components:
+  schemas:
+    complaintDefinitionRolledOut:
+      required:
+      - complaintReasonDefinitionRolledOut
+      type: object
+      x-Translation:
+        de: "Reklamationsbeschreibung der ausgerollten  Definition"
+      properties:
+        complaintReasonDefinitionRolledOut:
+          $ref: './complaintReasonDefinitionRolledOut.yaml#/components/schemas/complaintReasonDefinitionRolledOut'
+        versionDefinitionRolledOut:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: Angabe der Version der ausgerollten  Definition, wenn es sich um eine Reklamation unplausibel handelt.
+        code:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          description: Angabe des Codes der ausgerollten  Definition, wenn es sich um eine Reklamation unplausibel handelt.        

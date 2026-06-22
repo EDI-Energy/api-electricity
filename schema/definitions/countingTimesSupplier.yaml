@@ -1,0 +1,10 @@
+components:
+  schemas:
+    countingTimesSupplier:
+      type: array
+      minItems: 0
+      description: "Liste der Zählzeiten des LF"
+      x-Translation:
+        de: "Liste der Zählzeiten des LF"
+      items:
+        $ref: './countingTimeSupplier.yaml#/components/schemas/countingTimeSupplier'

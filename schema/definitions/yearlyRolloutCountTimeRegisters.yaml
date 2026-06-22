@@ -1,0 +1,10 @@
+components:
+  schemas:
+      yearlyRolloutCountTimeRegisters:
+        type: array
+        minItems: 1
+        description: "Array zur Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
+        x-Translation:
+          de: "Array zur Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
+        items:
+          $ref: './yearlyRolloutCountTimeRegister.yaml#/components/schemas/yearlyRolloutCountTimeRegister'

@@ -1,0 +1,9 @@
+components:
+  schemas:
+      codeRegisterSupplier:
+        type: array
+        minItems: 2
+        x-Translation:
+          de: "Code der Register"
+        items:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'

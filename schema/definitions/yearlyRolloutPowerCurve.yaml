@@ -1,0 +1,43 @@
+components:
+  schemas:
+    yearlyRolloutPowerCurve:
+      required:
+      - code
+      - executionTimeFrom
+      - executionTimeUntil
+      - version
+      - startMaximumPowerConsumptionBeginYear
+      - yearlyRolloutMaximumPowerConsumption
+      type: object
+      description: "Jährlich ausgerollte Leistungskurve"
+      x-Translation:
+        de: "Jährlich ausgerollte Leistungskurve"
+      properties:
+        code:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          description: "Code der Leistungskurve"
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab (01.01 00:00 Uhr eines Kalenderjahres)"
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Bis (01.01 00:00 Uhr eines Kalenderjahres)"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        orderReference:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        startMaximumPowerConsumptionBeginYear:
+          $ref: './maximumPower.yaml#/components/schemas/maximumPower'
+          description: "Die maximale Bezugsleistung an der Lokation zum 01.01. 0:00 Uhr eines Kalenderjahres."
+        startMaximumPowerProductionBeginYear:
+          $ref: './maximumPower.yaml#/components/schemas/maximumPower'
+          description: "Die maximale Erzeugungsleistung an der Lokation zum 01.01. 0:00 Uhr eines Kalenderjahres."
+        yearlyRolloutMaximumPowerConsumption:
+          $ref: './yearlyRolloutMaximumPowerConsumptionStates.yaml#/components/schemas/yearlyRolloutMaximumPowerConsumptionStates'
+          description: "Ausgerollte maximale Bezugsleistung für das Kalenderjahr."
+        yearlyRolloutMaximumPowerProduction:
+          $ref: './yearlyRolloutMaximumPowerProductionStates.yaml#/components/schemas/yearlyRolloutMaximumPowerProductionStates'
+          description: "Ausgerollte maximale Erzeugungslesitung für das Kalenderjahr."
+         

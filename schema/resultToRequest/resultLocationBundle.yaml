@@ -1,0 +1,23 @@
+components:
+  schemas:
+    resultLocationBundle:
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm für die Antwort auf die Übermittlung von Lokationsbündeln angegeben. Die Antwort ist immer, dass der Empfänger des Lokationsbündels die Daten übernommen hat. Er kann hier im Rahmen der Antwort eine abweichende Sichtweise, falls dies notwendig ist, übermitteln "
+      x-Translation:
+        de: "Antwort auf die Übermittlung von Lokationsbündeln"
+      required:
+      - responseCode
+      - decisionTree
+      type: object
+      properties:
+        decisionTree:
+          $ref: './decisionTree.yaml#/components/schemas/decisionTree'
+        responseCode:
+          $ref: './responseCode.yaml#/components/schemas/responseCode'
+        reason:
+          $ref: './../freeText.yaml#/components/schemas/freeText'
+        locationBundleObjectsViewSender:
+          $ref: './../masterData/locationBundleObjectStateSenderDatas.yaml#/components/schemas/locationBundleObjectStateSenderDatas'
+          description: "Liste ggf. mit mehreren Zeitscheiben der im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen als Sichtweise des Senders auf die übermittelten Daten. Diese Sichtweise kann von der Sichtweise des Empfängers abweichen, falls dies notwendig ist. "
+        noExpectedData:
+          $ref: './../masterData/locationBundleObjectStateViewSenderNoExpectedData.yaml#/components/schemas/locationBundleObjectStateViewSenderNoExpectedData'
+          description: "Erwartetes Datum ab dem im Lokationsbündel keine Objekte enthalten sind aus Sicht des Senders"

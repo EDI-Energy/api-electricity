@@ -1,0 +1,24 @@
+components:
+  schemas:
+    locationBundleObjectClearingSenderData:
+      required:
+      - locationBundleId
+      type: object
+      x-Translation:
+        de: "Die Zeitscheiben der Liste aller im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen aus Sicht des Senders zu den Systemdaten, erwarteten Daten, keinen erwarteten Daten und keinen Systemdaten"
+      properties:
+        locationBundleId:
+          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID der Lokationsbündel-ID"
+        expectedData:
+          $ref: './locationBundleObjectStateViewSenderExpectedData.yaml#/components/schemas/locationBundleObjectStateViewSenderExpectedData'
+          description: "Die Listen der zu erwarteten Daten aus Sicht des Senders"
+        systemData:
+          $ref: './locationBundleObjectStateViewSenderSystemData.yaml#/components/schemas/locationBundleObjectStateViewSenderSystemData'
+          description: "Die Listen der Daten im System aus Sicht des Senders"
+        noExpectedData:
+          $ref: './locationBundleObjectStateViewSenderNoExpectedData.yaml#/components/schemas/locationBundleObjectStateViewSenderNoExpectedData'
+          description: "Erwartetes Datum ab dem im Lokationsbündel keine Objekte enthalten sind aus Sicht des Senders"
+        noSystemData:
+          $ref: './locationBundleObjectStateViewSenderNoSystemData.yaml#/components/schemas/locationBundleObjectStateViewSenderNoSystemData'
+          description: "Im System vorhandenes Datum ab dem im Lokationsbündel keine Objekte enthalten sind aus Sicht des Senders"

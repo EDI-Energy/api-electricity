@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleNetworkOperatorChangeTrancheReferences:
+      type: array
+      x-Translation:
+        de: "Tranche mit Marktpartner-Zuordnung"
+      items:
+        $ref: './locationBundleNetworkOperatorChangeTrancheReference.yaml#/components/schemas/locationBundleNetworkOperatorChangeTrancheReference'

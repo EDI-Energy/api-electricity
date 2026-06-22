@@ -1,0 +1,31 @@
+components:
+  schemas:
+    calculationFormulaMaLoTimePeriod:
+      required:
+        - executionTimeFrom
+        - purposeOfUses
+        - calculationSteps
+        - result
+      type: object
+      description: Berechnungsformel für einen Zeitraum.
+      x-Translation:
+        de: Berechnungsformel für einen Zeitraum.
+      properties:
+        executionTimeFrom:
+          $ref: ./../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman
+          description: Zeitpunkt Gültig Ab
+        purposeOfUses:
+          $ref: './../purposeOfUses.yaml#/components/schemas/purposeOfUses'
+          description: "Angabe der Verwendungszecke der Berechnungsformel"
+        calculationSteps:
+          $ref: ./calculationStepsMaLo.yaml#/components/schemas/calculationStepsMaLo
+          description: "Liste der Operanden, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind." 
+        allocationFactors:
+          $ref: ./allocationFactors.yaml#/components/schemas/allocationFactors
+          description: "Liste von Aufteilungsfaktoren, die in der ausgeschriebenen Berechnungsformel zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
+        paremeterIDs:
+          $ref: ./parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas
+          description: "Liste der Parameter-IDs, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
+        result:
+          $ref: ./resultCalculationFormula.yaml#/components/schemas/resultCalculationFormula
+          description: "Die ausgeschriebene Berechnungsformel,die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig ist."

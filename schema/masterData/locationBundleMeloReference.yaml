@@ -1,0 +1,21 @@
+components:
+  schemas:
+    locationBundleMeloReference:
+      required:
+      - regardMeloId
+      type: object
+      x-Translation:
+        de: "Eine Messlokation mit ihren zugehörigen Messlokationen, technischen Ressourcen und Marktlokationen"
+      properties:
+        regardMeloId:
+          $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
+          description: "Identifiziert die Messlokation mittels einer eindeutigen ID welcher weiterer Objekte zugeordnet werden"
+        trIds:
+          $ref: './../identifier/trIds.yaml#/components/schemas/trIds'
+          description: "Die Liste der technischen Ressourcen, die der Messlokation zugeordnet sind"
+        maloIds:
+          $ref: './../identifier/maloIds.yaml#/components/schemas/maloIds'
+          description: "Die Liste der Marktlokationen, die der Messlokation zugeordnet sind"
+        meloIds:
+          $ref: './../identifier/meloIds.yaml#/components/schemas/meloIds'
+          description: "Die Liste der Messlokationen, die der Messlokation zugeordnet sind"

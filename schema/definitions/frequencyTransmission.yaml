@@ -1,0 +1,11 @@
+components:
+  schemas:
+    frequencyTransmission:
+      type: string
+      x-Translation:
+        de: "Häufigkeit der Übermittlung"
+      description: "Häufigkeit der Übermittlung"
+      example: "unique"
+      enum:
+      - yearly
+      - unique

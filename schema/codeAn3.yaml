@@ -1,0 +1,9 @@
+components:
+  schemas:
+    codeAn3:
+      type: string
+      pattern: "^[A-Za-z0-9]{1,3}$"
+      description: "Code alphanumerisch bis zu drei Stellen (an..3)"
+      x-Translation:
+        de: "Code alphanumerisch bis zu drei Stellen"
+      example: "123"

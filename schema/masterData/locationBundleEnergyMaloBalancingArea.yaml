@@ -1,0 +1,16 @@
+components:
+  schemas:
+    locationBundleEnergyMaloBalancingArea:
+      required:
+      - maloId
+      - balancingArea
+      type: object
+      x-Translation:
+        de: "Verbrauchende Marktlokationen mit Bilanzierungsgebieten"
+      properties:
+        maloId:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Identifiziert die verbrauchende Marktlokation mittels einer eindeutigen ID"
+        balancingArea:
+          $ref: './../identifier/balancingArea.yaml#/components/schemas/balancingArea'
+          description: "Informativ das Bilanzierungsgebiet der verbrauchenden Marktlokation mittels einer eindeutigen ID"

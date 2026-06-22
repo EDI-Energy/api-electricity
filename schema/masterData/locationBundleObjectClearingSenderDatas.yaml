@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleObjectClearingSenderDatas:
+       type: array
+       x-Translation:
+         de: "Liste der Status aus Sicht des Senders zu den Daten im System."
+       items:
+         $ref: './locationBundleObjectClearingSenderData.yaml#/components/schemas/locationBundleObjectClearingSenderData'

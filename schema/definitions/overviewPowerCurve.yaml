@@ -1,0 +1,22 @@
+components:
+  schemas:
+    overviewPowerCurve:
+      required:
+      - executionTimeFrom
+      - version
+      type: object
+      x-Translation:
+        de: "Übersicht der Leistungskurven"
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        orderReference:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        listOfPowerCurves:
+          $ref: './powerCurves.yaml#/components/schemas/powerCurves'
+          description: "Liste der Leistungskurven" 

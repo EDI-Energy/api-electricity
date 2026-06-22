@@ -1,0 +1,17 @@
+components:
+  schemas:
+    locationBundleObjectStateViewSenderNoSystemData:
+      required:
+      - locationBundleStateViewSender
+      - locationBundleObjectsViewSender
+      type: object
+      x-Translation:
+        de: "Eine Zeitscheibe der Liste aller im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen"
+      properties:
+        locationBundleStateViewSender:
+          $ref: './locationBundleStateViewSenderNoSystemData.yaml#/components/schemas/locationBundleStateViewSenderNoSystemData'
+          description: "Status (keine Systemdaten)"
+        locationBundleObjectsViewSender:
+          $ref: './locationBundleObjectsClearingNoDatas.yaml#/components/schemas/locationBundleObjectsClearingNoDatas'
+          description: "Datum ab dem im Lokationsbündel keine Objekte enthalten sind aus Sicht des Senders zu den Systemdaten"
+ 

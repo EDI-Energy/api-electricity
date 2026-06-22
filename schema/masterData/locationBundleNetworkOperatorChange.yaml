@@ -1,0 +1,20 @@
+components:
+  schemas:
+    locationBundleNetworkOperatorChange:
+      required:
+      - locationBundle
+      - networkOperatorChangePackageId
+      - locationBundleNetworkOperatorChangeObject
+      type: object
+      x-Translation:
+        de: "Lokationsbündel"
+      properties:
+        locationBundle:
+          $ref: '../../schema/masterData/locationBundle.yaml#/components/schemas/locationBundle'
+          description: "vollständiges Lokationsbündel"
+        networkOperatorChangePackageId:
+          $ref: './../identifier/networkOperatorChangePackageId.yaml#/components/schemas/networkOperatorChangePackageId'
+          description: "Identifiziert das Netzbetreiberwechsel-Paket mittels einer eindeutigen ID"
+        locationBundleNetworkOperatorChangeObject:
+          $ref: './locationBundleNetworkOperatorChangeObject.yaml#/components/schemas/locationBundleNetworkOperatorChangeObject'
+          description: "Die Liste der Lokationsbündel-Objekte mit den jeweils zugeordneten Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"

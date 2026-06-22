@@ -1,0 +1,9 @@
+components: 
+  schemas:
+    formula:
+      pattern: ""
+      type: string
+      description: "Formel zur Berechnung eines Wertes"
+      x-Translation:
+        de: "Formel zur Berechnung eines Wertes"
+      example: "=MeLo1+MeLo2"

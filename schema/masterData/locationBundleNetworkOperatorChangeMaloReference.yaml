@@ -1,0 +1,23 @@
+components:
+  schemas:
+    locationBundleNetworkOperatorChangeMaloReference:
+      required:
+      - regardMaloId
+      - measuringPointOperators
+      - transmissionSystemOperators
+      type: object
+      x-Translation:
+        de: "Eine Marktloaktion mit ihren zugehörigen Marktpartnern"
+      properties:
+        regardMaloId:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Identifiziert die Marktloaktion mittels einer eindeutigen ID"
+        measuringPointOperators:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          description: "Messstellenbetreiber, der der Marktloaktion zugeordnet ist"
+        supplier:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          description: "Lieferant, der der Marktloaktion zugeordnet ist"
+        transmissionSystemOperators:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          description: "UENB, der der Marktloaktion zugeordnet ist"

@@ -1,0 +1,157 @@
+openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
+info: # Allgemeine Infos zur Schnittstelle
+  title: EDI@Energy API-Webdienst zur Übermittlung der Übersicht und den ausgerollten Leistungskurven
+  version: 1.0.0
+  description: Mit diesem API-Webdienst wird die Übermittlung der Übersicht und den ausgerollten Leistungskurven umgesetzt.
+
+paths:
+  /definition/powerCurve/overview/v1:
+    post:
+      tags:
+        - Übersicht Leistungskurve
+      summary: Übermittlung der Übersicht der Leistungskurven
+      description: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Übersicht der Leistungskurven des sendenden Marktpartners.
+        required: true
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/definitions/overviewPowerCurve.yaml#/components/schemas/overviewPowerCurve'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error1
+
+  /definition/powerCurve/yearlyRollout/v1:
+    post:
+      tags:
+        - Ausgerollte Leistungskurve
+      summary: Übermittlung einer jährlich ausgerollten Leistungskurve
+      description: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer jährlich ausgerollten Leistungskurve.
+        required: true
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/definitions/yearlyRolloutPowerCurve.yaml#/components/schemas/yearlyRolloutPowerCurve'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error1
+
+  /definition/powerCurve/uniqueRollout/v1:
+    post:
+      tags:
+        - Ausgerollte Leistungskurve
+      summary: Übermittlung einer einmalig ausgerollten Leistungskurve
+      description: ""
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer einmlaig ausgerollten Leistungskurve.
+        required: true
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/definitions/uniqueRolloutPowerCurve.yaml#/components/schemas/uniqueRolloutPowerCurve'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error1
+ 

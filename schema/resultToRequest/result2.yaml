@@ -1,0 +1,17 @@
+components:
+  schemas:
+    result2:
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben."
+      x-Translation:
+        de: "Ergebnis"
+      required:
+      - responseCode
+      - decisionTree
+      type: object
+      properties:
+        decisionTree:
+          $ref: './decisionTree.yaml#/components/schemas/decisionTree'
+        responseCode:
+          $ref: './responseCode.yaml#/components/schemas/responseCode'
+        reason:
+          $ref: './../freeText.yaml#/components/schemas/freeText'

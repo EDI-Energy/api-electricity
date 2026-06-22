@@ -1,0 +1,26 @@
+components:
+  schemas:
+    locationBundleEnergy:
+      required:
+      - locationBundleId
+      - productionMaloId
+      - balancingArea
+      type: object
+      x-Translation:
+        de: "Energie-Lokationsbündel"
+      properties:
+        locationBundleId:
+          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID der Lokationsbündel-ID"
+        productionMaloId:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Identifiziert die erzeugende Marktlokation, die den weitern verbrauchenden Marktlokationen Energie bereitstellt"
+        balancingArea:
+          $ref: './../identifier/balancingArea.yaml#/components/schemas/balancingArea'
+          description: "Informativ das Bilanzierungsgebiet der erzeugenden Marktlokation mittels einer eindeutigen ID"
+        locationBundleEnergyMalo:
+          $ref: './locationBundleEnergyObjects.yaml#/components/schemas/locationBundleEnergyObjects'
+          description: "Die Liste ggf. mit Zeitscheiben der verbrauchenden Marktlokationen, die mit der erzeugenden Marktlokation in Verbindung stehen"
+        locationBundleObjectNoData:
+          $ref: './locationBundleObjectNoDatas.yaml#/components/schemas/locationBundleObjectNoDatas'
+          description: "Zeiträume in denen im Lokationsbündel Energy keine verbrauchenden Marktlokationen enthalten sind"

@@ -1,0 +1,10 @@
+components:
+  schemas:
+    parameterIdCalculationFormulas:
+      type: array
+      minItems: 0
+      description: "Parameter-ID"
+      x-Translation:
+        de: "Parameter-ID"
+      items:
+        $ref: './parameterIdCalculationFormula.yaml#/components/schemas/parameterIdCalculationFormula'

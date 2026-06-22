@@ -1,0 +1,16 @@
+components:
+  schemas:
+      codeRegisterNetworkOperator:
+        required:
+          - code
+          - isOffPeakCapable
+        type: object
+        description: "Code des Registers"
+        x-Translation:
+          de: "Code des Registers"
+        properties:
+          code:
+            $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          isOffPeakCapable:
+            $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse'
+            description: "Ist das Register schwachlastfaehig?"

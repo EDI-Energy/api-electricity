@@ -1,0 +1,14 @@
+components:
+  schemas:
+    powerCurves:
+      required:
+      - code
+      - frequencyTransmission
+      type: object
+      x-Translation:
+        de: "Liste der Übersicht der Leistungskurven"
+      properties:
+        code:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+        frequencyTransmission:
+          $ref: './frequencyTransmission.yaml#/components/schemas/frequencyTransmission'

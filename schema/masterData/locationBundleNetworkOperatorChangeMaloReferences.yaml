@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleNetworkOperatorChangeMaloReferences:
+      type: array
+      x-Translation:
+        de: "Marktlokationen mit Marktpartner-Zuordnung"
+      items:
+        $ref: './locationBundleNetworkOperatorChangeMaloReference.yaml#/components/schemas/locationBundleNetworkOperatorChangeMaloReference'

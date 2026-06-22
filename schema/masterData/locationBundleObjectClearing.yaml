@@ -1,0 +1,27 @@
+components:
+  schemas:
+    locationBundleObjectClearing:
+      required:
+      - executionDateTime
+      - neloReferences
+      - meloReferences
+      - maloReferences
+      type: object
+      x-Translation:
+        de: "Eine Zeitscheibe der Liste aller im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen"
+      properties:
+        executionDateTime:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Das Datum ab dem das Lokationsbündel in der Zusammensetzung der Objekte gültig ist"
+        srIds:
+          $ref: './../identifier/srIds.yaml#/components/schemas/srIds'
+          description: "Die Liste der steuerbaren Ressourcen im Lokationsbündel ohne Zuordnung zu einem Objekt, die zu der Zeitscheibe gültig sind"
+        neloReferences:
+          $ref: './locationBundleNeloReferences.yaml#/components/schemas/locationBundleNeloReferences'
+          description: "Die Liste der Netzlokationen, die dem Lokationsbündel zugeordnet sind und zu der Zeitscheibe gültig sind"
+        meloReferences:
+          $ref: './locationBundleMeloReferences.yaml#/components/schemas/locationBundleMeloReferences'
+          description: "Die Liste der Messlokationen, die dem Lokationsbündel zugeordnet sind und zu der Zeitscheibe gültig sind"
+        maloReferences:
+          $ref: './locationBundleMaloReferences.yaml#/components/schemas/locationBundleMaloReferences'
+          description: "Die Liste der Marklokationen, die dem Lokationsbündel zugeordnet sind und zu der Zeitscheibe gültig sind"

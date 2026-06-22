@@ -1,0 +1,8 @@
+components:
+  schemas:
+    locationBundleEnergyObjectClearingNoDatas:
+      type: array
+      x-Translation:
+        de: "Zeitscheiben der Liste in der im Lokationsbündel Energy keine verbrauchenden Marktlokationen enthalten sind"
+      items:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

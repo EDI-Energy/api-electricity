@@ -1,0 +1,10 @@
+components:
+  schemas:
+      uniqueRolloutMaximumPowerConsumptionStates:
+        type: array
+        minItems: 1
+        description: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Bezugsleistung."
+        x-Translation:
+          de: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Bezugsleistung."
+        items:
+          $ref: './uniqueRolloutMaximumPower.yaml#/components/schemas/uniqueRolloutMaximumPower'

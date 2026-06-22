@@ -1,0 +1,17 @@
+components:
+  schemas:
+    allocationFactor:
+      required:
+      - nameOfVariable
+      - factor
+      type: object
+      description: "Aufteilungsfaktor"
+      x-Translation:
+        de: "Aufteilungsfaktor"
+      properties:
+        nameOfVariable: 
+          $ref: './../codeAn5.yaml#/components/schemas/codeAn5'
+          description: "Name des Aufteilungsfaktors"
+        factor:
+          $ref: './../factor01.yaml#/components/schemas/factor01'
+          description: "Aufteilungsfaktor"

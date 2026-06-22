@@ -1,0 +1,12 @@
+components:
+  schemas:
+    calculationFormulaResponse:
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben."
+      x-Translation:
+        de: "Ergebnis"
+      required:
+      - response
+      type: object
+      properties:
+        response:
+          $ref: './../resultToRequest/result2.yaml#/components/schemas/result2'

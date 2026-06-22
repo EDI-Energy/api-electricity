@@ -1,0 +1,16 @@
+components:
+  schemas:
+    locationBundleEnergyObjectStateViewSenderNoExpectedData:
+      required:
+      - locationBundleEnergyStateViewSender
+      - locationBundleEnergyObjectsViewSender
+      type: object
+      x-Translation:
+        de: Zeitscheiben in denen im Lokationsbündel keine verbrauchenden Marktlokationen enthalten sind aus Sicht des Senders zu den erwarteten Daten
+      properties:
+        locationBundleEnergyStateViewSender:
+          $ref: './locationBundleEnergyStateViewSenderNoExpectedData.yaml#/components/schemas/locationBundleEnergyStateViewSenderNoExpectedData'
+          description: Status (keine erwartete Daten)
+        locationBundleEnergyObjectsViewSender:
+          $ref: './locationBundleEnergyObjectClearingNoDatas.yaml#/components/schemas/locationBundleEnergyObjectClearingNoDatas'
+          description: Zeitscheiben in denen im Lokationsbündel keine verbrauchenden Marktlokationen enthalten sind aus Sicht des Senders zu den erwarteten Daten

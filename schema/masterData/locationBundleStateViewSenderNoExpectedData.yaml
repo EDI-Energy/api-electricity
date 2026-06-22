@@ -1,0 +1,8 @@
+components:
+  schemas:
+    locationBundleStateViewSenderNoExpectedData:
+      type: string
+      description: "Lokationsbündel Sichtweise des Senders. noExpectedData=keine erwarteten Daten, expectedData=erwartete Daten."
+      example: "noExpectedData"
+      enum:
+      - noExpectedData

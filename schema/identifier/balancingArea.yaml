@@ -1,0 +1,9 @@
+components:
+  schemas:
+    balancingArea:
+      pattern: "^11Y[NRVW][A-Z0-9-]{11}[A-Z0-9]$"
+      type: string
+      description: "Identifiziert das Bilanzierungsgebiet mittels einer eindeutigen ID"
+      x-Translation:
+        de: "Bilanzierungsgebiet ID"
+      example: "11YN23456789012"

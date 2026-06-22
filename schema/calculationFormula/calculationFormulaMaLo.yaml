@@ -1,0 +1,23 @@
+components:
+  schemas:
+    calculationFormulaMaLo:
+      required:
+      - marketLocation
+      - calculationFormulas
+      type: object
+      description: "Übermittlung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche (Energie Sharing, Gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.) für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen."
+      x-Translation:
+        de: "Übermittlung der Berechnungsformel für Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche (Energie Sharing, Gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.) für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen."
+      properties:
+        marketLocation:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Angabe der Marktlokations-ID"
+        calculatedOutcome:
+          $ref: './../calculatedOutcome.yaml#/components/schemas/calculatedOutcome'
+          description: "Berechnungsformel-Ziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Berechnungsformelziele'"
+        calculationFormulas:
+          $ref: './listCalculationFormulasMaLo.yaml#/components/schemas/listCalculationFormulasMaLo'
+          description: "Berechnungsformel für jeweils einen Zeitraum" 
+        calculationFormulasNoData:
+          $ref: './calculationFormulasNoDatas.yaml#/components/schemas/calculationFormulasNoDatas'
+          description: "Zeiträume in denen keine Berechnunsgformel vorhanden ist"

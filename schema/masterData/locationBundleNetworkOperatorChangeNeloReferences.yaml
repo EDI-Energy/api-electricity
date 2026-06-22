@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleNetworkOperatorChangeNeloReferences:
+      type: array
+      x-Translation:
+        de: "Netzlokation mit Marktpartner-Zuordnung"
+      items:
+        $ref: './locationBundleNetworkOperatorChangeNeloReference.yaml#/components/schemas/locationBundleNetworkOperatorChangeNeloReference'

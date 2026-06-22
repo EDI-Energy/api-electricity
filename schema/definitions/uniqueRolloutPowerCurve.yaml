@@ -1,0 +1,39 @@
+components:
+  schemas:
+    uniqueRolloutPowerCurve:
+      required:
+      - code
+      - executionTimeFrom
+      - version
+      - startMaxPowerConsumptionBeginYear
+      - uniqueRolloutMaximumPowerConsumption
+      type: object
+      description: "Einmalig ausgerollte Leistungskurve"
+      x-Translation:
+        de: "Einmalig ausgerollte Leistungskurve"
+      properties:
+        code:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          description: "Code der Leistungskurve"
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab (01.01 00:00 Uhr eines Kalenderjahres)"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        orderReference:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        startMaxPowerConsumptionBeginYear:
+          $ref: './maximumPower.yaml#/components/schemas/maximumPower'
+          description: "Die maximale Bezugsleistung an der Lokation zum 01.01. eines Kalenderjahres."
+        startMaxPowerProductionBeginYear:
+          $ref: './maximumPower.yaml#/components/schemas/maximumPower'
+          description: "Die maximale Erzeugungsleistung an der Lokation zum 01.01. eines Kalenderjahres."
+        uniqueRolloutMaximumPowerConsumption:
+          $ref: './uniqueRolloutMaximumPowerConsumptionStates.yaml#/components/schemas/uniqueRolloutMaximumPowerConsumptionStates'
+          description: "Ausgerollte maximale Bezugsleistung für das Kalenderjahr."
+        uniqueRolloutMaxPowerProduction:
+          $ref: './uniqueRolloutMaximumPowerProductionStates.yaml#/components/schemas/uniqueRolloutMaximumPowerProductionStates'
+          description: "Ausgerollte maximale Erzeugungsleistung für das Kalenderjahr."
+         

@@ -1,0 +1,28 @@
+components:
+  schemas:
+    locationBundleNetworkOperatorChangeObject:
+      required:
+      - neloReferences
+      - meloReferences
+      - maloReferences
+      - trancheReferences
+      - srReferences
+      type: object
+      x-Translation:
+        de: "Alle Lokationen mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
+      properties:
+        neloReferences:
+          $ref: './locationBundleNetworkOperatorChangeNeloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeNeloReferences'
+          description: "Die Liste der Netzlokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
+        meloReferences:
+          $ref: './locationBundleNetworkOperatorChangeMeloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeMeloReferences'
+          description: "Die Liste der Messlokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
+        maloReferences:
+          $ref: './locationBundleNetworkOperatorChangeMaloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeMaloReferences'
+          description: "Die Liste der Marklokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
+        trancheReferences:
+          $ref: './locationBundleNetworkOperatorChangeTrancheReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeTrancheReferences'
+          description: "Die Liste der Tranchen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
+        srReferences:
+          $ref: './locationBundleNetworkOperatorChangeSrReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeSrReferences'
+          description: "Die Liste der steuerbaren Ressourcen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"

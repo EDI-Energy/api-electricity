@@ -1,0 +1,24 @@
+components:
+  schemas:
+    terminationCalculationFormulaLocation:
+      required:
+      - location
+      - calculatedOutcome
+      - terminationDateTime
+      type: object
+      description: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Netzlokation auf Basis von Werten von Messlokationen."
+      x-Translation:
+        de: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Netzlokation auf Basis von Werten von Messlokationen."
+      properties:
+        location:
+          oneOf:
+            - $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+              description: "Marktlokations-ID"
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+              description: "Netzlokations-ID"
+        calculatedOutcome:
+          $ref: './../calculatedOutcome.yaml#/components/schemas/calculatedOutcome'
+          description: "Berechnungsformel-Ziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Berechnungsformelziele'"
+        terminationDateTime:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Beendigungszeitpunkt zu dem die Berechnungsformel mit dem genannten Berechnungsziel für die Marktlokation bzw. Netzlokation nicht mehr benötigt wird."

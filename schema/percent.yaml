@@ -1,0 +1,9 @@
+components: 
+  schemas:
+    percent:
+      pattern: "\\d{1,2}(\\.[\\d]{1,3})? Todo GSC: Pattern korrekt bauen"
+      type: string
+      description: "Prozentualer Wert bis 100%"
+      x-Translation:
+        de: "Prozentualer Wert bis 100%"
+      example: "99.000"

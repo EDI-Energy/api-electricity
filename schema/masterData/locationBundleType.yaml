@@ -1,0 +1,9 @@
+components:
+  schemas:
+    locationBundleType:
+      type: string
+      description: "Art des Energie Lokationsbündels, d.h. Hintergrund der Gruppierung der aufgeführten Marktlokationen"
+      example: "energySharing2028"
+      enum:
+      - energySharing2026
+      - energySharing2028

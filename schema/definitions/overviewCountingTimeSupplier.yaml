@@ -1,0 +1,22 @@
+components:
+  schemas:
+    overviewCountingTimeSupplier:
+      required:
+      - executionTimeFrom
+      - version
+      type: object
+      x-Translation:
+        de: "Übersicht der Zählzeiten eines LF"
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        orderReference:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        listOfCountingTimes:
+          $ref: './countingTimesSupplier.yaml#/components/schemas/countingTimesSupplier'
+          description: "Übersicht der Zählzeiten eines LF."          

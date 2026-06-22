@@ -1,0 +1,21 @@
+components:
+  schemas:
+    terminationCalculationFormulaMaLo:
+      required:
+      - marketLocation
+      - calculatedOutcome
+      - terminationDateTime
+      type: object
+      description: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche (Energie Sharing, Gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.) für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen"
+      x-Translation:
+        de: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche (Energie Sharing, Gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.) für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen"
+      properties:
+        marketLocation:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Angabe der Marktlokations-ID"
+        calculatedOutcome:
+          $ref: './../calculatedOutcome.yaml#/components/schemas/calculatedOutcome'
+          description: "Berechnungsformel-Ziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Berechnungsformelziele'"  
+        terminationDateTime:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Beendigungszeitpunkt zu dem die Berechnungsformel mit dem genannten Berechnungsziel für die Marktlokation bzw. Tranche nicht mehr benötigt wird."

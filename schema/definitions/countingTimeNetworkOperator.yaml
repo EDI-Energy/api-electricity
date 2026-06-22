@@ -1,0 +1,30 @@
+components:
+  schemas:
+    countingTimeNetworkOperator:
+      required:
+      - code
+      - frequencyTransmission
+      - determiningMaximumPowerAtypicalNetworkUsage
+      - canBeOrdered
+      - countingTimeType
+      - codeRegister     
+      type: object
+      x-Translation:
+        de: "Liste der Übersicht der Zählzeiten des NB"
+      properties:
+        code:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+        frequencyTransmission:
+          $ref: './frequencyTransmission.yaml#/components/schemas/frequencyTransmission'
+        determiningMaximumPowerAtypicalNetworkUsage:
+          $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse'
+          description: "Ermittlung des Leistungsmaximums bei atypischer Netznutzung"
+        canBeOrdered:
+          $ref: './../trueOrFalse.yaml#/components/schemas/trueOrFalse'
+          description: "Angabe, ob die Zählzeit bestellbar ist"
+        countingTimeType:
+          $ref: './countingTimeTypeEnum.yaml#/components/schemas/countingTimeTypeEnum'
+        codeRegisters:
+          $ref: './codeRegisterNetworkOperators.yaml#/components/schemas/codeRegisterNetworkOperators'
+          description: "Code des Registers einer Zählzeit"
+        

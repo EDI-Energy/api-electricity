@@ -1,0 +1,9 @@
+components: 
+  schemas:
+    kilowatt:
+      pattern: "\\d{1,2}(\\.[\\d]{1,6})?"
+      type: string
+      description: "Angabe von Kilowatt (kw)"
+      x-Translation:
+        de: "Angabe von Kilowatt (kw)"
+      example: "4.2"

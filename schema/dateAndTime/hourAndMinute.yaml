@@ -1,0 +1,9 @@
+components:
+   schemas:
+    hourAndMinute:
+      pattern: "Todo GSC --> pattern erstellen"
+      type: string
+      description: "Angabe einer Uhrzeit mit der Granularität Stunde und Minute. Beispiel: 12:53 Uhr deutscher gesetzlicher Zeit: 1253"
+      x-Translation:
+        de: "Angabe einer Uhrzeit mit der Granularität Stunde und Minute"
+      example: "1253"

@@ -1,0 +1,31 @@
+components:
+  schemas:
+    calculationFormulaLocationTimePeriod:
+      required:
+      - executionTimeFrom
+      - purposeOfUses
+      - calculationSteps
+      - result
+      type: object
+      description: "Berechnungsformel für einen Zeitraum"
+      x-Translation:
+        de: "Berechnungsformel für einen Zeitraum"
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab"
+        purposeOfUses:
+          $ref: './../purposeOfUses.yaml#/components/schemas/purposeOfUses'
+          description: "Angabe der Verwendungszecke der Berechnungsformel"
+        calculationSteps:
+          $ref: './calculationStepsLocation.yaml#/components/schemas/calculationStepsLocation'
+          description: "Liste von Operanden, die in der ausgeschriebenen Berechnungsformel, die zur Ermittlung der Energiemenge der Marktlokation bzw. die Netzlokation für das genannte Berechnungsziel notwendig sind."
+        allocationFactors:
+          $ref: './allocationFactors.yaml#/components/schemas/allocationFactors'
+          description: "Liste von Aufteilungsfaktoren, die in der ausgeschriebenen Berechnungsformel, die zur Ermittlung der Energiemenge der Marktlokation bzw. die Netzlokation für das genannte Berechnungsziel notwendig sind."
+        paremeterIDs:
+          $ref: './parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas'
+          description: "Liste Parameter-IDs, die in der ausgeschriebenen Berechnungsformel, die zur Ermittlung der Energiemenge der Marktlokation bzw. die Netzlokation für das genannte Berechnungsziel notwendig sind."
+        result:
+          $ref: './resultCalculationFormula.yaml#/components/schemas/resultCalculationFormula'
+          description: "Die ausgeschriebene Berechnungsformel, die zur Ermittlung der Energiemenge der Marktlokation bzw. die Netzlokation für das genannte Berechnungsziel notwendig ist."

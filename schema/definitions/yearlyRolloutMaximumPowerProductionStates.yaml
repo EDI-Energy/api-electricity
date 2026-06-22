@@ -1,0 +1,10 @@
+components:
+  schemas:
+      yearlyRolloutMaximumPowerProductionStates:
+        type: array
+        minItems: 0
+        description: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Erzeugungsleistung."
+        x-Translation:
+          de: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Erzeugungsleistung."
+        items:
+          $ref: './yearlyRolloutMaximumPower.yaml#/components/schemas/yearlyRolloutMaximumPower'

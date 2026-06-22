@@ -1,0 +1,12 @@
+components:
+  schemas:
+    locationBundleEnergyNetworkOperatorChangeObject:
+      required:
+      - maloReferences
+      type: object
+      x-Translation:
+        de: "Alle Marklokationen mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"
+      properties:
+        maloReferences:
+          $ref: './locationBundleNetworkOperatorChangeMaloReferences.yaml#/components/schemas/locationBundleNetworkOperatorChangeMaloReferences'
+          description: "Die Liste der Marklokationen, die dem Lokationsbündel zugeordnet sind mit ihren zugehörigen Marktpartnern zum Zeitpunkt des Netzbetreiberwechsels"

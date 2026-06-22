@@ -1,0 +1,8 @@
+components:
+  schemas:
+    trueOrFalse:
+      type: boolean
+      description: "Angabe eines booleschen Wertes Ja oder Nein"
+      x-Translation:
+        de: "Angabe eines booleschen Wertes Ja oder Nein"
+      example: false

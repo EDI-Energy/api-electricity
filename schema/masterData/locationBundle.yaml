@@ -1,0 +1,19 @@
+components:
+  schemas:
+    locationBundle:
+      required:
+      - locationBundleId
+      - locationBundleObjects
+      type: object
+      x-Translation:
+        de: "Lokationsbündel"
+      properties:
+        locationBundleId:
+          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID der Lokationsbündel-ID"
+        locationBundleObjects:
+          $ref: './locationBundleObjects.yaml#/components/schemas/locationBundleObjects'
+          description: "Liste ggf. mit mehreren Zeitscheiben der im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen"
+        locationBundleObjectNoData:
+          $ref: './locationBundleObjectNoData.yaml#/components/schemas/locationBundleObjectNoData'
+          description: "Datum ab dem im Lokationsbündel keine Objekte enthalten sind"

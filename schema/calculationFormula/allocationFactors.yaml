@@ -1,0 +1,10 @@
+components:
+  schemas:
+    allocationFactors:
+      type: array
+      minItems: 0
+      description: "Aufteilungsfaktor"
+      x-Translation:
+        de: "Aufteilungsfaktor"
+      items:
+        $ref: './allocationFactor.yaml#/components/schemas/allocationFactor'

@@ -1,0 +1,20 @@
+components:
+  schemas:
+    resultComplaintRolledOut:
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Wenn der Empfänger der Reklamation die ausgerollte Definition bereits übermittelt hat ist die Version, mit welcher er diese übermittelt hat  in \"version\" anzugeben."
+      x-Translation:
+        de: "Ergebnis auf die Reklamation der ausgerollten Definition"
+      required:
+      - responseCode
+      - decisionTree
+      type: object
+      properties:
+        decisionTree:
+          $ref: './decisionTree.yaml#/components/schemas/decisionTree'
+        responseCode:
+          $ref: './responseCode.yaml#/components/schemas/responseCode'
+        reason:
+          $ref: './../freeText.yaml#/components/schemas/freeText'
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe mit der die reklamierte ausgerollte Definition übermittelt wurde."

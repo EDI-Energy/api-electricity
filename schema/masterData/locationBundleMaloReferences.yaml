@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleMaloReferences:
+      type: array
+      x-Translation:
+        de: "Lokationsbündel-Objekte die auf eine MaLo referenzieren"
+      items:
+        $ref: './locationBundleMaloReference.yaml#/components/schemas/locationBundleMaloReference'

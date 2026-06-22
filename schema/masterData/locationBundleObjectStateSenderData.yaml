@@ -1,0 +1,12 @@
+components:
+  schemas:
+    locationBundleObjectStateSenderData:
+      required:
+      - expectedData
+      type: object
+      x-Translation:
+        de: "Eine Zeitscheibe der Liste aller im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen"
+      properties:
+        expectedData:
+          $ref: './locationBundleObjectStateViewSenderExpectedData.yaml#/components/schemas/locationBundleObjectStateViewSenderExpectedData'
+          description: "Die Liste der Status aus Sicht des Senders zu den erwarteten Daten"

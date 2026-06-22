@@ -1,0 +1,23 @@
+components:
+  schemas:
+    overviewCountingTimeNetworkOperator:
+      required:
+      - executionTimeFrom
+      - version
+      - DeterminingMaximumPowerAtypicalNetworkUsage
+      type: object
+      x-Translation:
+        de: "Übersicht der Zählzeiten eines NB"
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        orderReference:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        lsitOfCountingTimes:
+          $ref: './countingTimesNetworkOperator.yaml#/components/schemas/countingTimesNetworkOperator'
+          description: "Liste der Zählzeiten des NB."

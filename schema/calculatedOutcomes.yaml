@@ -1,0 +1,9 @@
+components:
+  schemas:
+    purposeOfUses:
+      minItems: 1
+      type: array
+      x-Translation:
+        de: Berechnungsformel Ziele
+      items:
+        $ref: './calculatedOutcome.yaml#/components/schemas/calculatedOutcome'

@@ -1,0 +1,8 @@
+components:
+  schemas:
+    trIds:
+      type: array
+      x-Translation:
+        de: "Technische Ressource IDs"
+      items:
+        $ref: './trId.yaml#/components/schemas/trId'

@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleEnergyObjectsClearingNoDatas:
+      type: array
+      x-Translation:
+        de: "Keine Lokationsbündel-Energy-Marktlokationen"
+      items:
+        $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

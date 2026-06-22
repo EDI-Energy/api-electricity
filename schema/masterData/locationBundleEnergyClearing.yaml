@@ -1,0 +1,28 @@
+components:
+  schemas:
+    locationBundleEnergyClearing:
+      required:
+      - locationBundleId
+      - productionMaloId
+      type: object
+      x-Translation:
+        de: "Energie-Lokationsbündel"
+      properties:
+        locationBundleId:
+          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+          description: "Identifiziert das Lokationsbündel"
+        productionMaloId:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Identifiziert die erzeugende Marktlokation, die den weitern verbrauchenden Marktlokationen Energie bereitstellt"
+        ExpectedData:
+          $ref: './locationBundleEnergyObjectStateViewSenderExpectedData.yaml#/components/schemas/locationBundleEnergyObjectStateViewSenderExpectedData'
+          description: "Die Listen der erwarteten Daten aus Sicht des Senders"
+        systemData:
+          $ref: './locationBundleEnergyObjectStateViewSenderSystemData.yaml#/components/schemas/locationBundleEnergyObjectStateViewSenderSystemData'
+          description: "Die Listen der Daten im System aus Sicht des Senders"
+        noExpectedData:
+          $ref: './locationBundleEnergyObjectStateViewSenderNoExpectedData.yaml#/components/schemas/locationBundleEnergyObjectStateViewSenderNoExpectedData'
+          description: "Erwartete Zeitscheiben in denen im Lokationsbündel keine verbrauchenden Marktlokationen enthalten sind aus Sicht des Senders"
+        noSystemData:
+          $ref: './locationBundleEnergyObjectStateViewSenderNoSystemData.yaml#/components/schemas/locationBundleEnergyObjectStateViewSenderNoSystemData'
+          description: "Im System vorhandene Zeitscheiben ab dem im Lokationsbündel keine verbrauchenden Marktlokationen enthalten sind aus Sicht des Senders"

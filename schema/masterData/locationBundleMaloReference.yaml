@@ -1,0 +1,18 @@
+components:
+  schemas:
+    locationBundleMaloReference:
+      required:
+      - regardMaloId
+      type: object
+      x-Translation:
+        de: "Eine Marktlokation mit ihren zugehörigen technischen Ressourcen und Tranchen"
+      properties:
+        regardMaloId:
+          $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+          description: "Identifiziert die Marktlokation mittels einer eindeutigen ID"
+        trIds:
+          $ref: './../identifier/trIds.yaml#/components/schemas/trIds'
+          description: "Die Liste der technischen Ressourcen, die der Marktlokation zugeordnet sind"
+        tranchenIds:
+          $ref: './../identifier/maloIds.yaml#/components/schemas/maloIds'
+          description: "Die Liste der Tranchen, die der Marktlokation zugeordnet sind"

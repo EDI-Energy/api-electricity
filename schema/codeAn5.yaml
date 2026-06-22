@@ -1,0 +1,9 @@
+components:
+  schemas:
+    codeAn5:
+      type: string
+      pattern: "^[A-Za-z0-9]{1,5}$"
+      description: "Code alphanumerisch bis zu fünf Stellen (an..5)"
+      x-Translation:
+        de: "Code alphanumerisch bis zu fünf Stellen"
+      example: "12345"

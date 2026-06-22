@@ -1,0 +1,15 @@
+components:
+  schemas:
+    yearlyRolloutSwitchingTimeState:
+      required:
+      - executionTimeFrom
+      - state
+      type: object
+      description: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen Status der Schalthandlung."
+      x-Translation:
+        de: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen Status der Schalthandlung."
+      properties:
+        executionTimeFrom:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+        state:
+          $ref: './switchingTimeState.yaml#/components/schemas/switchingTimeState'

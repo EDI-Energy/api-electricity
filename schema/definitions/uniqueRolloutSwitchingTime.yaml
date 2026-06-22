@@ -1,0 +1,33 @@
+components:
+  schemas:
+    uniqueRolloutSwitchingTime:
+      required:
+      - code
+      - executionTimeFrom
+      - version
+      - startPowerStateBeginYear
+      - uniqueRolloutSwitchingTimes
+      type: object
+      description: "Einmalig ausgerollte Schaltzeit"
+      x-Translation:
+        de: "Einmalig ausgerollte Schaltzeit"
+      properties:
+        code:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          description: "Code der Schaltzeit"
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Zeitpunkt Gültig Ab (01.01 00:00 Uhr eines Kalenderjahres)"
+        version:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Versionsangabe"
+        orderReference:
+          $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
+          description: "Referenz auf eine mögliche Reklamation"
+        startPowerStateBeginYear:
+          $ref: './switchingTimeState.yaml#/components/schemas/switchingTimeState'
+          description: "Der Status der Leistung an der Lokation zum 01.01. eines Kalenderjahres."
+        uniqueRolloutSwitchingTimes:
+          $ref: './uniqueRolloutSwitchingTimeStates.yaml#/components/schemas/uniqueRolloutSwitchingTimeStates'
+          description: "Einmalig ausgerollte Schaltzeit"
+         

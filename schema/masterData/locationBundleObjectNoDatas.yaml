@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleObjectNoDatas:
+      type: array
+      x-Translation:
+        de: "Zeitscheiben in der Liste in der im Lokationsbündel keine Objekte enthalten sind"
+      items:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

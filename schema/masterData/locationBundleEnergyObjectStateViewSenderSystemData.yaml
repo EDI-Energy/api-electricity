@@ -1,0 +1,17 @@
+components:
+  schemas:
+    locationBundleEnergyObjectStateViewSenderSystemData:
+      required:
+      - locationBundleEnergyStateViewSender
+      - locationBundleEnergyObjectsViewSender
+      type: object
+      x-Translation:
+        de: "Eine Zeitscheibe der Liste aller im Lokationsbündel enthaltenen Marktlokationen"
+      properties:
+        locationBundleEnergyStateViewSender:
+          $ref: './locationBundleEnergyStateViewSenderSystemData.yaml#/components/schemas/locationBundleEnergyStateViewSenderSystemData'
+          description: "Status (Systemdaten)"
+        locationBundleEnergyObjectsViewSender:
+          $ref: './locationBundleEnergyObjectsClearing.yaml#/components/schemas/locationBundleEnergyObjectsClearing'
+          description: "Die Liste der Objekte aus Sicht des Senders zu den Systemdaten"
+ 

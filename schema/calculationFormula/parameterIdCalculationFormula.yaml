@@ -1,0 +1,12 @@
+components:
+  schemas:
+    parameterIdCalculationFormula:
+      required:
+      - id
+      type: object
+      description: "Parameter-ID"
+      x-Translation:
+        de: "Parameter-ID"
+      properties:
+        id:
+          $ref: './../codeAn10.yaml#/components/schemas/codeAn10'

@@ -1,0 +1,14 @@
+components:
+  schemas:
+    complaintDefinitionOverview:
+      required:
+      - complaintReasonDefinitionOverview
+      type: object
+      x-Translation:
+        de: "Reklamationsbeschreibung der Übersicht einer Definition"
+      properties:
+        complaintReasonDefinitionOverview:
+          $ref: './complaintReasonDefinitionOverview.yaml#/components/schemas/complaintReasonDefinitionOverview'
+        versionDefinitionOverview:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: Angabe der Version der Übersicht einer Definition, wenn es sich um eine Reklamation unplausibel handelt.

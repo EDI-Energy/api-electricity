@@ -1,0 +1,10 @@
+components:
+  schemas:
+    calculationStepsMaLo:
+      type: array
+      minItems: 1
+      description: "Operand einer Berechnungsformel"
+      x-Translation:
+        de: "Operand einer Berechnungsformel"
+      items:
+        $ref: './calculationStepMaLo.yaml#/components/schemas/calculationStepMaLo'

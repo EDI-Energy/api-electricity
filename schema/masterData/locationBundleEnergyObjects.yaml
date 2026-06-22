@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleEnergyObjects:
+      type: array
+      x-Translation:
+        de: "Lokationsbündel-Energy-Objekte"
+      items:
+        $ref: './locationBundleEnergyObject.yaml#/components/schemas/locationBundleEnergyObject'

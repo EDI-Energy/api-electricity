@@ -1,0 +1,16 @@
+components:
+  schemas:
+    terminationLocationBundle:
+      required:
+      - locationBundleId
+      - terminationDateTime
+      type: object
+      x-Translation:
+        de: "Lokationsbündel"
+      properties:
+        locationBundleId:
+          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID der Lokationsbündel-ID"
+        terminationDateTime:
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          description: "Beendigungszeitpunkt"

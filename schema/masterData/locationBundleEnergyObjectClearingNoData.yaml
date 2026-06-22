@@ -1,0 +1,12 @@
+components:
+  schemas:
+    locationBundleEnergyObjectClearingNoData:
+      required:
+      - executionDateTime
+      type: object
+      x-Translation:
+        de: "Eine Zeitscheibe der Liste in der im Lokationsbündel Energy keine Marktlokationen enthalten sind"
+      properties:
+        executionDateTime:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          description: "Das Datum ab dem im Lokationsbündel Energy keine Marktlokationen enthalten sind"

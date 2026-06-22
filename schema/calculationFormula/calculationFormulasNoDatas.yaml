@@ -1,0 +1,8 @@
+components:
+  schemas:
+     calculationFormulasNoDatas:
+      type: array
+      x-Translation:
+        de: "Zeiträume in denen keine Berechnunsgformel vorhanden ist"
+      items:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

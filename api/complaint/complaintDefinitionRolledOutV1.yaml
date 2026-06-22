@@ -1,0 +1,59 @@
+openapi: 3.0.0 # OpenAPI-Version (erlaubte Features und Syntax)
+info: # Allgemeine Infos zur Schnittstelle
+  title: EDI@Energy API-Webdienst zur Übermittlung von Reklamationen der ausgerollten Definition
+  version: 1.0.0
+  description: Mit diesen API-Webdienst wird die Übermittlung von Reklmamationen der ausgerollten Definition umgesetzt.
+
+paths:
+  /complaintDefinitionRolledOut/v1:
+    post:
+      tags: 
+      - Reklamation ausgerollte Definition
+      summary: >-
+       Übermittlung einer Reklamation zu einer ausgerollten Zählzeit, 
+       Leistungskurve oder Schaltzeit
+      description: ""      
+      parameters:
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs.
+        required: true
+        schema:
+          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
+      - name: testFlag
+        in: header
+        description: >-
+          Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: true
+        schema:
+          $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
+      requestBody:
+        content:
+         application/json:
+           schema:
+             $ref: '../../schema/complaint/complaintDefinitionRolledOut.yaml#/components/schemas/complaintDefinitionRolledOut'
+      responses:
+        "202":
+          description: accepted
+        "400":
+          description: Bad Request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not Found
+        "405":
+          description: Method not allowed
+        "500":
+          description: Internal Server Error

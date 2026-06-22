@@ -1,0 +1,16 @@
+components:
+  schemas:
+    locationBundleNetworkOperatorChangeMeloReference:
+      required:
+      - regardMeloId
+      - measuringPointOperators
+      type: object
+      x-Translation:
+        de: "Eine Messlokation mit ihren zugehörigen Marktpartnern"
+      properties:
+        regardMeloId:
+          $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
+          description: "Identifiziert die Messlokation mittels einer eindeutigen ID"
+        measuringPointOperators:
+          $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
+          description: "Messstellenbetreiber, der der Messlokation zugeordnet ist"

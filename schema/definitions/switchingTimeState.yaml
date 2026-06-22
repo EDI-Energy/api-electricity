@@ -1,0 +1,11 @@
+components:
+  schemas:
+    switchingTimeState:
+      type: string
+      description: "Schalthandlung an einer Lokation und dem Status."
+      x-Translation:
+        de: "Schalthandlung"
+      example: "powerOn"
+      enum:
+      - powerOn
+      - powerOff

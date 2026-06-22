@@ -1,0 +1,8 @@
+components:
+  schemas:
+    locationBundleEnergyStateViewSenderNoSystemData:
+      type: string
+      description: "Lokationsbündel Energy Sichtweise des Senders. systemData=im System vorhandene Daten, noSystemData= keine Daten im System vorhanden"
+      example: "noSystemData"
+      enum:
+      - noSystemData

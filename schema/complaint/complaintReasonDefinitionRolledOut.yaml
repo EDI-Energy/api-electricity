@@ -1,0 +1,11 @@
+components:
+  schemas:
+    complaintReasonDefinitionRolledOut:
+      type: string
+      description: "Reklamationsgrund für die ausgerollte Definition"
+      x-Translation:
+        de: "Reklamationsgrund"
+      example: "missing"
+      enum:
+      - missing
+      - implausible

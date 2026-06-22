@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleEnergyMaloBalancingAreas:
+      type: array
+      x-Translation:
+        de: "Verbrauchende Marktlokationen mit Nennung des Bilanzierungsgebiets"
+      items:
+        $ref: './locationBundleEnergyMaloBalancingArea.yaml#/components/schemas/locationBundleEnergyMaloBalancingArea'

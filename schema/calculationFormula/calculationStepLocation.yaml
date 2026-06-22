@@ -1,0 +1,27 @@
+components:
+  schemas:
+    calculationStepLocation:
+      required:
+      - identifierMeterLocation
+      - nameofVariable
+      - energyDirection
+      type: object
+      description: "Operand einer Berechnungsformel"
+      x-Translation:
+        de: "Operand einer Berechnungsformel"
+      properties:
+        identifierMeterLocation:
+          $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
+          description: "Messlokation-ID"
+        nameofVariable: 
+          $ref: './../codeAn5.yaml#/components/schemas/codeAn5'
+          description: "Name des Operands"
+        energyDirection:
+          $ref: './../energyDirection.yaml#/components/schemas/energyDirection'
+          description: "Energieflussrichtung"
+        transformerLossFactor:
+          $ref: './../factor02.yaml#/components/schemas/factor02'
+          description: "Verlustfaktor Trafo"
+        powerlineLossFactor:
+          $ref: './../factor02.yaml#/components/schemas/factor02'
+          description: "Verlustfaktor Leitung"

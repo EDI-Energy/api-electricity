@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleNetworkOperatorChangeSrReferences:
+      type: array
+      x-Translation:
+        de: "steuerbare Ressourcen mit Marktpartner-Zuordnung"
+      items:
+        $ref: './locationBundleNetworkOperatorChangeSrReference.yaml#/components/schemas/locationBundleNetworkOperatorChangeSrReference'

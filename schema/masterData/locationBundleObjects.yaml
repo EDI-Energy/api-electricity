@@ -1,0 +1,8 @@
+components:
+  schemas:
+     locationBundleObjects:
+      type: array
+      x-Translation:
+        de: "Lokationsbündel-Objekte"
+      items:
+        $ref: './locationBundleObject.yaml#/components/schemas/locationBundleObject'
