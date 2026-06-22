@@ -91,7 +91,7 @@ paths:
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
         required: true
         schema:
-          $ref: '#/components/schemas/referenceId'
+          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
         content:
           application/json:
@@ -147,7 +147,7 @@ paths:
           description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Aufrufs.
           required: true
           schema:
-            $ref: '#/components/schemas/referenceId'
+            $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       requestBody:
           content:
             application/json:
