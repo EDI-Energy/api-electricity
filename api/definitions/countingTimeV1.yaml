@@ -55,7 +55,7 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
  
   /definition/countingTime/overviewSupplier/v1:
     post:
@@ -107,7 +107,7 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
 
   /definition/countingTime/yearlyRollout/v1:
     post:
@@ -159,7 +159,7 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
 
   /definition/countingTime/uniqueRollout/v1:
     post:
@@ -211,5 +211,5 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
  

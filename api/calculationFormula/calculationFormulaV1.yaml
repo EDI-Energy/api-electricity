@@ -59,7 +59,7 @@ paths:
         '422': 
           description: Unprocessable Entity
         '500':
-          description: Internal Server Error1
+          description: Internal Server Error
   /calculationFormula/location/response/v1:
     post:
       tags:
@@ -121,7 +121,7 @@ paths:
         '422': 
           description: Unprocessable Entity
         '500':
-          description: Internal Server Error1
+          description: Internal Server Error
   /calculationFormula/location/termination/v1:
     post:
       tags:
@@ -175,7 +175,7 @@ paths:
         '422': 
           description: Unprocessable Entity
         '500':
-          description: Internal Server Error1
+          description: Internal Server Error
   /calculationFormula/malo/v1:
     post:
       tags:
@@ -230,7 +230,7 @@ paths:
         '422': 
           description: Unprocessable Entity
         '500':
-          description: Internal Server Error1
+          description: Internal Server Error
   /calculationFormula/malo/response/v1:
     post:
       tags:
@@ -291,4 +291,4 @@ paths:
         '422': 
           description: Unprocessable Entity
         '500':
-          description: Internal Server Error1
+          description: Internal Server Error

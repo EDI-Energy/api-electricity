@@ -55,7 +55,7 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
 
   /definition/powerCurve/yearlyRollout/v1:
     post:
@@ -107,7 +107,7 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
 
   /definition/powerCurve/uniqueRollout/v1:
     post:
@@ -159,5 +159,5 @@ paths:
         "422": 
           description: Unprocessable Entity
         "500":
-          description: Internal Server Error1
+          description: Internal Server Error
  
