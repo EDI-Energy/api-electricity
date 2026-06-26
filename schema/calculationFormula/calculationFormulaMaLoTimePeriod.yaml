@@ -23,7 +23,7 @@ components:
         allocationFactors:
           $ref: ./allocationFactors.yaml#/components/schemas/allocationFactors
           description: "Liste von Aufteilungsfaktoren, die in der ausgeschriebenen Berechnungsformel zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
-        paremeterIDs:
+        parameterIDs:
           $ref: ./parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas
           description: "Liste der Parameter-IDs, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
         result:

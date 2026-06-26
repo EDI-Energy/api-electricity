@@ -22,7 +22,7 @@ components:
         allocationFactors:
           $ref: './allocationFactors.yaml#/components/schemas/allocationFactors'
           description: "Liste von Aufteilungsfaktor"
-        paremeterIDs:
+        parameterIDs:
           $ref: './parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas'
           description: "Liste Parameter-IDs"
         result:
