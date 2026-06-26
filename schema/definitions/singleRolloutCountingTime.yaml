@@ -26,7 +26,7 @@ components:
           description: "Referenz auf eine mögliche Reklamation"
         startCodeRegisterBeginYear:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
-          description: "Das zum 01.01. 0:00 Uhr des jeweiligen Kalendarjahres aktive Register"
+          description: "Das zum 01.01. 0:00 Uhr des jeweiligen Kalenderjahres aktive Register"
         singleRolloutCountingTimeRegisters:
           $ref: './singleRolloutCountingTimeRegisters.yaml#/components/schemas/singleRolloutCountingTimeRegisters'
           description: "Die ausgerollte Zählzeit mit den Registern und deren Änderungszeitpunkte über das Kalendarjahr"

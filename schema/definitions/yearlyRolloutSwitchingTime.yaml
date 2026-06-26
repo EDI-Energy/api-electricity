@@ -33,5 +33,5 @@ components:
           description: "Der Status der Leistung an der Lokation zum 01.01. eines Kalenderjahres."
         yearlyRolloutSwitchingTimes:
           $ref: './yearlyRolloutSwitchingTimeStates.yaml#/components/schemas/yearlyRolloutSwitchingTimeStates'
-          description: "Das zum 01.01. des jeweiligen Kalendarjahres aktive Register"
+          description: "Das zum 01.01. des jeweiligen Kalenderjahres aktive Register"
          

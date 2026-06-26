@@ -118,7 +118,7 @@ paths:
       parameters:
       - name: transactionId
         in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer einmlaig ausgerollten Leistungskurve.
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer einmalig ausgerollten Leistungskurve.
         required: true
         schema:
           $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'

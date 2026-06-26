@@ -3,7 +3,7 @@ components:
     countingTimeTypeEnum:
       type: string
       x-Translation:
-        de: "Zählzeitstyp | heatPump = Wärmepumpe| nightStorageHeater = Nachtspeicherheizung | offPeakWindow = Schwachlastzeifenster | otherCountingTimeDefinitionType = sonstiger Zählzeitdefintionstyp | peakWindow = Hochlastzeitfenster"
+        de: "Zählzeitstyp | heatPump = Wärmepumpe| nightStorageHeater = Nachtspeicherheizung | offPeakWindow = Schwachlastzeitfenster | otherCountingTimeDefinitionType = sonstiger Zählzeitdefinitionstyp | peakWindow = Hochlastzeitfenster"
       description: "Zählzeitstyp"
       example: "heatPump"
       enum:
