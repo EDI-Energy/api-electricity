@@ -1,6 +1,6 @@
 components:
   schemas:
-    countingTimeType:
+    countingTimeDefinitionType:
       required:
       - countingTimeType
       type: object
