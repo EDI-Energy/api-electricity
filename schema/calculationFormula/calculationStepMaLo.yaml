@@ -3,7 +3,7 @@ components:
     calculationStepMaLo:
       required:
       - identifierMarketLocation
-      - nameofVariable
+      - nameOfVariable
       - energyDirection
       type: object
       description: "Operand einer Berechnungsformel"
@@ -13,7 +13,7 @@ components:
         identifierMarketLocation:
           $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
           description: "Angabe der Marktlokations-ID"
-        nameofVariable: 
+        nameOfVariable: 
           $ref: './../codeAn5.yaml#/components/schemas/codeAn5'
           description: "Name der Variable des Operands"
         energyDirection:

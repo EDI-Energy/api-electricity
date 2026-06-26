@@ -3,7 +3,7 @@ components:
     calculationStepLocation:
       required:
       - identifierMeterLocation
-      - nameofVariable
+      - nameOfVariable
       - energyDirection
       type: object
       description: "Operand einer Berechnungsformel"
@@ -13,7 +13,7 @@ components:
         identifierMeterLocation:
           $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
           description: "Messlokation-ID"
-        nameofVariable: 
+        nameOfVariable: 
           $ref: './../codeAn5.yaml#/components/schemas/codeAn5'
           description: "Name des Operands"
         energyDirection:
