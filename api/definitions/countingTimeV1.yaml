@@ -10,7 +10,7 @@ paths:
       tags:
         - Übersicht Zählzeit
       summary: Übermittlung der Übersicht der Zählzeiten eines NB
-      description: ""
+      description: "Für die Übermittlung der Übersicht der Zählzeiten eines NB. Hat der NB keine Zählzeiten, so ist eine leere Liste zu übermitteln."
       parameters:
       - name: transactionId
         in: header
@@ -62,7 +62,7 @@ paths:
       tags:
         - Übersicht Zählzeit
       summary: Übermittlung der Übersicht der Zählzeiten eines LF
-      description: ""
+      description: "Für die Übermittlung der Übersicht der Zählzeiten eines LF. Hat der LF keine Zählzeiten, so ist eine leere Liste zu übermitteln."
       parameters:
       - name: transactionId
         in: header
