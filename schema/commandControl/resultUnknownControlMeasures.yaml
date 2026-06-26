@@ -1,7 +1,7 @@
 components:
   schemas:
     resultUnknownControlMeasures:
-      description: 
+      description: "unbekanntes Ergebnis/Antwort auf den Steuerbefehl"
       required:
       - locationId
       - stateUnknownControlMeasures

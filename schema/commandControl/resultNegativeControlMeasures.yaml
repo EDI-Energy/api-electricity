@@ -1,7 +1,7 @@
 components:
   schemas:
     resultNegativeControlMeasures:
-      description: 
+      description: "negatives Ergebnis/Antwort auf den Steuerbefehl"
       required:
       - locationId
       - stateNegativeControlMeasures

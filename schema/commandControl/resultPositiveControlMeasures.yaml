@@ -1,7 +1,7 @@
 components:
   schemas:
     resultPositiveControlMeasures:
-      description: 
+      description: "positives Ergebnis/Antwort auf den Steuerbefehl"
       required:
       - locationId
       - statePositiveControlMeasures

@@ -1,6 +1,7 @@
 components:
   schemas:
     preliminaryResultPositiveControlMeasures:
+      description: "vorläufiges Ergebnis/Antwort auf den Steuerbefehl"
       required:
       - locationId
       - preliminaryStatePositiveControlMeasures
