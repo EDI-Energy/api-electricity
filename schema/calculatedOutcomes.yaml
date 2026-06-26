@@ -1,6 +1,6 @@
 components:
   schemas:
-    purposeOfUses:
+    calculatedOutcomes:
       minItems: 1
       type: array
       x-Translation:
