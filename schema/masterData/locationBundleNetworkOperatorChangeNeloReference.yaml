@@ -3,7 +3,7 @@ components:
     locationBundleNetworkOperatorChangeNeloReference:
       required:
       - regardNeloId
-      - measuringPointOperators
+      - measuringPointOperator
       type: object
       x-Translation:
         de: "Eine Netzlokation mit ihren zugehörigen Marktpartnern"
@@ -11,6 +11,6 @@ components:
         regardNeloId:
           $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
           description: "Identifiziert die Netzlokation mittels einer eindeutigen ID"
-        measuringPointOperators:
+        measuringPointOperator:
           $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
           description: "Messstellenbetreiber, der der Netzlokation zugeordnet ist"
