@@ -9,9 +9,9 @@ components:
       - startCodeRegisterBeginYear
       - yearlyRolloutCountTimeRegisters
       type: object
-      description: "Jährlich ausgerollte Zählzeit eines LF"
+      description: "Jährlich ausgerollte Zählzeit eines NB/LF"
       x-Translation:
-        de: "Jährlich ausgerollte Zählzeit eines LF"
+        de: "Jährlich ausgerollte Zählzeit eines NB/LF"
       properties:
         codeCountingTime:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
