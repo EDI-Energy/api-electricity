@@ -4,7 +4,7 @@ components:
       required:
       - executionTimeFrom
       - version
-      - DeterminingMaximumPowerAtypicalNetworkUsage
+      - listOfCountingTimes
       type: object
       x-Translation:
         de: "Übersicht der Zählzeiten eines NB"
@@ -18,6 +18,6 @@ components:
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        lsitOfCountingTimes:
+        listOfCountingTimes:
           $ref: './countingTimesNetworkOperator.yaml#/components/schemas/countingTimesNetworkOperator'
           description: "Liste der Zählzeiten des NB."
