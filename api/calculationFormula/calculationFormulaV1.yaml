@@ -235,7 +235,7 @@ paths:
     post:
       tags:
         - Berechnungsformel Lokation
-      summary: Übermittlung der Antwort auf eineBerechnungsformel für ein Berechnungsziel Marktlokation/Tranche
+      summary: Übermittlung der Antwort auf eine Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
       description: Übermittlung der Antwort auf eine Berechnungsformel für ein
         Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche
         (z.B. Energie Sharing, gemeinschaftliche Gebäudeversorgung, virtueller
