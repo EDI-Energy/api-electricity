@@ -7,5 +7,5 @@ components:
       description: "Gibt die Bildungslogik der Tranche an"
       example: "percent"
       enum:
-      - bilateralAgreement
+      - calculationFormula
       - percent
