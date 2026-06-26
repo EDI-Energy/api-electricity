@@ -53,7 +53,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -120,14 +120,14 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: '../../schema/resultToRequest/resultLocationBundle.yaml#/components/schemas/resultLocationBundle'
+         application/json:
+           schema:
+             $ref: '../../schema/resultToRequest/resultLocationBundle.yaml#/components/schemas/resultLocationBundle'
       responses:
         "202":
           description: accepted
@@ -180,7 +180,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -246,7 +246,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -308,7 +308,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -375,14 +375,14 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: '../../schema/resultToRequest/resultLocationBundleEnergy.yaml#/components/schemas/resultLocationBundleEnergy'
+         application/json:
+           schema:
+             $ref: '../../schema/resultToRequest/resultLocationBundleEnergy.yaml#/components/schemas/resultLocationBundleEnergy'
       responses:
         "202":
           description: accepted
@@ -435,7 +435,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -500,7 +500,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:

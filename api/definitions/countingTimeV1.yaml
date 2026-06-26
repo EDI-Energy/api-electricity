@@ -33,7 +33,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -85,7 +85,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -137,7 +137,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
@@ -189,7 +189,7 @@ paths:
       - name: testFlag
         in: header
         description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: true
+        required: false
         schema:
           $ref: '../../schema/header/testFlag.yaml#/components/schemas/testFlag'
       requestBody:
