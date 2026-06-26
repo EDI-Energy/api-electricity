@@ -5,7 +5,7 @@ components:
       x-Translation:
         de: "Häufigkeit der Übermittlung"
       description: "Häufigkeit der Übermittlung"
-      example: "unique"
+      example: "single"
       enum:
       - yearly
-      - unique
+      - single

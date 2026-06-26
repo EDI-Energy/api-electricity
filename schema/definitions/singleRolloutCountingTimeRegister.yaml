@@ -1,6 +1,6 @@
 components:
   schemas:
-    uniqueRolloutCountingTimeRegister:
+    singleRolloutCountingTimeRegister:
       required:
       - executionTimeFrom
       - codeRegister

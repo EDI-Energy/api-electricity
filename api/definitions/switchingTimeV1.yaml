@@ -109,7 +109,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /definition/switchingTime/uniqueRollout/v1:
+  /definition/switchingTime/singleRollout/v1:
     post:
       tags:
         - Ausgerollte Schaltzeiten
@@ -144,7 +144,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/definitions/uniqueRolloutSwitchingTime.yaml#/components/schemas/uniqueRolloutSwitchingTime'
+             $ref: '../../schema/definitions/singleRolloutSwitchingTime.yaml#/components/schemas/singleRolloutSwitchingTime'
       responses:
         "202":
           description: accepted

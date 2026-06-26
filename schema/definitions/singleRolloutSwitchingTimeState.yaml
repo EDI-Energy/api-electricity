@@ -1,6 +1,6 @@
 components:
   schemas:
-    uniqueRolloutSwitchingTimeState:
+    singleRolloutSwitchingTimeState:
       required:
       - executionTimeFrom
       - state

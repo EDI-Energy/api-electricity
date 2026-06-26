@@ -1,6 +1,6 @@
 components:
   schemas:
-    uniqueRolloutMaximumPower:
+    singleRolloutMaximumPower:
       required:
       - executionTimeFrom
       - maxPower

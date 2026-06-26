@@ -109,7 +109,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /definition/powerCurve/uniqueRollout/v1:
+  /definition/powerCurve/singleRollout/v1:
     post:
       tags:
         - Ausgerollte Leistungskurve
@@ -144,7 +144,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/definitions/uniqueRolloutPowerCurve.yaml#/components/schemas/uniqueRolloutPowerCurve'
+             $ref: '../../schema/definitions/singleRolloutPowerCurve.yaml#/components/schemas/singleRolloutPowerCurve'
       responses:
         "202":
           description: accepted

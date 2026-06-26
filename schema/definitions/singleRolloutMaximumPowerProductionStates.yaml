@@ -1,10 +1,10 @@
 components:
   schemas:
-      uniqueRolloutMaximumPowerProductionStates:
+      singleRolloutMaximumPowerProductionStates:
         type: array
         minItems: 0
         description: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Erzeugungsleistung."
         x-Translation:
           de: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Erzeugungsleistung."
         items:
-          $ref: './uniqueRolloutMaximumPower.yaml#/components/schemas/uniqueRolloutMaximumPower'
+          $ref: './singleRolloutMaximumPower.yaml#/components/schemas/singleRolloutMaximumPower'

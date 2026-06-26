@@ -1,20 +1,20 @@
 components:
   schemas:
-    uniqueRolloutSwitchingTime:
+    singleRolloutCountingTime:
       required:
       - code
       - executionTimeFrom
       - version
-      - startPowerStateBeginYear
-      - uniqueRolloutSwitchingTimes
+      - startCodeRegisterBeginYear
+      - singleRolloutCountingTimeRegisters
       type: object
-      description: "Einmalig ausgerollte Schaltzeit"
+      description: "Einmalig ausgerollte Zählzeit"
       x-Translation:
-        de: "Einmalig ausgerollte Schaltzeit"
+        de: "Einmalig ausgerollte Zählzeit"
       properties:
         code:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
-          description: "Code der Schaltzeit"
+          description: "Code der Zählzeit"
         executionTimeFrom:
           $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
           description: "Zeitpunkt Gültig Ab (01.01 00:00 Uhr eines Kalenderjahres)"
@@ -24,10 +24,10 @@ components:
         orderReference:
           $ref: './../header/transactionId.yaml#/components/schemas/transactionId'
           description: "Referenz auf eine mögliche Reklamation"
-        startPowerStateBeginYear:
-          $ref: './switchingTimeState.yaml#/components/schemas/switchingTimeState'
-          description: "Der Status der Leistung an der Lokation zum 01.01. eines Kalenderjahres."
-        uniqueRolloutSwitchingTimes:
-          $ref: './uniqueRolloutSwitchingTimeStates.yaml#/components/schemas/uniqueRolloutSwitchingTimeStates'
-          description: "Einmalig ausgerollte Schaltzeit"
+        startCodeRegisterBeginYear:
+          $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
+          description: "Das zum 01.01. 0:00 Uhr des jeweiligen Kalendarjahres aktive Register"
+        singleRolloutCountingTimeRegisters:
+          $ref: './singleRolloutCountingTimeRegisters.yaml#/components/schemas/singleRolloutCountingTimeRegisters'
+          description: "Die ausgerollte Zählzeit mit den Registern und deren Änderungszeitpunkte über das Kalendarjahr"
          
