@@ -1,6 +1,6 @@
 components:
   schemas:
-    yearlyRolloutCountTimeRegister:
+    uniqueRolloutCountingTimeRegister:
       required:
       - executionTimeFrom
       - codeRegister
@@ -10,6 +10,6 @@ components:
         de: "Angabe eines Zeitpunktes und das zu diesem Zeitpunkt aktive Register der Zählzeit."
       properties:
         executionTimeFrom:
-          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+          $ref: './../dateAndTime/hourAndMinute.yaml#/components/schemas/hourAndMinute'
         codeRegister:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'

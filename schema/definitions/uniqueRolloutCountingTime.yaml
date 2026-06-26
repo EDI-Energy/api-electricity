@@ -6,7 +6,7 @@ components:
       - executionTimeFrom
       - version
       - startCodeRegisterBeginYear
-      - uniqueRolloutCountTimeRegisters
+      - uniqueRolloutCountingTimeRegisters
       type: object
       description: "Einmalig ausgerollte Zählzeit"
       x-Translation:
@@ -27,7 +27,7 @@ components:
         startCodeRegisterBeginYear:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
           description: "Das zum 01.01. 0:00 Uhr des jeweiligen Kalendarjahres aktive Register"
-        uniqueRolloutCountTimeRegisters:
-          $ref: './uniqueRolloutCountTimeRegisters.yaml#/components/schemas/uniqueRolloutCountTimeRegisters'
+        uniqueRolloutCountingTimeRegisters:
+          $ref: './uniqueRolloutCountingTimeRegisters.yaml#/components/schemas/uniqueRolloutCountingTimeRegisters'
           description: "Die ausgerollte Zählzeit mit den Registern und deren Änderungszeitpunkte über das Kalendarjahr"
          
