@@ -202,7 +202,7 @@ paths:
         - name: initialTransactionId
           in: header
           description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-          explode: false
+          required: false
           schema:
             $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
         - name: testFlag
