@@ -2,7 +2,7 @@ components:
   schemas:
     descriptionAn35:
       type: string
-      pattern: "^{1,35}$"
+      pattern: "^.{1,35}$"
       description: "Beschreibung eines Sachverhalts bis zu 35 Stellen (an..35)"
       x-Translation:
         de: "Beschreibung eines Sachverhalts bis zu 35 Stellen an..35"
