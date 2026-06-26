@@ -2,7 +2,7 @@ components:
   schemas:
     yearlyRolloutCountingTime:
       required:
-      - codeCountingTime
+      - code
       - executionTimeFrom
       - executionTimeUntil
       - version
@@ -13,7 +13,7 @@ components:
       x-Translation:
         de: "Jährlich ausgerollte Zählzeit eines NB/LF"
       properties:
-        codeCountingTime:
+        code:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
           description: "Code der Zählzeit"
         executionTimeFrom:
