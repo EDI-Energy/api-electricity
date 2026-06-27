@@ -20,5 +20,5 @@ components:
           $ref: './../calculatedOutcome.yaml#/components/schemas/calculatedOutcome'
           description: "Berechnungsziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Verwendungszwecke'."
         calculationFormulas:
-          $ref: './listCalculationFormulasLocation.yaml#/components/schemas/listCalculationFormulasLocation'
+          $ref: './calculationFormulasLocation.yaml#/components/schemas/calculationFormulasLocation'
           description: "Berechnungsformel für jeweils einen Zeitraum"  
