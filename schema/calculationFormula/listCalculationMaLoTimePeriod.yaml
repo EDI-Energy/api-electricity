@@ -4,7 +4,7 @@ components:
       required:
       - executionTimeFrom
       - calculationSteps
-      - result
+      - calculationFormula
       type: object
       description: "Berechnungsformel für einen Zeitraum"
       x-Translation:
@@ -25,6 +25,6 @@ components:
         parameterIDs:
           $ref: './parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas'
           description: "Liste Parameter-IDs"
-        result:
+        calculationFormula:
           $ref: './calculationFormula.yaml#/components/schemas/calculationFormula'
-          description: "Die Berechnungsformel ausgeschrieben"
+          description: "Die Berechnungsformel ausgeschrieben" 
