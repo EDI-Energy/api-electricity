@@ -5,7 +5,7 @@ components:
         - executionTimeFrom
         - purposeOfUses
         - calculationSteps
-        - result
+        - calculationFormula
       type: object
       description: Berechnungsformel für einen Zeitraum.
       x-Translation:
@@ -26,6 +26,6 @@ components:
         parameterIDs:
           $ref: ./parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas
           description: "Liste der Parameter-IDs, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
-        result:
+        calculationFormula:
           $ref: ./calculationFormula.yaml#/components/schemas/calculationFormula
           description: "Die ausgeschriebene Berechnungsformel,die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig ist."
