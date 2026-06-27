@@ -27,5 +27,5 @@ components:
           $ref: ./parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas
           description: "Liste der Parameter-IDs, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
         result:
-          $ref: ./resultCalculationFormula.yaml#/components/schemas/resultCalculationFormula
+          $ref: ./calculationFormula.yaml#/components/schemas/calculationFormula
           description: "Die ausgeschriebene Berechnungsformel,die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig ist."

@@ -26,5 +26,5 @@ components:
           $ref: './parameterIdCalculationFormulas.yaml#/components/schemas/parameterIdCalculationFormulas'
           description: "Liste Parameter-IDs"
         result:
-          $ref: './resultCalculationFormula.yaml#/components/schemas/resultCalculationFormula'
+          $ref: './calculationFormula.yaml#/components/schemas/calculationFormula'
           description: "Die Berechnungsformel ausgeschrieben"
