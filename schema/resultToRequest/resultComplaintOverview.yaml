@@ -1,7 +1,7 @@
 components:
   schemas:
     resultComplaintOverview:
-      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Wenn der Empfänger der Reklamation die Definition bereits übermittelt hat ist die Version, mit welcher er diese übermittelt hat  in \"version\" anzugeben."
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Ein Freitext ist nur dann anzugeben, wenn der Antwortcode des entsprechenden Entscheidungsbaumdiagramms die Angabe eines Freitextes vorsieht. Wenn der Empfänger der Reklamation die Definition bereits übermittelt hat ist die Version, mit welcher er diese übermittelt hat  in \"version\" anzugeben."
       x-Translation:
         de: "Ergebnis auf die Reklamation der Übersicht einer Definition"
       required:

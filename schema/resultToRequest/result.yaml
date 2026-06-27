@@ -1,7 +1,7 @@
 components:
   schemas:
     result:
-      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als \"networkOperator\" anzugeben, an den die Marktlokation abgegeben wurde."
+      description: "Hier wird bei einer Antwort der Entscheidungsbaum und der entsprechende Antwortcode aus dem Entscheidungsbaumdiagramm angegeben. Ein Freitext ist nur dann anzugeben, wenn der Antwortcode des entsprechenden Entscheidungsbaumdiagramms die Angabe eines Freitextes vorsieht. Wenn sich die Marktlokation nicht mehr im Netzgebiet befindet ist die MP-ID des NB als \"networkOperator\" anzugeben, an den die Marktlokation abgegeben wurde."
       x-Translation:
         de: "Ergebnis"
       required:
