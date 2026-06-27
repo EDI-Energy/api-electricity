@@ -1,9 +1,9 @@
 components:
   schemas:
     calculatedOutcome:
-      pattern: "C\\d{2}"
+      pattern: 'V\d{2}'
       type: string
-      description: Berechnungsformel-Ziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Berechnungsformelziele'
+      description: "Berechnungsziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Verwendungszwecke'"
       x-Translation:
         de: "Berechnungsformel Ziel"
-      example: "C01"
+      example: "V01"

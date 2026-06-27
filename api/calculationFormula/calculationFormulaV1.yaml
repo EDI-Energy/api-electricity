@@ -10,41 +10,41 @@ paths:
   /calculationFormula/location/v1:
     post:
       tags:
-        - Berechnungsformel Lokation
-      summary: Übermittlung der Berechnungsformel für ein Berechnungsziel einer Marktlokation/Netzlokation
+        - Berechnungsformel auf Basis Messlokation
+      summary: Übermittlung der Berechnungsformel für ein Berechnungsziel einer Marktlokation/Netzlokation auf Basis von Werten einer/mehreren Messlokation/en.
       description: Übermittlung der Berechnungsformel für ein Berechnungsziel von
         Energiemengen einer Marktlokation oder einer Netzlokation, für die
         genannten Verwendungszwecke, auf Basis von Werten von Messlokationen.
       parameters:
-        - name: transactionId
-          in: header
-          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer Berechnungsformel des sendenden NB.
-          required: true
-          schema:
-            $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
-        - name: creationDateTime
-          in: header
-          description: Zeitpunkt an dem der Aufruf erstellt wurde
-          required: true
-          schema:
-            $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
-        - name: initialTransactionId
-          in: header
-          description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-          required: false
-          schema:
-            $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
-        - name: testFlag
-          in: header
-          description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-          required: false
-          schema:
-            $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer Berechnungsformel des sendenden NB.
+        required: true
+        schema:
+          $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: false
+        schema:
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: ../../schema/calculationFormula/calculationFormulaLocation.yaml#/components/schemas/calculationFormulaLocation
+         application/json:
+          schema:
+            $ref: ../../schema/calculationFormula/calculationFormulaLocation.yaml#/components/schemas/calculationFormulaLocation
       responses:
         '202':
           description: accepted
@@ -63,50 +63,50 @@ paths:
   /calculationFormula/location/response/v1:
     post:
       tags:
-        - Berechnungsformel Lokation
+        - Berechnungsformel auf Basis Messlokation
       summary: Übermittlung der Antwort auf eine Berechnungsformel für ein
-        Berechnungsziel einer Marktlokation/Netzlokation
+        Berechnungsziel einer Marktlokation/Netzlokation auf Basis von Werten einer/mehreren Messlokation/en
       description: Übermittlung der Antwort auf eine Berechnungsformel für ein
         Berechnungsziel von Energiemengen einer Marktlokation oder einer
         Netzlokation, für die genannten Verwendungszwecke, auf Basis von Werten
         von Messlokationen.
       parameters:
-        - name: transactionId
-          in: header
-          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Antwort auf eine Berechnungsformel des sendenden NB.
-          required: true
-          schema:
-            $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
-        - name: creationDateTime
-          in: header
-          description: Zeitpunkt an dem der Aufruf erstellt wurde
-          required: true
-          schema:
-            $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
-        - name: initialTransactionId
-          in: header
-          description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-          required: false
-          schema:
-            $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
-        - name: referenceId
-          in: header
-          description: >-
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Antwort auf eine Berechnungsformel des sendenden NB.
+        required: true
+        schema:
+          $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
+      - name: referenceId
+        in: header
+        description: >-
             Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
-          required: true
-          schema:
-            $ref: ../../schema/header/referenceId.yaml#/components/schemas/referenceId
-        - name: testFlag
-          in: header
-          description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-          required: false
-          schema:
-            $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
+        required: true
+        schema:
+          $ref: ../../schema/header/referenceId.yaml#/components/schemas/referenceId
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: false
+        schema:
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: ../../schema/calculationFormula/calculationFormulaResponse.yaml#/components/schemas/calculationFormulaResponse
+         application/json:
+           schema:
+             $ref: ../../schema/calculationFormula/calculationFormulaResponse.yaml#/components/schemas/calculationFormulaResponse
       responses:
         '202':
           description: accepted
@@ -131,36 +131,35 @@ paths:
         Energiemengen einer Marktlokation oder einer Netzlokation auf Basis von
         Werten von Messlokationen.
       parameters:
-        - name: transactionId
-          in: header
-          description: Externe Transaktions-Id zur eindeutigen Identifikation der
-            Beendigung einer Berechnungsformel des sendenden NB.
-          required: true
-          schema:
-            $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
-        - name: creationDateTime
-          in: header
-          description: Zeitpunkt an dem der Aufruf erstellt wurde
-          required: true
-          schema:
-            $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
-        - name: initialTransactionId
-          in: header
-          description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-          required: false
-          schema:
-            $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
-        - name: testFlag
-          in: header
-          description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-          required: false
-          schema:
-            $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Beendigung einer Berechnungsformel des sendenden NB.
+        required: true
+        schema:
+          $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: false
+        schema:
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: ../../schema/calculationFormula/terminationCalculationFormulaLocation.yaml#/components/schemas/terminationCalculationFormulaLocation
+         application/json:
+           schema:
+             $ref: ../../schema/calculationFormula/terminationCalculationFormulaLocation.yaml#/components/schemas/terminationCalculationFormulaLocation
       responses:
         '202':
           description: accepted
@@ -179,7 +178,7 @@ paths:
   /calculationFormula/malo/v1:
     post:
       tags:
-        - Berechnungsformel Lokation
+        - Berechnungsformel auf Basis Marktlokation
       summary: Übermittlung der Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
       description: Übermittlung der Berechnungsformel für ein Berechnungsziel von
         Energiemengen einer Marktlokation oder einer Tranche (z.B. Energie Sharing,
@@ -187,35 +186,35 @@ paths:
         die genannten Verwendungszwecke, auf Basis von Energiemengen von
         Marktlokationen.
       parameters:
-        - name: transactionId
-          in: header
-          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer Berechnungsformel des sendenden NB.
-          required: true
-          schema:
-            $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
-        - name: creationDateTime
-          in: header
-          description: Zeitpunkt an dem der Aufruf erstellt wurde
-          required: true
-          schema:
-            $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
-        - name: initialTransactionId
-          in: header
-          description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-          required: false
-          schema:
-            $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
-        - name: testFlag
-          in: header
-          description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-          required: false
-          schema:
-            $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung einer Berechnungsformel des sendenden NB.
+        required: true
+        schema:
+          $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: false
+        schema:
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: ../../schema/calculationFormula/calculationFormulaMaLo.yaml#/components/schemas/calculationFormulaMaLo
+         application/json:
+           schema:
+             $ref: ../../schema/calculationFormula/calculationFormulaMaLo.yaml#/components/schemas/calculationFormulaMaLo
       responses:
         '202':
           description: accepted
@@ -234,7 +233,7 @@ paths:
   /calculationFormula/malo/response/v1:
     post:
       tags:
-        - Berechnungsformel Lokation
+        - Berechnungsformel auf Basis Marktlokation
       summary: Übermittlung der Antwort auf eine Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
       description: Übermittlung der Antwort auf eine Berechnungsformel für ein
         Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche
@@ -242,41 +241,41 @@ paths:
         Summenzähler, etc.), für die genannten Verwendungszwecke, auf Basis von
         Energiemengen von Marktlokationen.
       parameters:
-        - name: transactionId
-          in: header
-          description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Antwort auf eine Berechnungsformel des sendenden NB.
-          required: true
-          schema:
-            $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
-        - name: creationDateTime
-          in: header
-          description: Zeitpunkt an dem der Aufruf erstellt wurde
-          required: true
-          schema:
-            $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
-        - name: initialTransactionId
-          in: header
-          description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-          required: false
-          schema:
-            $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
-        - name: referenceId
-          in: header
-          description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
-          required: true
-          schema:
-            $ref: ../../schema/header/referenceId.yaml#/components/schemas/referenceId
-        - name: testFlag
-          in: header
-          description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-          required: false
-          schema:
-            $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
+      - name: transactionId
+        in: header
+        description: Externe Transaktions-Id zur eindeutigen Identifikation der Übermittlung der Antwort auf eine Berechnungsformel des sendenden NB.
+        required: true
+        schema:
+          $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
+      - name: creationDateTime
+        in: header
+        description: Zeitpunkt an dem der Aufruf erstellt wurde
+        required: true
+        schema:
+          $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
+      - name: initialTransactionId
+        in: header
+        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
+        required: false
+        schema:
+          $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
+      - name: referenceId
+        in: header
+        description: Externe Vorgangsreferenz zur eindeutigen Identifikation der ursprünglichen Anfrage.
+        required: true
+        schema:
+          $ref: ../../schema/header/referenceId.yaml#/components/schemas/referenceId
+      - name: testFlag
+        in: header
+        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
+        required: false
+        schema:
+          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
       requestBody:
         content:
-          application/json:
-            schema:
-              $ref: ../../schema/calculationFormula/calculationFormulaResponse.yaml#/components/schemas/calculationFormulaResponse
+         application/json:
+          schema:
+            $ref: ../../schema/calculationFormula/calculationFormulaResponse.yaml#/components/schemas/calculationFormulaResponse
       responses:
         '202':
           description: accepted

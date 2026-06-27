@@ -18,7 +18,7 @@ components:
               description: "Netzlokations-ID"
         calculatedOutcome:
           $ref: './../calculatedOutcome.yaml#/components/schemas/calculatedOutcome'
-          description: "Berechnungsformel-Ziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Berechnungsformelziele'."
+          description: "Berechnungsziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Verwendungszwecke'."
         calculationFormulas:
           $ref: './listCalculationFormulasLocation.yaml#/components/schemas/listCalculationFormulasLocation'
           description: "Berechnungsformel für jeweils einen Zeitraum"  
