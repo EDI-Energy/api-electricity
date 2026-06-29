@@ -6,9 +6,9 @@ components:
       - calculatedOutcome
       - calculationFormulas
       type: object
-      description: "Berechnungsformel für Berechnungsziele von Energiemengen einer Marktlokation oder einer Netzlokation für die genannten Verwendungszwecke auf Basis von Werten von Messlokationen."
+      description: "Berechnungsformel für die Berechnungsziele von Energiemengen einer Marktlokation oder einer Netzlokation für die genannten Verwendungszwecke auf Basis von Werten von Messlokationen."
       x-Translation:
-        de: "Berechnungsformel für Berechnungsziele von Energiemengen einer Marktlokation oder einer Netzlokation für die genannten Verwendungszwecke auf Basis von Werten von Messlokationen."
+        de: "Berechnungsformel für die Berechnungsziele von Energiemengen einer Marktlokation oder einer Netzlokation für die genannten Verwendungszwecke auf Basis von Werten von Messlokationen."
       properties:
         location:
           oneOf:
@@ -24,4 +24,4 @@ components:
           description: "Berechnungsformel für jeweils einen Zeitraum"  
         calculationFormulasNoData:
           $ref: './calculationFormulasNoDatas.yaml#/components/schemas/calculationFormulasNoDatas'
-          description: "Zeiträume in denen keine Berechnunsgformel vorhanden ist"
+          description: "Zeiträume in denen keine Berechnungsgformel vorhanden ist"

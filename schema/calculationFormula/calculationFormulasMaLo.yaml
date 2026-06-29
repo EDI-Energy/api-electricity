@@ -5,6 +5,6 @@ components:
       minItems: 1
       description: "Liste von Berechnungsformeln die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für de genannten Verwendungszwecke notwendig sind. Pro Zeitraum wird eine Berechnungsformel übermittelt."
       x-Translation:
-        de: "Liste von Berechnungsformeln die zur Ermittlung der Energiemenge der Marktlokation bzw. der Netzlokation für de genannten Verwendungszwecke notwendig sind. Pro Zeitraum wird eine Berechnungsformel übermittelt."
+        de: "Liste von Berechnungsformeln die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für de genannten Verwendungszwecke notwendig sind. Pro Zeitraum wird eine Berechnungsformel übermittelt."
       items:
         $ref: './calculationFormulaMaLoTimePeriod.yaml#/components/schemas/calculationFormulaMaLoTimePeriod'

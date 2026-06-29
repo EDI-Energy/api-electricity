@@ -16,7 +16,7 @@ components:
           description: Zeitpunkt Gültig Ab
         purposeOfUses:
           $ref: './../purposeOfUses.yaml#/components/schemas/purposeOfUses'
-          description: "Angabe der Verwendungszecke der Berechnungsformel"
+          description: "Angabe der Verwendungszwecke der Berechnungsformel"
         calculationOperands:
           $ref: ./calculationOperandsMaLo.yaml#/components/schemas/calculationOperandsMaLo
           description: "Liste der Operanden, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind." 
@@ -28,4 +28,4 @@ components:
           description: "Liste der Parameter-IDs, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind."
         calculationFormula:
           $ref: ./calculationFormula.yaml#/components/schemas/calculationFormula
-          description: "Die ausgeschriebene Berechnungsformel,die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig ist."
+          description: "Die ausgeschriebene Berechnungsformel, die zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig ist."

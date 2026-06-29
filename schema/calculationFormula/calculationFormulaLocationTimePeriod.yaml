@@ -16,7 +16,7 @@ components:
           description: "Zeitpunkt Gültig Ab"
         purposeOfUses:
           $ref: './../purposeOfUses.yaml#/components/schemas/purposeOfUses'
-          description: "Angabe der Verwendungszecke der Berechnungsformel"
+          description: "Angabe der Verwendungszwecke der Berechnungsformel"
         calculationOperands:
           $ref: './calculationOperandsLocation.yaml#/components/schemas/calculationOperandsLocation'
           description: "Liste von Operanden, die in der ausgeschriebenen Berechnungsformel, die zur Ermittlung der Energiemenge der Marktlokation bzw. die Netzlokation für das genannte Berechnungsziel notwendig sind."
