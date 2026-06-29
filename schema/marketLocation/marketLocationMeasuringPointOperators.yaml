@@ -3,6 +3,6 @@ components:
     marketLocationMeasuringPointOperators:
       type: array
       x-Translation:
-        de: "Messstellenebtreiber an der Marktlokation"
+        de: "Messstellenbetreiber an der Marktlokation"
       items:
         $ref: './marketLocationMeasuringPointOperator.yaml#/components/schemas/marketLocationMeasuringPointOperator'

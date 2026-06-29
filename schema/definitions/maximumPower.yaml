@@ -4,13 +4,20 @@ components:
       required:
         - power
       type: object
-      description: "Angabe einer maximalen Leistung in % oder in Kilowatt (kw)"
+      description: "Angabe einer maximalen Leistung entweder in % (powerPercent) oder in KW (powerKilowatt) - siehe oneOf"
       x-Translation:
         de: "Angabe einer maximalen Leistung in % oder in Kilowatt (kw)"
       properties:
-        power:
-          oneOf:
-            - $ref: './../percent.yaml#/components/schemas/percent'
-              description: "Angabe in %"
-            - $ref: './../kilowatt.yaml#/components/schemas/kilowatt'
-              description: "Angabe in kw"
+        powerPercent:
+         allOf:
+           - $ref: './../percent.yaml#/components/schemas/percent'
+             description: "Angabe in %"
+        powerKilowatt:
+         allOf:
+           - $ref: './../kilowatt.yaml#/components/schemas/kilowatt'
+             description: "Angabe in kw"
+      oneOf:
+        - required:
+            - powerPercent
+        - required:
+            - powerKilowatt

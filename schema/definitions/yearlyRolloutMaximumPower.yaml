@@ -5,9 +5,9 @@ components:
       - executionTimeFrom
       - maxPower
       type: object
-      description: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Leistung."
+      description: "Angabe eines Zeitpunktes und der zu diesem Zeitpunkt vorhandenen max. Leistung."
       x-Translation:
-        de: "Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Leistung."
+        de: "Angabe eines Zeitpunktes und der zu diesem Zeitpunkt vorhandenen max. Leistung."
       properties:
         executionTimeFrom:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
