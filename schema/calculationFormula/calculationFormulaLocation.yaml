@@ -22,3 +22,6 @@ components:
         calculationFormulas:
           $ref: './calculationFormulasLocation.yaml#/components/schemas/calculationFormulasLocation'
           description: "Berechnungsformel für jeweils einen Zeitraum"  
+        calculationFormulasNoData:
+          $ref: './calculationFormulasNoDatas.yaml#/components/schemas/calculationFormulasNoDatas'
+          description: "Zeiträume in denen keine Berechnunsgformel vorhanden ist"

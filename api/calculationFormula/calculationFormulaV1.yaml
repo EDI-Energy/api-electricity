@@ -5,7 +5,8 @@ info:
   description: Mit diesem API-Webdienst wird die Übermittlung von Berechnungsformeln für
     Berechnungsziele von Energiemengen für Marktlokationen, Netzlokationen und
     Tranchen, einschließlich ihrer Verwendungszwecke, sowie zur Übermittlung der
-    zugehörigen Antworten und zur Beendigung der Berechnungsvorgänge realisiert.
+    zugehörigen Antworten der Berechnungsvorgänge realisiert. Eine Beendidung der Berechnungsformel
+    erfolgt mittels Zeitscheiben analog zum Lokationsbündel. 
 paths:
   /calculationFormula/location/v1:
     post:
@@ -107,59 +108,6 @@ paths:
          application/json:
            schema:
              $ref: ../../schema/calculationFormula/calculationFormulaResponse.yaml#/components/schemas/calculationFormulaResponse
-      responses:
-        '202':
-          description: accepted
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not Found
-        '405':
-          description: Method not allowed
-        '422': 
-          description: Unprocessable Entity
-        '500':
-          description: Internal Server Error
-  /calculationFormula/location/termination/v1:
-    post:
-      tags:
-        - Beendigung Berechnungsformel Lokation
-      summary: Beendigung der Berechnungsformel für ein Berechnungsziel Marktlokation/Netzlokation
-      description: Beendigung der Berechnungsformel für ein Berechnungsziel von
-        Energiemengen einer Marktlokation oder einer Netzlokation auf Basis von
-        Werten von Messlokationen.
-      parameters:
-      - name: transactionId
-        in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation der Beendigung einer Berechnungsformel des sendenden NB.
-        required: true
-        schema:
-          $ref: ../../schema/header/transactionId.yaml#/components/schemas/transactionId
-      - name: creationDateTime
-        in: header
-        description: Zeitpunkt an dem der Aufruf erstellt wurde
-        required: true
-        schema:
-          $ref: ../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime
-      - name: initialTransactionId
-        in: header
-        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-        required: false
-        schema:
-          $ref: ../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId
-      - name: testFlag
-        in: header
-        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: false
-        schema:
-          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
-      requestBody:
-        content:
-         application/json:
-           schema:
-             $ref: ../../schema/calculationFormula/terminationCalculationFormulaLocation.yaml#/components/schemas/terminationCalculationFormulaLocation
       responses:
         '202':
           description: accepted
