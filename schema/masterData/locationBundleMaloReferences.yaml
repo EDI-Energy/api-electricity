@@ -2,6 +2,7 @@ components:
   schemas:
      locationBundleMaloReferences:
       type: array
+      minItems: 1
       x-Translation:
         de: "Lokationsbündel-Objekte die auf eine MaLo referenzieren"
       items:
