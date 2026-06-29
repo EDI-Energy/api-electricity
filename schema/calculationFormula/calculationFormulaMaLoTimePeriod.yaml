@@ -4,7 +4,7 @@ components:
       required:
         - executionTimeFrom
         - purposeOfUses
-        - calculationSteps
+        - calculationOperands
         - calculationFormula
       type: object
       description: Berechnungsformel für einen Zeitraum.
@@ -17,8 +17,8 @@ components:
         purposeOfUses:
           $ref: './../purposeOfUses.yaml#/components/schemas/purposeOfUses'
           description: "Angabe der Verwendungszecke der Berechnungsformel"
-        calculationSteps:
-          $ref: ./calculationStepsMaLo.yaml#/components/schemas/calculationStepsMaLo
+        calculationOperands:
+          $ref: ./calculationOperandsMaLo.yaml#/components/schemas/calculationOperandsMaLo
           description: "Liste der Operanden, die in der ausgeschriebenen Berechnungsformel, zur Ermittlung der Energiemenge der Marktlokation bzw. der Tranche für das genannte Berechnungsziel notwendig sind." 
         allocationFactors:
           $ref: ./allocationFactors.yaml#/components/schemas/allocationFactors

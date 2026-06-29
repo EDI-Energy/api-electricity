@@ -1,6 +1,6 @@
 components:
   schemas:
-    calculationStepLocation:
+    calculationOperandLocation:
       required:
       - identifierMeterLocation
       - nameOfVariable
