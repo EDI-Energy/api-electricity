@@ -1,0 +1,12 @@
+components:
+  schemas:
+    complaintDefinitionType:
+      type: string
+      x-Translation:
+        de: "Typ der Definition die Reklamiert wird"
+      description: "Typ der Definition die Reklamiert wird"
+      example: "countingTime"
+      enum:
+      - countingTime
+      - powerCurve
+      - switchingTime

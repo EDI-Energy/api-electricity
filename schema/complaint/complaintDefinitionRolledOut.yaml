@@ -2,11 +2,14 @@ components:
   schemas:
     complaintDefinitionRolledOut:
       required:
+      - complaintDefinitionType
       - complaintReasonDefinitionRolledOut
       type: object
       x-Translation:
         de: "Reklamationsbeschreibung der ausgerollten  Definition"
       properties:
+        complaintDefinitionType:
+          $ref: './complaintDefinitionType.yaml#/components/schemas/complaintDefinitionType'
         complaintReasonDefinitionRolledOut:
           $ref: './complaintReasonDefinitionRolledOut.yaml#/components/schemas/complaintReasonDefinitionRolledOut'
         versionDefinitionRolledOut:

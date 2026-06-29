@@ -2,11 +2,14 @@ components:
   schemas:
     complaintDefinitionOverview:
       required:
+      - complaintDefinitionType
       - complaintReasonDefinitionOverview
       type: object
       x-Translation:
         de: "Reklamationsbeschreibung der Übersicht einer Definition"
       properties:
+        complaintDefinitionType:
+          $ref: './complaintDefinitionType.yaml#/components/schemas/complaintDefinitionType'
         complaintReasonDefinitionOverview:
           $ref: './complaintReasonDefinitionOverview.yaml#/components/schemas/complaintReasonDefinitionOverview'
         versionDefinitionOverview:
