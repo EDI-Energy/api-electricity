@@ -6,12 +6,14 @@ components:
       - complaintReasonDefinitionOverview
       type: object
       x-Translation:
-        de: "Reklamationsbeschreibung der Übersicht einer Definition"
+        de: "Reklamationsbeschreibung der Übersicht einer Definition. Ein Freitext ist anzugeben, wenn als Reklamationsgrund unplausibel angegeben wird."
       properties:
         complaintDefinitionType:
           $ref: './complaintDefinitionType.yaml#/components/schemas/complaintDefinitionType'
         complaintReasonDefinitionOverview:
           $ref: './complaintReasonDefinitionOverview.yaml#/components/schemas/complaintReasonDefinitionOverview'
+        complaintFreeText:
+          $ref: './../freeText.yaml#/components/schemas/freeText'
         versionDefinitionOverview:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
           description: Angabe der Version der Übersicht einer Definition, wenn es sich um eine Reklamation unplausibel handelt.
