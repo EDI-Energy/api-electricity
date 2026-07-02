@@ -5,6 +5,7 @@ components:
       description: "Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt."
       x-Translation:
         de: "Test Kennzeichen"
+      x-sign: true
       example: false
       nullable: false
       default: false

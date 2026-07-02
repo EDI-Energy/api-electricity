@@ -4,6 +4,7 @@ components:
       type: string
       x-Translation:
         de: "Transaktion-ID"
+      x-sign: true
       description: "Externe Transaktionsnummer zur eindeutigen Identifikation des Vorgangs des sendenden Marktpartners"
       format: uuid
       example: "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
