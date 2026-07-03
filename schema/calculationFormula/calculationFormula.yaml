@@ -2,8 +2,14 @@ components:
   schemas:
     calculationFormula:
       type: "string"
-      pattern: "^\\s*=\\s*(?:(?:MIN|MAX|Positivwert)\\s*\\(|[A-Za-z0-9]{5}|[+\\-*\\/(),]|\\s)+\\s*$"
+      pattern: "^\\s*=\\s*(?:(?:MIN|MAX|Positivwert)\\s*\\(|[A-Za-z0-9]{1,10}|[+\\-*\\/(),]|\\s)+\\s*$"
       description: "Die ausgeschriebene Berechnungsformel die folgende Elemente enthalten kann: - die Funktionen MIN, MAX und Positivwert, - die Parameter-IDs, - die Operatoren +, -, *, /, (, ) und - Leerzeichen. Es muss mit einem Gleichheitszeichen beginnen."
       x-Translation:
         de: "Die ausgeschriebene Berechnungsformel"
-      example: "=Me123+MIN(Me123,Me124)*Positivwert(Me125-Me126)"
+      examples: 
+        Beispiel1: 
+          summary: "Beispiel1 für eine Berechnungsformel, Hinweis: Die im Beispiel verwendete Parameter-ID definiert der Sender der Formel."
+          value: "=Me123+MIN(Me123,Me124)*Positivwert(Me125-Me126)"
+        Beispiel2:
+          summary: "Beispiel2 für eine Berechnungsformel, Hinweis: Die im Beispiel verwendete Parameter-ID (hier: Messlok12 und MLSSE1678) definiert der Sender der Formel."
+          value: "=Messlok12+MLSSE1678"
