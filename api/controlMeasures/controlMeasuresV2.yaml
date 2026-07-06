@@ -10,11 +10,11 @@ servers: # URLs unter der die API bereitsteht
   
 
 paths:
-  /steuerbefehl/konfiguration/v2:
+  /controlMeasures/configuration/v2:
     post:
+      tags: 
+      - Anweisung
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf einen Leistungswert.
-      description: ""
-      operationId: ""
       parameters:
       - name: transactionId
         in: header
@@ -61,10 +61,11 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/initialZustand/v2:
+  /controlMeasures/initialState/v2:
     post:
+      tags: 
+      - Anweisung
       summary: Anweisung Steuerbefehl vom NB/LF an MSB zur Regelung auf den ursprünglichen Zustand.
-      description: ""
       parameters:
       - name: transactionId
         in: header
@@ -111,11 +112,11 @@ paths:
         "500":
           description: Internal Server Error
  
-  /steuerbefehl/vorlaeufigePositiveAntwort/v2:
+  /controlMeasures/preliminaryStatePositive/v2:
     post:
+      tags: 
+      - Vorläufige Mitteilung
       summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
-      description: ""
-      operationId: ""
       parameters:
       - name: transactionId
         in: header
@@ -168,11 +169,11 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/vorlaeufigeNegativeAntwort/v2:
+  /controlMeasures/preliminaryStateNegative/v2:
     post:
+      tags: 
+      - Vorläufige Mitteilung
       summary: Negative Mitteilung zum weiteren Vorgehen
-      description: ""
-      operationId: ""
       parameters:
       - name: transactionId
         in: header
@@ -225,11 +226,11 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/positiveAntwort/v2:
+  /controlMeasures/positiveResponse/v2:
     post:
+      tags: 
+      - Antwort
       summary: Positive Antwort auf den Steuerbefehl
-      description: ""
-      operationId: ""
       parameters:
       - name: transactionId
         in: header
@@ -282,11 +283,11 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/negativeAntwort/v2:
+  /controlMeasures/negativeResponse/v2:
     post:
+      tags:
+      - Antwort
       summary: Negative Antwort auf den Steuerbefehl
-      description: ""
-      operationId: ""
       parameters:
       - name: transactionId
         in: header
@@ -339,11 +340,11 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/informationAnweisung/v2:
+  /controlMeasures/informationResultUnknown/v2:
     post:
+      tags:
+      - Information
       summary: Information zum Steuerbefehl an Anweisenden, dass finaler Status noch nicht vorliegt.
-      description: ""
-      operationId: ""
       parameters:
       - name: transactionId
         in: header
@@ -396,11 +397,11 @@ paths:
         "500":
           description: Internal Server Error
 
-  /steuerbefehl/information/v2:
+  /controlMeasures/information/v2:
     post:
       summary: Information
-      description: ""
-      operationId: ""
+      tags:
+      - Information
       parameters:
       - name: transactionId
         in: header
