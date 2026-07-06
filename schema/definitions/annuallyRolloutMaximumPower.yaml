@@ -1,6 +1,6 @@
 components:
   schemas:
-    yearlyRolloutMaximumPower:
+    annuallyRolloutMaximumPower:
       required:
       - executionTimeFrom
       - maxPower

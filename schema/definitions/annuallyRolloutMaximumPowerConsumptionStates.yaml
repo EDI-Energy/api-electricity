@@ -1,10 +1,10 @@
 components:
   schemas:
-      yearlyRolloutMaximumPowerConsumptionStates:
+      annuallyRolloutMaximumPowerConsumptionStates:
         type: array
         minItems: 1
         description: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Bezugsleistung."
         x-Translation:
           de: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen max. Bezugsleistung."
         items:
-          $ref: './yearlyRolloutMaximumPower.yaml#/components/schemas/yearlyRolloutMaximumPower'
+          $ref: './annuallyRolloutMaximumPower.yaml#/components/schemas/annuallyRolloutMaximumPower'

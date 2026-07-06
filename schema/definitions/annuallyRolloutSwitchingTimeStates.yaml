@@ -1,10 +1,10 @@
 components:
   schemas:
-      yearlyRolloutSwitchingTimeStates:
+      annuallyRolloutSwitchingTimeStates:
         type: array
         minItems: 1
         description: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen Status der Schalthandlung."
         x-Translation:
           de: "Array zur Angabe eines Zeitpunktes und den zu diesem Zeitpunkt vorhandenen Status der Schalthandlung."
         items:
-          $ref: './yearlyRolloutSwitchingTimeState.yaml#/components/schemas/yearlyRolloutSwitchingTimeState'
+          $ref: './annuallyRolloutSwitchingTimeState.yaml#/components/schemas/annuallyRolloutSwitchingTimeState'

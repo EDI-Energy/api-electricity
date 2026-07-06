@@ -1,6 +1,6 @@
 components:
   schemas:
-    yearlyRolloutSwitchingTimeState:
+    annuallyRolloutSwitchingTimeState:
       required:
       - executionTimeFrom
       - state

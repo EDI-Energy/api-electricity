@@ -1,6 +1,6 @@
 components:
   schemas:
-    yearlyRolloutCountingTimeRegister:
+    annuallyRolloutCountingTimeRegister:
       required:
       - executionTimeFrom
       - codeRegister

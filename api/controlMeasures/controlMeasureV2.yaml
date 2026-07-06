@@ -226,7 +226,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasure/positiveResponse/v2:
+  /controlMeasure/resultPositive/v2:
     post:
       tags: 
       - Antwort
@@ -283,7 +283,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasure/negativeResponse/v2:
+  /controlMeasure/resultNegative/v2:
     post:
       tags:
       - Antwort

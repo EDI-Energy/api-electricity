@@ -109,7 +109,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /definition/countingTime/yearlyRollout/v1:
+  /definition/countingTime/annuallyRollout/v1:
     post:
       tags:
         - Ausgerollte Zählzeit
@@ -144,7 +144,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/definitions/yearlyRolloutCountingTime.yaml#/components/schemas/yearlyRolloutCountingTime'
+             $ref: '../../schema/definitions/annuallyRolloutCountingTime.yaml#/components/schemas/annuallyRolloutCountingTime'
       responses:
         "202":
           description: accepted

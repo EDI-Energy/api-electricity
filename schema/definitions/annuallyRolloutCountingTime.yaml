@@ -1,13 +1,13 @@
 components:
   schemas:
-    yearlyRolloutCountingTime:
+    annuallyRolloutCountingTime:
       required:
       - code
       - executionTimeFrom
       - executionTimeUntil
       - version
       - startCodeRegisterBeginYear
-      - yearlyRolloutCountingTimeRegisters
+      - annuallyRolloutCountingTimeRegisters
       type: object
       description: "Jährlich ausgerollte Zählzeit eines NB/LF"
       x-Translation:
@@ -31,6 +31,6 @@ components:
         startCodeRegisterBeginYear:
           $ref: './../codeAn3.yaml#/components/schemas/codeAn3'
           description: "Das zum 01.01. 0:00 Uhr des jeweiligen Kalenderjahres aktive Register"
-        yearlyRolloutCountingTimeRegisters:
-          $ref: './yearlyRolloutCountingTimeRegisters.yaml#/components/schemas/yearlyRolloutCountingTimeRegisters'
+        annuallyRolloutCountingTimeRegisters:
+          $ref: './annuallyRolloutCountingTimeRegisters.yaml#/components/schemas/annuallyRolloutCountingTimeRegisters'
           description: "Die ausgerollte Zählzeit mit den Registern und deren Änderungszeitpunkte über das Kalendarjahr"        

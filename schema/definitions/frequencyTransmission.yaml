@@ -7,5 +7,5 @@ components:
       description: "Häufigkeit der Übermittlung"
       example: "single"
       enum:
-      - yearly
+      - annually
       - single

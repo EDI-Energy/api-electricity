@@ -1,13 +1,13 @@
 components:
   schemas:
-    yearlyRolloutPowerCurve:
+    annuallyRolloutPowerCurve:
       required:
       - code
       - executionTimeFrom
       - executionTimeUntil
       - version
       - startMaximumPowerConsumptionBeginYear
-      - yearlyRolloutMaximumPowerConsumption
+      - annuallyRolloutMaximumPowerConsumption
       type: object
       description: "Jährlich ausgerollte Leistungskurve"
       x-Translation:
@@ -34,10 +34,10 @@ components:
         startMaximumPowerProductionBeginYear:
           $ref: './maximumPower.yaml#/components/schemas/maximumPower'
           description: "Die maximale Erzeugungsleistung an der Lokation zum 01.01. 0:00 Uhr eines Kalenderjahres."
-        yearlyRolloutMaximumPowerConsumption:
-          $ref: './yearlyRolloutMaximumPowerConsumptionStates.yaml#/components/schemas/yearlyRolloutMaximumPowerConsumptionStates'
+        annuallyRolloutMaximumPowerConsumption:
+          $ref: './annuallyRolloutMaximumPowerConsumptionStates.yaml#/components/schemas/annuallyRolloutMaximumPowerConsumptionStates'
           description: "Ausgerollte maximale Bezugsleistung für das Kalenderjahr."
-        yearlyRolloutMaximumPowerProduction:
-          $ref: './yearlyRolloutMaximumPowerProductionStates.yaml#/components/schemas/yearlyRolloutMaximumPowerProductionStates'
+        annuallyRolloutMaximumPowerProduction:
+          $ref: './annuallyRolloutMaximumPowerProductionStates.yaml#/components/schemas/annuallyRolloutMaximumPowerProductionStates'
           description: "Ausgerollte maximale Erzeugungslesitung für das Kalenderjahr."
          
