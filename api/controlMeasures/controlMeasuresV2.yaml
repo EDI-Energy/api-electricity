@@ -136,10 +136,9 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
-        in: query
+        in: header
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
-        style: form
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -194,10 +193,9 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
-        in: query
+        in: header
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
-        style: form
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -252,10 +250,9 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
-        in: query
+        in: header
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
-        style: form
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -310,10 +307,9 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
-        in: query
+        in: header
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
-        style: form
         schema:
           $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
       - name: testFlag
@@ -368,7 +364,7 @@ paths:
         schema:
           $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
       - name: referenceId
-        in: query
+        in: header
         description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
         required: true
         schema:
