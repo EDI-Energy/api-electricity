@@ -14,7 +14,6 @@ paths:
       summary: >-
        Übermittlung einer Reklamation zu einer Übersicht einer Zählzeit, 
        Leistungskurve oder Schaltzeit
-      description: ""
       parameters:
       - name: transactionId
         in: header

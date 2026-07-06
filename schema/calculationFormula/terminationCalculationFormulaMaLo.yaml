@@ -15,7 +15,7 @@ components:
           description: "Angabe der Marktlokations-ID"
         calculatedOutcome:
           $ref: './../calculatedOutcome.yaml#/components/schemas/calculatedOutcome'
-          description: "Berechnungsformel-Ziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Berechnungsformelziele'"  
+          description: "Ziel der Berechnungsformel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Verwendungszwecke'"  
         terminationDateTime:
           $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
           description: "Beendigungszeitpunkt zu dem die Berechnungsformel mit dem genannten Berechnungsziel für die Marktlokation bzw. Tranche nicht mehr benötigt wird."

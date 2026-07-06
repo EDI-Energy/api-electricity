@@ -3,8 +3,8 @@ components:
     complaintDefinitionType:
       type: string
       x-Translation:
-        de: "Typ der Definition die Reklamiert wird"
-      description: "Typ der Definition die Reklamiert wird"
+        de: "Typ der Definition die reklamiert wird"
+      description: "Typ der Definition die reklamiert wird"
       example: "countingTime"
       enum:
       - countingTime
