@@ -7,8 +7,6 @@ components:
       type: object
       properties:
         commandInformation:
-          oneOf:
-            - $ref: './commandControl.yaml#/components/schemas/commandControl'
-            - $ref: './commandRegular.yaml#/components/schemas/commandRegular'
+          $ref: './commandControl.yaml#/components/schemas/commandControl'
         partnerId:
           $ref: './../identifier/marketPartnerId.yaml#/components/schemas/marketPartnerId'
