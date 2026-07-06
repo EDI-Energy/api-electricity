@@ -4,7 +4,7 @@ info: # Allgemeine Infos zur Schnittstelle
    EDI@Energy API-Webdienst zur Übermittlung von Reklamationen der Übersicht einer Definition
   version: 1.0.0
   description: >-
-   Mit diesen API-Webdienst wird die Übermittlung von Reklamationen der Übersicht einer Definition sowie deren Antwort umgesetzt.
+   Mit diesen API-Webdiensten wird die Übermittlung von Reklamationen der Übersicht einer Definition sowie deren Antwort umgesetzt.
 
 paths:
   /complaintDefinitionOverview/v1:
