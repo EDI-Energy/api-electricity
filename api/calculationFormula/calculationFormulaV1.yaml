@@ -5,7 +5,7 @@ info:
   description: Mit diesem API-Webdienst wird die Übermittlung von Berechnungsformeln für
     Berechnungsziele von Energiemengen für Marktlokationen, Netzlokationen und
     Tranchen, einschließlich ihrer Verwendungszwecke, sowie zur Übermittlung der
-    zugehörigen Antworten der Berechnungsvorgänge realisiert. Eine Beendidung der Berechnungsformel
+    zugehörigen Antworten der Berechnungsvorgänge realisiert. Eine Beendigung der Berechnungsformel
     erfolgt mittels Zeitscheiben analog zum Lokationsbündel. 
 paths:
   /calculationFormula/location/v1:
