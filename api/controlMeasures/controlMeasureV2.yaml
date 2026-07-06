@@ -10,7 +10,7 @@ servers: # URLs unter der die API bereitsteht
   
 
 paths:
-  /controlMeasures/configuration/v2:
+  /controlMeasure/configuration/v2:
     post:
       tags: 
       - Anweisung
@@ -61,7 +61,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasures/initialState/v2:
+  /controlMeasure/initialState/v2:
     post:
       tags: 
       - Anweisung
@@ -112,7 +112,7 @@ paths:
         "500":
           description: Internal Server Error
  
-  /controlMeasures/preliminaryStatePositive/v2:
+  /controlMeasure/preliminaryStatePositive/v2:
     post:
       tags: 
       - Vorläufige Mitteilung
@@ -169,7 +169,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasures/preliminaryStateNegative/v2:
+  /controlMeasure/preliminaryStateNegative/v2:
     post:
       tags: 
       - Vorläufige Mitteilung
@@ -226,7 +226,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasures/positiveResponse/v2:
+  /controlMeasure/positiveResponse/v2:
     post:
       tags: 
       - Antwort
@@ -283,7 +283,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasures/negativeResponse/v2:
+  /controlMeasure/negativeResponse/v2:
     post:
       tags:
       - Antwort
@@ -340,7 +340,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasures/informationResultUnknown/v2:
+  /controlMeasure/informationResultUnknown/v2:
     post:
       tags:
       - Information
@@ -397,7 +397,7 @@ paths:
         "500":
           description: Internal Server Error
 
-  /controlMeasures/information/v2:
+  /controlMeasure/information/v2:
     post:
       summary: Information
       tags:
