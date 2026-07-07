@@ -2,7 +2,6 @@ components:
   schemas:
     locationBundleObjectClearingSenderData:
       required:
-      - locationBundleId
       type: object
       x-Translation:
         de: "Die Zeitscheiben der Liste aller im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen aus Sicht des Senders zu den Systemdaten, erwarteten Daten, keinen erwarteten Daten und keinen Systemdaten"

@@ -2,7 +2,6 @@ components:
   schemas:
     locationBundleEnergyClearing:
       required:
-      - locationBundleId
       - productionMaloId
       type: object
       x-Translation:
