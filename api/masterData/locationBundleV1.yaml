@@ -156,7 +156,7 @@ paths:
         Übermittlung von Lokationsbündeln mit Nennung der zugeordneten Marktpartnern im 
         Rahmen von Netzbetreiberwechselprozessen. Dabei werden die Marktpartner genannt, 
         die zum Zeitpunkt des Versendens der Nachricht dem NBA für den Zeitpunkt des 
-        Netzbetreiberwechsels vorliegen mitgeteilt. Eine Abbildung in Zeitscheiben findet 
+        Netzbetreiberwechsels vorliegen. Eine Abbildung in Zeitscheiben findet 
         für die Marktpartnerzuordnung nicht statt.
       parameters:
       - name: transactionId
@@ -280,7 +280,7 @@ paths:
       description: >-
         Übermittlung von Energielokationsbündeln mehrerer Marktlokationen. 
         Dieses Bündel wird benötigt, um dem Markt mitzuteilen, welche Marktlokationen 
-        Bestanteil eines Energielokationsbündels sind, das zum Beispiel für Energie-Sharing 
+        Bestandteil eines Energielokationsbündels sind, das zum Beispiel für Energie-Sharing 
         gebildet wurde. Im Fall von Energie-Sharing wird die erzeugende Marktlokation genannt, 
         welche die Energie bereitstellt und zudem alle verbrauchenden Marktlokationen, 
         die im Rahmen von Energie-Sharing Energie von der genannten erzeugenden Marktlokation 
@@ -411,7 +411,7 @@ paths:
         Übermittlung von Energielokationsbündeln mit Nennung der zugeordneten Marktpartnern im 
         Rahmen von Netzbetreiberwechselprozessen. Dabei werden die Marktpartner genannt, 
         die zum Zeitpunkt des Versendens der Nachricht dem NBA für den Zeitpunkt des 
-        Netzbetreiberwechsels vorliegen mitgeteilt. Eine Abbildung in Zeitscheiben findet 
+        Netzbetreiberwechsels vorliegen. Eine Abbildung in Zeitscheiben findet 
         für die Marktpartnerzuordnung nicht statt.
       parameters:
       - name: transactionId
@@ -471,7 +471,7 @@ paths:
         Dabei kann der Datenstand im IT System des Berechtigten dargestellt werden und 
         zudem wenn erforderlich die Erwartung an die Daten, wie der Berechtigte sie gerne 
         vom Verantwortlichen bekommen würde. Dieses Bündel wird benötigt, um dem Markt 
-        mitzuteilen, welche Marktlokationen Bestanteil eines Energielokationsbündels sind, 
+        mitzuteilen, welche Marktlokationen Bestandteil eines Energielokationsbündels sind, 
         das zum Beispiel für Energie-Sharing gebildet wurde. Im Fall von Energie-Sharing 
         wird die erzeugende Marktlokation genannt, welche die Energie bereitstellt und 
         zudem alle verbrauchenden Marktlokationen, die im Rahmen von Energie-Sharing 
