@@ -2,13 +2,17 @@ components:
   schemas:
     locationBundleObjectClearingSenderData:
       required:
+      - locationId
       type: object
       x-Translation:
         de: "Die Zeitscheiben der Liste aller im Lokationsbündel enthaltenen Netzlokationen, Marktlokationen, Messlokationen, technischen Ressourcen, Tranchen und steuerbaren Ressourcen aus Sicht des Senders zu den Systemdaten, erwarteten Daten, keinen erwarteten Daten und keinen Systemdaten"
       properties:
-        locationBundleId:
-          $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
-          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID der Lokationsbündel-ID"
+        locationId:
+          oneOf:
+            - $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
+            - $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID im Clearing kann dies die Lokationsbündel-ID, die Malo-ID oder die Nelo-ID sein"
         expectedData:
           $ref: './locationBundleObjectStateViewSenderExpectedData.yaml#/components/schemas/locationBundleObjectStateViewSenderExpectedData'
           description: "Die Listen der zu erwarteten Daten aus Sicht des Senders"
