@@ -4,6 +4,4 @@ components:
       pattern: 'V\d{2}'
       type: string
       description: "Berechnungsziel, Beschreibung des fachlichen Ziels der Berechnungsformel aus dem Edi@Energy Dokument 'Codeliste der Verwendungszwecke'"
-      x-Translation:
-        de: "Berechnungsformel Ziel"
       example: "V01"
