@@ -6,9 +6,9 @@ components:
       - calculatedOutcome
       - terminationDateTime
       type: object
-      description: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche (Energie Sharing, Gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.) für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen"
+      description: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen"
       x-Translation:
-        de: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche (Energie Sharing, Gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.) für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen"
+        de: "Beendigung der Berechnungsformel für ein Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche für die genannten Verwendungszwecke auf Basis von Energiemengen von Marktlokationen"
       properties:
         marketLocation:
           $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
