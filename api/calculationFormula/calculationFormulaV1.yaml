@@ -129,8 +129,7 @@ paths:
         - Berechnungsformel auf Basis Marktlokation
       summary: Übermittlung der Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
       description: Übermittlung der Berechnungsformel für ein Berechnungsziel von
-        Energiemengen einer Marktlokation oder einer Tranche (z.B. Energie Sharing,
-        gemeinschaftliche Gebäudeversorgung, virtueller Summenzähler, etc.), für
+        Energiemengen einer Marktlokation oder einer Tranche, für
         die genannten Verwendungszwecke, auf Basis von Energiemengen von
         Marktlokationen.
       parameters:
@@ -184,9 +183,7 @@ paths:
         - Berechnungsformel auf Basis Marktlokation
       summary: Übermittlung der Antwort auf eine Berechnungsformel für ein Berechnungsziel Marktlokation/Tranche
       description: Übermittlung der Antwort auf eine Berechnungsformel für ein
-        Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche
-        (z.B. Energie Sharing, gemeinschaftliche Gebäudeversorgung, virtueller
-        Summenzähler, etc.), für die genannten Verwendungszwecke, auf Basis von
+        Berechnungsziel von Energiemengen einer Marktlokation oder einer Tranche, für die genannten Verwendungszwecke, auf Basis von
         Energiemengen von Marktlokationen.
       parameters:
       - name: transactionId
