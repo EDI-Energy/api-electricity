@@ -13,7 +13,7 @@ components:
             - $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
             - $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
             - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
-          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID im Clearing kann dies die Lokationsbündel-ID, die Malo-ID oder die Nelo-ID sein"
+          description: "Identifiziert das Lokationsbündel mittels einer eindeutigen ID im Clearing kann dies die Lokationsbündel-ID, die Malo-ID, MeLo-ID oder die Nelo-ID sein"
         expectedData:
           $ref: './locationBundleObjectStateViewSenderExpectedData.yaml#/components/schemas/locationBundleObjectStateViewSenderExpectedData'
           description: "Die Listen der zu erwarteten Daten aus Sicht des Senders"

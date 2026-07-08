@@ -12,8 +12,9 @@ components:
           oneOf:
             - $ref: './../identifier/locationBundleId.yaml#/components/schemas/locationBundleId'
             - $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
+            - $ref: './../identifier/meloId.yaml#/components/schemas/meloId'
             - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
-          description: "Identifiziert das Lokationsbündel mittels ID im Clearing kann dies die Lokationsbündel-ID, die Malo-ID oder die Nelo-ID sein"
+          description: "Identifiziert das Lokationsbündel mittels ID im Clearing kann dies die Lokationsbündel-ID, die Malo-ID, MeLo-ID oder die Nelo-ID sein"
         productionMaloId:
           $ref: './../identifier/maloId.yaml#/components/schemas/maloId'
           description: "Identifiziert die erzeugende Marktlokation, die den weitern verbrauchenden Marktlokationen Energie bereitstellt"
