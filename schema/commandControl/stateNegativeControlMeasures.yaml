@@ -1,8 +1,0 @@
-components:
-  schemas:
-    stateNegativeControlMeasures:
-      type: string
-      description: "Negativer Antwortgrund"
-      example: "failed"
-      enum:
-      - failed

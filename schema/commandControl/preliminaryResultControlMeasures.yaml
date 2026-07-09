@@ -1,15 +1,15 @@
 components:
   schemas:
-    resultPositiveControlMeasures:
-      description: "positives Ergebnis/Antwort auf den Steuerbefehl"
+    preliminaryResultControlMeasures:
+      description: "vorläufiges Ergebnis/Antwort auf den Steuerbefehl"
       required:
       - locationId
-      - statePositiveControlMeasures
+      - preliminaryStateControlMeasures
       type: object
       properties:
         locationId:
           oneOf:
             - $ref: './../identifier/srId.yaml#/components/schemas/srId'
             - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
-        statePositiveControlMeasures:
-          $ref: './statePositiveControlMeasures.yaml#/components/schemas/statePositiveControlMeasures'
+        preliminaryStateControlMeasures:
+          $ref: './../resultToRequest/result2.yaml#/components/schemas/result2'

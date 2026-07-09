@@ -1,0 +1,15 @@
+components:
+  schemas:
+    resultControlMeasures:
+      description: "Ergebnis/Antwort auf den Steuerbefehl"
+      required:
+      - locationId
+      - stateControlMeasures
+      type: object
+      properties:
+        locationId:
+          oneOf:
+            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
+            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId' 
+        stateControlMeasures:
+          $ref: './../resultToRequest/result2.yaml#/components/schemas/result2'

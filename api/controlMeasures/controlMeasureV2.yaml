@@ -68,11 +68,11 @@ paths:
           description: Service Unavailable
         '504':
           description: Gateway Timeout
-  /controlMeasure/preliminaryStatePositive/v2:
+  /controlMeasure/preliminaryState/v2:
     post:
       tags: 
       - Vorläufige Mitteilung
-      summary: Vorläufige positive Mitteilung zum weiteren Vorgehen
+      summary: Vorläufige Mitteilung zum weiteren Vorgehen
       parameters:
       - name: transactionId
         in: header
@@ -108,7 +108,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/commandControl/preliminaryResultPositiveControlMeasures.yaml#/components/schemas/preliminaryResultPositiveControlMeasures'
+             $ref: '../../schema/commandControl/preliminaryResultControlMeasures.yaml#/components/schemas/preliminaryResultControlMeasures'
       responses:
         '202':
           description: accepted
@@ -133,76 +133,11 @@ paths:
         '504':
           description: Gateway Timeout
 
-  /controlMeasure/preliminaryStateNegative/v2:
-    post:
-      tags: 
-      - Vorläufige Mitteilung
-      summary: Negative Mitteilung zum weiteren Vorgehen
-      parameters:
-      - name: transactionId
-        in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs des sendenden Marktpartners.
-        required: true
-        schema:
-          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
-      - name: creationDateTime
-        in: header
-        description: Zeitpunkt an dem der Aufruf erstellt wurde
-        required: true
-        schema:
-          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
-      - name: initialTransactionId
-        in: header
-        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-        required: false
-        schema:
-          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
-      - name: referenceId
-        in: header
-        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
-        required: true
-        schema:
-          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
-      - name: testFlag
-        in: header
-        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: false
-        schema:
-          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
-      requestBody:
-        content:
-         application/json:
-           schema:
-             $ref: '../../schema/commandControl/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
-      responses:
-        '202':
-          description: accepted
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not Found
-        '405':
-          description: Method not allowed
-        '415':
-          description: Unsupported Media Type
-        '422': 
-          description: Unprocessable Entity
-        '429':
-          description: Too Many Requests
-        '500':
-          description: Internal Server Error
-        '503':
-          description: Service Unavailable
-        '504':
-          description: Gateway Timeout
-
-  /controlMeasure/resultPositive/v2:
+  /controlMeasure/result/v2:
     post:
       tags: 
       - Antwort
-      summary: Positive Antwort auf den Steuerbefehl
+      summary: Antwort auf den Steuerbefehl
       parameters:
       - name: transactionId
         in: header
@@ -238,72 +173,7 @@ paths:
         content:
          application/json:
            schema:
-             $ref: '../../schema/commandControl/resultPositiveControlMeasures.yaml#/components/schemas/resultPositiveControlMeasures'
-      responses:
-        '202':
-          description: accepted
-        '400':
-          description: Bad Request
-        '401':
-          description: Unauthorized
-        '404':
-          description: Not Found
-        '405':
-          description: Method not allowed
-        '415':
-          description: Unsupported Media Type
-        '422': 
-          description: Unprocessable Entity
-        '429':
-          description: Too Many Requests
-        '500':
-          description: Internal Server Error
-        '503':
-          description: Service Unavailable
-        '504':
-          description: Gateway Timeout
-
-  /controlMeasure/resultNegative/v2:
-    post:
-      tags:
-      - Antwort
-      summary: Negative Antwort auf den Steuerbefehl
-      parameters:
-      - name: transactionId
-        in: header
-        description: Externe Transaktions-Id zur eindeutigen Identifikation des Aufrufs des sendenden Marktpartners.
-        required: true
-        schema:
-          $ref: '../../schema/header/transactionId.yaml#/components/schemas/transactionId'
-      - name: creationDateTime
-        in: header
-        description: Zeitpunkt an dem der Aufruf erstellt wurde
-        required: true
-        schema:
-          $ref: '../../schema/dateAndTime/dateTime.yaml#/components/schemas/dateTime'
-      - name: initialTransactionId
-        in: header
-        description: Zur Angabe des Idempotenzschlüssels im Falle eines Retry.
-        required: false
-        schema:
-          $ref: '../../schema/header/initialTransactionId.yaml#/components/schemas/initialTransactionId'
-      - name: referenceId
-        in: header
-        description: Externe Vorgangsreferenz zur eindeutigen Identifikation des ursprünglichen Steuerbefehls (Wert aus transactionId, Schritt1 des UC Steuerbefehl vom NB/LF an MSB).
-        required: true
-        schema:
-          $ref: '../../schema/header/referenceId.yaml#/components/schemas/referenceId'
-      - name: testFlag
-        in: header
-        description: Angabe, ob es sich bei dem Aufruf um einen Testaufruf handelt.
-        required: false
-        schema:
-          $ref: ../../schema/header/testFlag.yaml#/components/schemas/testFlag
-      requestBody:
-        content:
-         application/json:
-          schema:
-            $ref: '../../schema/commandControl/resultNegativeControlMeasures.yaml#/components/schemas/resultNegativeControlMeasures'
+             $ref: '../../schema/commandControl/resultControlMeasures.yaml#/components/schemas/resultControlMeasures'
       responses:
         '202':
           description: accepted
