@@ -2,18 +2,10 @@ components:
   schemas:
     commandControl:
       required:
-      - locationId
-      - maximumPowerValue
-      - executionTimeFrom
+      - commandControl
       type: object
       properties:
-        locationId:
+        commandControl:
           oneOf:
-            - $ref: './../identifier/srId.yaml#/components/schemas/srId'
-            - $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
-        maximumPowerValue:
-          $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
-        executionTimeFrom:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-        executionTimeUntil:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+            - $ref: './commandControlsControllableResource.yaml#/components/schemas/commandControlsControllableResource'
+            - $ref: './commandControlsNetworkLocation.yaml#/components/schemas/commandControlsNetworkLocation'

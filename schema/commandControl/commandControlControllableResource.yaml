@@ -1,0 +1,17 @@
+components:
+  schemas:
+    commandControlControllableResource:
+      required:
+      - srId
+      - maximumPowerValue
+      - executionTimeFrom
+      type: object
+      properties:
+        srId:
+          $ref: './../identifier/srId.yaml#/components/schemas/srId'
+        maximumPowerValue:
+          $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

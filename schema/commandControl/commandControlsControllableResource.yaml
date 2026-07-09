@@ -1,0 +1,7 @@
+components:
+  schemas:
+     commandControlsControllableResource:
+      type: array
+      description: "Steuerbefehl auf Ebene der steuerbaren Ressource"
+      items:
+        $ref: './commandControlControllableResource.yaml#/components/schemas/commandControlControllableResource'

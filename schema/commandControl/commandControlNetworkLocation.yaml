@@ -1,0 +1,18 @@
+components:
+  schemas:
+    commandControlNetworkLocation:
+      required:
+      - neloId
+      - executionTimeFrom
+      type: object
+      properties:
+        neloId:
+          $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
+        maximumPowerValueProduction:
+          $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
+        maximumPowerValueConsumption:
+          $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
+        executionTimeFrom:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+        executionTimeUntil:
+          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'

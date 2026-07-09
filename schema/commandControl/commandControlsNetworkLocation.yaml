@@ -1,0 +1,7 @@
+components:
+  schemas:
+     commandControlsNetworkLocation:
+      type: array
+      description: "Steuerbefehl auf Ebene der Netzlokation"
+      items:
+        $ref: './commandControlNetworkLocation.yaml#/components/schemas/commandControlNetworkLocation'
