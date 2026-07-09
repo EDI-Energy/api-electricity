@@ -57,10 +57,18 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '415':
+          description: Unsupported Media Type
         '422': 
           description: Unprocessable Entity
+        '429':
+          description: Too Many Requests
         '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
   /calculationFormula/location/response/v1:
     post:
       tags:
@@ -119,10 +127,18 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '415':
+          description: Unsupported Media Type
         '422': 
           description: Unprocessable Entity
+        '429':
+          description: Too Many Requests
         '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
   /calculationFormula/malo/v1:
     post:
       tags:
@@ -173,10 +189,18 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '415':
+          description: Unsupported Media Type
         '422': 
           description: Unprocessable Entity
+        '429':
+          description: Too Many Requests
         '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
   /calculationFormula/malo/response/v1:
     post:
       tags:
@@ -232,7 +256,15 @@ paths:
           description: Not Found
         '405':
           description: Method not allowed
+        '415':
+          description: Unsupported Media Type
         '422': 
           description: Unprocessable Entity
+        '429':
+          description: Too Many Requests
         '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout

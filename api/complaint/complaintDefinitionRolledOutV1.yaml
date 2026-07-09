@@ -43,20 +43,28 @@ paths:
            schema:
              $ref: '../../schema/complaint/complaintDefinitionRolledOut.yaml#/components/schemas/complaintDefinitionRolledOut'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
   /complaintDefinitionRolledOut/result/v1:
     post:
       tags: 
@@ -99,17 +107,25 @@ paths:
             schema:
               $ref: '../../schema/resultToRequest/resultComplaintRolledOut.yaml#/components/schemas/resultComplaintRolledOut'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout

@@ -42,20 +42,28 @@ paths:
            schema:
              $ref: '../../schema/definitions/overviewSwitchingTime.yaml#/components/schemas/overviewSwitchingTime'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
 
   /definition/switchingTime/annuallyRollout/v1:
     post:
@@ -94,20 +102,28 @@ paths:
            schema:
              $ref: '../../schema/definitions/annuallyRolloutSwitchingTime.yaml#/components/schemas/annuallyRolloutSwitchingTime'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
 
   /definition/switchingTime/singleRollout/v1:
     post:
@@ -146,18 +162,26 @@ paths:
            schema:
              $ref: '../../schema/definitions/singleRolloutSwitchingTime.yaml#/components/schemas/singleRolloutSwitchingTime'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
  

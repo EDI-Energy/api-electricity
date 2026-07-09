@@ -42,20 +42,28 @@ paths:
            schema:
              $ref: '../../schema/definitions/overviewCountingTimeNetworkOperator.yaml#/components/schemas/overviewCountingTimeNetworkOperator'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
  
   /definition/countingTime/overviewSupplier/v1:
     post:
@@ -94,20 +102,28 @@ paths:
            schema:
              $ref: '../../schema/definitions/overviewCountingTimeSupplier.yaml#/components/schemas/overviewCountingTimeSupplier'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
 
   /definition/countingTime/annuallyRollout/v1:
     post:
@@ -146,20 +162,28 @@ paths:
            schema:
              $ref: '../../schema/definitions/annuallyRolloutCountingTime.yaml#/components/schemas/annuallyRolloutCountingTime'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
 
   /definition/countingTime/singleRollout/v1:
     post:
@@ -198,18 +222,26 @@ paths:
            schema:
              $ref: '../../schema/definitions/singleRolloutCountingTime.yaml#/components/schemas/singleRolloutCountingTime'
       responses:
-        "202":
+        '202':
           description: accepted
-        "400":
+        '400':
           description: Bad Request
-        "401":
+        '401':
           description: Unauthorized
-        "404":
+        '404':
           description: Not Found
-        "405":
+        '405':
           description: Method not allowed
-        "422": 
+        '415':
+          description: Unsupported Media Type
+        '422': 
           description: Unprocessable Entity
-        "500":
+        '429':
+          description: Too Many Requests
+        '500':
           description: Internal Server Error
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway Timeout
  
