@@ -4,11 +4,11 @@ info: # Allgemeine Infos zur Schnittstelle
     EDI@Energy API-Webdienst zur Übermittlung von Lokationsbündeln
   version: 1.0.0
   description: >-
-    Mit diesem API-Webdienst wird die Übermittlung von Lokationsbündeln, 
-    Beendigung von Lokationsbündeln, Antwort auf die Übermittlung von Lokationsbündeln 
-    umgesetzt, Übermittlung von Lokationsbündeln mit Nennung der zugeordneten 
-    Marktpartnern im Rahmen von Netzbetreiberwechselprozessen, 
-    Übermittlung von Clearings zu Lokationsbündeln, 
+    Mit diesen API-Webdiensten wird die Übermittlung von Lokationsbündeln, die 
+    Beendigung von Lokationsbündeln, die Antwort auf die Übermittlung von Lokationsbündeln, 
+    die Übermittlung von Lokationsbündeln mit Nennung der zugeordneten 
+    Marktpartnern im Rahmen von Netzbetreiberwechselprozessen und die 
+    Übermittlung von Clearings zu Lokationsbündeln umgesetzt. 
 
 paths:
   /masterData/locationBundle/v1:
