@@ -8,11 +8,40 @@ components:
       properties:
         neloId:
           $ref: './../identifier/neloId.yaml#/components/schemas/neloId'
-        maximumPowerValueProduction:
+        maximumPowerValueProductionKW:
           $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
-        maximumPowerValueConsumption:
+        maximumPowerValueProductionPercent:
+          $ref: './../percent.yaml#/components/schemas/percent'
+        maximumPowerValueConsumptionKW:
           $ref: './maximumPowerValue.yaml#/components/schemas/maximumPowerValue'
+        maximumPowerValueConsumptionPercent:
+          $ref: './../percent.yaml#/components/schemas/percent'
         executionTimeFrom:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
-        executionTimeUntil:
-          $ref: './../dateAndTime/zeroTimeLegalGerman.yaml#/components/schemas/zeroTimeLegalGerman'
+          $ref: './../dateAndTime/dateTime.yaml#/components/schemas/dateTime'
+      allOf:
+        # Optionales Paket Erzeugung
+        - oneOf:
+          - required:
+            - maximumPowerValueProductionKW
+          - required:
+            - maximumPowerValueProductionPercent
+          - not:
+        # Erlaubt, dass im Paket Erzeugung keine Werte gesetzt werden, wenn im Paket Verbrauch Werte gesetzt werden
+            anyOf:
+              - required:
+                - maximumPowerValueProductionKW
+              - required:
+                - maximumPowerValueProductionPercent
+        # Optionales Paket Verbrauch
+        - oneOf:
+          - required:
+            - maximumPowerValueConsumptionKW
+          - required:
+            - maximumPowerValueConsumptionPercent
+          - not:
+        # Erlaubt, dass im Paket Verbrauch keine Werte gesetzt werden, wenn im Paket Erzeugung Werte gesetzt werden
+            anyOf:
+              - required:
+                - maximumPowerValueConsumptionKW
+              - required:
+                - maximumPowerValueConsumptionPercent
